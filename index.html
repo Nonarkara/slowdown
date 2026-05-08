@@ -12,6 +12,7 @@
 <body>
 
 <div class="progress" id="progress"></div>
+<div class="part-badge" id="partBadge" aria-hidden="true">—</div>
 <nav class="float-nav" aria-label="reading nav">
   <button id="navTop" title="Top of book">↑</button>
   <button id="navContents" title="Contents">☰</button>
@@ -1358,40 +1359,56 @@
     // 5b. Per-part theme switcher — body gets [data-current-part="N"] when an
     //     opener with [data-part="N"] is the most-recently-seen one. CSS uses
     //     the body attribute to swap the entire palette + animation flavour.
+    const partNames = {
+      '1':  'I · SLOW',  '2':  'II · SEE',   '3':  'III · LESS',
+      '4':  'IV · ALONE','5':  'V · TIME',   '6':  'VI · MAKE',
+      '7':  'VII · FAIL','8':  'VIII · PEOPLE','9':  'IX · HOME',
+      '10': 'X · END'
+    };
     const partOpeners = Array.from(document.querySelectorAll('.opener[data-part]'));
-    if (partOpeners.length) {
-      const partIO = new IntersectionObserver((entries) => {
-        // Pick the entry whose top is closest to (but below) the viewport top
-        let best = null, bestTop = -Infinity;
-        entries.forEach(e => {
-          const t = e.boundingClientRect.top;
-          if (t <= window.innerHeight * 0.5 && t > bestTop) {
-            bestTop = t; best = e;
-          }
-        });
-        if (best) document.body.setAttribute('data-current-part', best.target.dataset.part);
-      }, { threshold: [0, 0.1, 0.3], rootMargin: '0px 0px -50% 0px' });
-      partOpeners.forEach(el => partIO.observe(el));
+    const badge = document.getElementById('partBadge');
 
-      // Also: any time we scroll, find the most-recent opener above the fold
-      const updatePart = () => {
-        let cur = null;
-        partOpeners.forEach(el => {
-          if (el.getBoundingClientRect().top <= window.innerHeight * 0.5) cur = el;
-        });
-        if (cur) {
-          const p = cur.dataset.part;
-          if (document.body.getAttribute('data-current-part') !== p) {
-            document.body.setAttribute('data-current-part', p);
+    if (partOpeners.length) {
+      const setPart = (p) => {
+        const old = document.body.getAttribute('data-current-part');
+        if (old === p) return;
+        if (p) {
+          document.body.setAttribute('data-current-part', p);
+          if (badge) {
+            badge.textContent = partNames[p] || ('PART ' + p);
+            badge.classList.add('show');
           }
-        } else if (document.body.hasAttribute('data-current-part')) {
+        } else {
           document.body.removeAttribute('data-current-part');
+          if (badge) badge.classList.remove('show');
         }
       };
+
+      const updatePart = () => {
+        let cur = null;
+        for (const el of partOpeners) {
+          if (el.getBoundingClientRect().top <= window.innerHeight * 0.5) cur = el;
+        }
+        setPart(cur ? cur.dataset.part : null);
+      };
+
+      // Scroll handler — debounced via rAF
       let pTick = false;
-      window.addEventListener('scroll', () => {
-        if (!pTick) { requestAnimationFrame(() => { updatePart(); pTick = false; }); pTick = true; }
-      }, { passive: true });
+      const onScroll = () => {
+        if (!pTick) {
+          requestAnimationFrame(() => { updatePart(); pTick = false; });
+          pTick = true;
+        }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      // Also IntersectionObserver as a redundancy
+      const io = new IntersectionObserver(() => updatePart(), {
+        rootMargin: '-50% 0px -50% 0px',
+        threshold: 0
+      });
+      partOpeners.forEach(el => io.observe(el));
+
       updatePart();
     }
 

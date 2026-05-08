@@ -1364,3 +1364,122 @@ img[data-fallback="true"]::after {
   font-size: 9px;
   color: rgba(0,0,0,.4);
 }
+
+/* ============================================================
+   PER-PART VISIBLE BACKGROUND TINTS
+   Apply to actual section elements so the colour shift is visible
+   even if html/body bg gets cached by the renderer.
+   ============================================================ */
+
+/* Each section class accepts a tint based on the body's data-current-part */
+body[data-current-part] .essay,
+body[data-current-part] .aphorism,
+body[data-current-part] .margin-spread,
+body[data-current-part] .list-page,
+body[data-current-part] .compare,
+body[data-current-part] .quartet {
+  background-color: var(--paper);
+  transition: background-color 1.4s ease;
+}
+
+body[data-current-part] .toc,
+body[data-current-part] .appendix {
+  background-color: var(--paper-deep);
+}
+
+/* Big visible "part badge" floats fixed top-right showing current part */
+.part-badge {
+  position: fixed;
+  top: 14px; right: 80px;
+  z-index: 60;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; letter-spacing: .2em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  background: var(--accent-a, var(--ink));
+  color: var(--paper);
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity .5s ease, transform .5s ease, background .8s ease;
+  pointer-events: none;
+}
+.part-badge.show { opacity: 1; transform: translateY(0); }
+
+/* The aphorism .line should color-shift to accent on per-part */
+body[data-current-part] .aphorism .line {
+  color: var(--ink);
+}
+body[data-current-part="3"] .aphorism .line { color: var(--ink); }
+body[data-current-part="7"] .aphorism .line { color: var(--accent-a); } /* fail = blood red */
+body[data-current-part="10"] .aphorism .line.serif { color: var(--accent-a); } /* end = slate */
+
+/* Each opener gets a coloured underline strip below the giant title */
+body[data-current-part] .opener .word {
+  position: relative;
+}
+body[data-current-part] .opener .word::after {
+  content: '';
+  display: block;
+  width: 80px; height: 6px;
+  background: var(--accent-a);
+  margin-top: 24px;
+  transform-origin: left center;
+  animation: barIn 1.2s cubic-bezier(.85,0,.15,1) forwards;
+}
+@keyframes barIn {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Section dividers between sections get a colored hairline */
+body[data-current-part] .essay + .essay,
+body[data-current-part] .essay + .plate-full,
+body[data-current-part] .plate-full + .essay,
+body[data-current-part] .aphorism + .essay,
+body[data-current-part] .essay + .margin-spread {
+  position: relative;
+}
+
+/* Drop cap uses accent */
+body[data-current-part] .essay .body .lead::first-letter {
+  color: var(--accent-a);
+}
+body[data-current-part] .essay .body p:first-child::first-letter {
+  color: var(--accent-a);
+}
+
+/* Gutter labels use accent */
+body[data-current-part] .essay .gutter-l .num {
+  color: var(--accent-a);
+}
+body[data-current-part] .essay .gutter-r .marg .lab {
+  color: var(--accent-a);
+}
+body[data-current-part] .essay .body .pull {
+  border-color: var(--accent-a);
+}
+
+/* H2 titles in essays get accent tint on first letter */
+body[data-current-part] .essay .body h2 {
+  color: var(--ink);
+}
+
+/* Margin-spread title bar accent */
+body[data-current-part] .margin-spread .text-col h3 {
+  border-left: 3px solid var(--accent-a);
+  padding-left: 16px;
+  margin-left: -19px;
+}
+
+/* List page big number uses accent */
+body[data-current-part] .list-page .lead-block .num-big {
+  color: var(--accent-a);
+}
+
+/* Compare h3 uses accent */
+body[data-current-part] .compare h3 {
+  color: var(--ink);
+  border-bottom: 4px solid var(--accent-a);
+  padding-bottom: 12px;
+  display: inline-block;
+}
