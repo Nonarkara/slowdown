@@ -1184,3 +1184,183 @@ hr.thin { border: 0; height: 1px; background: var(--rule-soft); margin: 1.4em 0;
   .interlude .ilm { font-size: clamp(48px, 14vw, 88px); }
   .author-portrait { width: 140px; height: 140px; }
 }
+
+/* ============================================================
+   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   ▓▓▓ PER-MOVEMENT THEMES — each Part = its own world ▓▓▓
+   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   Body gets [data-current-part="X"] dynamically by JS.
+   Each part rotates accent + decorative + animation flavour.
+   ============================================================ */
+
+body { transition: background-color 1.2s ease, color 1.2s ease; }
+
+/* Defaults already set above — these override per-part */
+body[data-current-part="1"] {
+  --accent-a: #4d6b53;          /* sage — calm */
+  --accent-b: #8a9a89;
+  --paper:    #f0eee2;
+  --paper-deep: #e6e3d4;
+}
+body[data-current-part="2"] {
+  --accent-a: #1b4dad;          /* electric blue — vision */
+  --accent-b: #75a3e0;
+  --paper:    #eef0f4;
+  --paper-deep: #e2e6ed;
+}
+body[data-current-part="3"] {
+  --accent-a: #1b1b1b;          /* monochrome — less is less */
+  --accent-b: #6e6e6e;
+  --paper:    #fafaf6;
+  --paper-deep: #f0efe8;
+}
+body[data-current-part="4"] {
+  --accent-a: #2c2a6b;          /* deep indigo — alone */
+  --accent-b: #6e6c9c;
+  --paper:    #ecebef;
+  --paper-deep: #dedceb;
+}
+body[data-current-part="5"] {
+  --accent-a: #b08a3a;          /* sand/ochre — time */
+  --accent-b: #d8b86a;
+  --paper:    #f3ecd8;
+  --paper-deep: #e8dec3;
+}
+body[data-current-part="6"] {
+  --accent-a: #a04a2c;          /* terracotta — make */
+  --accent-b: #c8754f;
+  --paper:    #f0e8da;
+  --paper-deep: #e6dcc7;
+}
+body[data-current-part="7"] {
+  --accent-a: #7a1e1e;          /* deep crimson — fail */
+  --accent-b: #b04545;
+  --paper:    #ecdfd9;
+  --paper-deep: #ddc9c0;
+}
+body[data-current-part="8"] {
+  --accent-a: #c14d75;          /* coral/rose — people */
+  --accent-b: #e090a8;
+  --paper:    #f5e7e9;
+  --paper-deep: #ecd6dc;
+}
+body[data-current-part="9"] {
+  --accent-a: #c8851a;          /* amber — home */
+  --accent-b: #e6b258;
+  --paper:    #f4ead6;
+  --paper-deep: #ecdcbe;
+}
+body[data-current-part="10"] {
+  --accent-a: #3a4554;          /* slate — end */
+  --accent-b: #6f7c8d;
+  --paper:    #ebe8e2;
+  --paper-deep: #ddd9d0;
+}
+
+/* Use --accent-a wherever the original used --seal */
+body[data-current-part] .progress { background: var(--accent-a); }
+body[data-current-part] .float-nav button:hover { background: var(--accent-a); }
+body[data-current-part] .aphorism .pre .tick { color: var(--accent-a); }
+body[data-current-part] .aphorism:hover .line:not(.serif) { color: var(--accent-a); }
+body[data-current-part] .essay .body .pull::after { background: var(--accent-b); }
+body[data-current-part] .contents ol > li:nth-child(3n) .roman { color: var(--accent-b); }
+body[data-current-part] .contents ol > li:nth-child(3n+1) .roman { color: var(--accent-a); }
+body[data-current-part] .contents ol > li:nth-child(3n+2) .roman { color: var(--accent-b); }
+body[data-current-part] .plate-full .caption { border-left-color: var(--accent-b); }
+body[data-current-part] .plate-full .caption .why::before { color: var(--accent-b); }
+body[data-current-part] .essay .body .lead::first-letter { color: var(--accent-a); }
+body[data-current-part] .seal-mark { color: var(--accent-a); border-color: var(--accent-a); }
+body[data-current-part] .body p:first-child::first-letter,
+body[data-current-part] .essay .body .pull { color: var(--ink); }
+body[data-current-part] .author-portrait { border-color: var(--ink); }
+
+/* ============================================================
+   PER-PART ANIMATION PERSONALITIES
+   ============================================================ */
+
+/* I. SLOW — no extra motion. Reveals are extra slow. */
+body[data-current-part="1"] [data-reveal] { transition-duration: 1.8s !important; }
+
+/* II. SEE — content "lens-focuses" in (blur-to-sharp) */
+body[data-current-part="2"] [data-reveal] {
+  filter: blur(8px); transition: filter 1.4s ease, opacity 1.4s ease, transform 1.4s ease;
+}
+body[data-current-part="2"] [data-reveal].in { filter: blur(0); }
+
+/* III. LESS — gentle subtraction */
+body[data-current-part="3"] .body, body[data-current-part="3"] .essay .body {
+  letter-spacing: -.005em;
+}
+
+/* IV. ALONE — content centers and dims periphery */
+body[data-current-part="4"] .essay {
+  background: radial-gradient(ellipse at center, var(--paper) 0%, var(--paper-deep) 100%);
+}
+
+/* V. TIME — slow horizontal drift on aphorisms */
+body[data-current-part="5"] .aphorism .line {
+  animation: time-drift 22s ease-in-out infinite alternate;
+}
+@keyframes time-drift { 0%{transform:translateX(-12px);} 100%{transform:translateX(12px);} }
+
+/* VI. MAKE — slight wobble on chapter heads */
+body[data-current-part="6"] .essay .body h2 {
+  animation: make-wobble 6s ease-in-out infinite;
+  display: inline-block;
+}
+@keyframes make-wobble { 0%,100%{transform:rotate(-.4deg);} 50%{transform:rotate(.4deg);} }
+
+/* VII. FAIL — tremor on entry, then settles */
+body[data-current-part="7"] [data-reveal].in {
+  animation: fail-tremor .9s ease-out 1;
+}
+@keyframes fail-tremor {
+  0% {transform: translate(0,0);}
+  20% {transform: translate(-3px,2px);}
+  40% {transform: translate(2px,-2px);}
+  60% {transform: translate(-2px,1px);}
+  80% {transform: translate(1px,-1px);}
+  100% {transform: translate(0,0);}
+}
+
+/* VIII. PEOPLE — vibrant rotation of accents on each scroll-in element */
+body[data-current-part="8"] .aphorism .line .ch {
+  transition-duration: .9s;
+}
+body[data-current-part="8"] [data-reveal] {
+  background: linear-gradient(135deg, transparent 60%, rgba(193,77,117,.05) 100%);
+}
+
+/* IX. HOME — warm glow pulse on figures */
+body[data-current-part="9"] figure img,
+body[data-current-part="9"] .opener .plate img {
+  filter: brightness(.96) saturate(1.1) sepia(.05);
+}
+body[data-current-part="9"] .essay .body .pull {
+  background: linear-gradient(180deg, transparent 50%, rgba(200,133,26,.10));
+  padding-bottom: 24px;
+}
+
+/* X. END — final slow zoom on plates */
+body[data-current-part="10"] .plate-full > img {
+  animation: end-zoom 30s ease-out infinite alternate;
+}
+@keyframes end-zoom {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+
+/* ============================================================
+   FALLBACK ARTWORK BADGE — when image is substituted, show subtle marker
+   ============================================================ */
+img[data-fallback="true"] {
+  filter: contrast(.95) brightness(1.02);
+}
+img[data-fallback="true"]::after {
+  content: "(plate substituted — original missing from public archive)";
+  position: absolute;
+  bottom: 4px; right: 4px;
+  font-family: var(--mono, monospace);
+  font-size: 9px;
+  color: rgba(0,0,0,.4);
+}
