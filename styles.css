@@ -1390,7 +1390,7 @@ body[data-current-part] .appendix {
 /* Big visible "part badge" floats fixed top-right showing current part */
 .part-badge {
   position: fixed;
-  top: 14px; right: 80px;
+  top: 64px; right: 14px;
   z-index: 60;
   font-family: "JetBrains Mono", monospace;
   font-size: 11px; letter-spacing: .2em;
@@ -2089,6 +2089,68 @@ body[data-current-part="10"] #partFx::before {
 
 /* Sections with audio MUST be position:relative so the button anchors */
 section[data-has-audio] { position: relative; }
+
+/* ─── Global "Listen" button in topbar — always visible from any scroll position ─── */
+.global-listen {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 95;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px 10px 12px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0,0,0,.3), 0 0 0 0 rgba(201,48,35,0);
+  animation: listenPulse 3s ease-in-out infinite;
+  transition: background .25s ease, transform .2s ease;
+}
+@keyframes listenPulse {
+  0%, 100% { box-shadow: 0 8px 24px rgba(0,0,0,.3), 0 0 0 0 rgba(201,48,35,0); }
+  50%      { box-shadow: 0 8px 24px rgba(0,0,0,.3), 0 0 0 10px rgba(201,48,35,.18); }
+}
+.global-listen:hover {
+  background: var(--seal);
+  transform: translateY(-2px);
+}
+.global-listen .gl-icon {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--seal);
+  display: grid; place-items: center;
+  color: var(--paper);
+  font-size: 11px;
+  flex-shrink: 0;
+  transition: background .2s ease;
+}
+.global-listen.is-playing .gl-icon { background: var(--paper); color: var(--ink); }
+.global-listen .gl-text small {
+  display: block;
+  font-size: 8px;
+  opacity: .55;
+  letter-spacing: .25em;
+  margin-bottom: 2px;
+}
+.global-listen .gl-text strong {
+  font-weight: 500;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.global-listen.is-playing { animation: none; background: var(--seal); }
+@media (max-width: 800px) {
+  .global-listen { padding: 8px 12px 8px 10px; font-size: 10px; }
+  .global-listen .gl-text strong { font-size: 12px; }
+}
 
 /* Per-section play button — ALWAYS visible on sections that have audio */
 .audio-tag {

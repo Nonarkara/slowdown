@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Sarabun:wght@300;400;500&family=Noto+Serif+Thai:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 
@@ -1831,6 +1831,40 @@
       tag.addEventListener('click', (e) => { e.stopPropagation(); loadAndPlay(id); });
       sec.appendChild(tag);
     });
+
+    // GLOBAL "Listen" button — always visible top-right, fixed.
+    // Picks the closest audio section to the current scroll position.
+    const ids = Object.keys(NARRATION);
+    if (ids.length) {
+      const gl = document.createElement('button');
+      gl.className = 'global-listen';
+      gl.setAttribute('aria-label', 'Listen to narration');
+      gl.innerHTML = `
+        <span class="gl-icon">▶</span>
+        <span class="gl-text"><small>NARRATION</small><strong>Listen to ${NARRATION[ids[0]].label}</strong></span>
+      `;
+      document.body.appendChild(gl);
+      gl.addEventListener('click', () => {
+        // Find which audio section to play: nearest to viewport top
+        let best = ids[0];
+        let bestDist = Infinity;
+        for (const id of ids) {
+          const sec = document.getElementById(id);
+          if (!sec) continue;
+          const r = sec.getBoundingClientRect();
+          const dist = Math.abs(r.top);
+          if (dist < bestDist) { bestDist = dist; best = id; }
+        }
+        // Scroll to the section first, then play
+        const sec = document.getElementById(best);
+        if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => loadAndPlay(best), 600);
+      });
+      // Update its label/state on play/pause
+      a.addEventListener('play',  () => { gl.classList.add('is-playing'); gl.querySelector('.gl-icon').textContent = '❚❚'; });
+      a.addEventListener('pause', () => { gl.classList.remove('is-playing'); gl.querySelector('.gl-icon').textContent = '▶'; });
+      a.addEventListener('ended', () => { gl.classList.remove('is-playing'); gl.querySelector('.gl-icon').textContent = '▶'; });
+    }
 
     // Auto-pause if user scrolls far away from the playing section
     let outAt = null;
