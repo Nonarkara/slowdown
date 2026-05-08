@@ -2087,16 +2087,19 @@ body[data-current-part="10"] #partFx::before {
    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    ============================================================ */
 
-/* Per-section play button — appears on sections that have audio */
+/* Sections with audio MUST be position:relative so the button anchors */
+section[data-has-audio] { position: relative; }
+
+/* Per-section play button — ALWAYS visible on sections that have audio */
 .audio-tag {
   position: absolute;
-  top: 18px;
-  right: 18px;
-  z-index: 8;
+  top: 20px;
+  right: 20px;
+  z-index: 30;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 12px 6px 8px;
+  gap: 10px;
+  padding: 9px 14px 9px 10px;
   background: var(--ink);
   color: var(--paper);
   font-family: "JetBrains Mono", monospace;
@@ -2106,16 +2109,17 @@ body[data-current-part="10"] #partFx::before {
   border: none;
   cursor: pointer;
   transition: background .25s ease, transform .2s ease, box-shadow .2s ease;
-  opacity: 0;
-  transform: translateY(-6px);
-  box-shadow: 0 6px 16px rgba(0,0,0,.18);
-}
-section[data-has-audio]:hover .audio-tag,
-section[data-has-audio].audio-active .audio-tag,
-.has-audio-flag .audio-tag {
   opacity: 1;
   transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(0,0,0,.22), 0 0 0 0 rgba(201,48,35,0);
+  /* Subtle pulse so it's noticeable */
+  animation: audioTagPulse 3.5s ease-in-out infinite;
 }
+@keyframes audioTagPulse {
+  0%, 100% { box-shadow: 0 6px 16px rgba(0,0,0,.22), 0 0 0 0 rgba(201,48,35,0); }
+  50%      { box-shadow: 0 6px 16px rgba(0,0,0,.22), 0 0 0 8px rgba(201,48,35,.18); }
+}
+.audio-tag.is-playing { animation: none; }
 .audio-tag:hover {
   background: var(--accent-a, var(--seal));
   transform: translateY(-2px);
