@@ -1483,3 +1483,335 @@ body[data-current-part] .compare h3 {
   padding-bottom: 12px;
   display: inline-block;
 }
+
+/* ============================================================
+   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   ▓▓▓ FUN LAYER — bold decorative motifs per movement ▓▓▓
+   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   Adds visible per-part decorations + universal play.
+   ============================================================ */
+
+/* ─── universal: cursor-following ink splatter ─── */
+.splat {
+  position: absolute;
+  width: 80px; height: 80px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%,
+    var(--accent-a, #c93023) 0%,
+    var(--accent-a, #c93023) 30%,
+    transparent 70%);
+  opacity: 0;
+  transform: translate(-50%,-50%) scale(0);
+  z-index: 999;
+  mix-blend-mode: multiply;
+  animation: splatPop .9s cubic-bezier(.18,.89,.32,1.28) forwards;
+}
+@keyframes splatPop {
+  0%   { transform: translate(-50%,-50%) scale(0) rotate(0); opacity: 0; }
+  35%  { opacity: .55; }
+  70%  { transform: translate(-50%,-50%) scale(1.4) rotate(20deg); opacity: .35; }
+  100% { transform: translate(-50%,-50%) scale(1.6) rotate(45deg); opacity: 0; }
+}
+/* Smaller satellite splatters around the main one */
+.splat::before, .splat::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: var(--accent-a, #c93023);
+  mix-blend-mode: multiply;
+}
+.splat::before { width: 14px; height: 14px; top: -10px; left: 60%; opacity: .7; }
+.splat::after  { width: 22px; height: 18px; bottom: -8px; left: 10%; opacity: .55; transform: rotate(-15deg); }
+
+/* ─── universal: hover-tilt on every artwork ─── */
+img {
+  transition: transform .6s cubic-bezier(.2,.8,.25,1), filter .6s ease, box-shadow .4s ease;
+}
+.plate-full > img,
+.opener .plate img,
+.spread-arden .img img,
+.compare .pair figure img,
+.quartet .grid4 img,
+.margin-spread .figure-col img {
+  cursor: zoom-in;
+}
+.compare .pair figure:hover img,
+.quartet .grid4 figure:hover img,
+.margin-spread .figure-col figure:hover img {
+  transform: scale(1.025) translateY(-3px);
+  box-shadow: 0 24px 56px -28px rgba(0,0,0,.45);
+  filter: brightness(1.04) contrast(1.05);
+}
+
+/* ─── kinetic cover — letters drift independently ─── */
+.cover .title-line {
+  display: block;
+}
+.cover .title-line .ch-bounce {
+  display: inline-block;
+  animation: coverBob 5s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+@keyframes coverBob {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  25%      { transform: translateY(-6px) rotate(-.3deg); }
+  75%      { transform: translateY(4px) rotate(.4deg); }
+}
+
+/* ─── PART FX overlay container ─── */
+#partFx {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+body[data-current-part] #partFx { opacity: 1; }
+
+/* ════════ I. SLOW — giant breathing circle ════════ */
+body[data-current-part="1"] #partFx::before {
+  content: '';
+  position: absolute;
+  left: 8%; bottom: -28vh;
+  width: 60vh; height: 60vh;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-a) 0%, transparent 70%);
+  opacity: .14;
+  animation: slowBreathe 14s ease-in-out infinite;
+}
+@keyframes slowBreathe {
+  0%, 100% { transform: scale(.9); opacity: .10; }
+  50%      { transform: scale(1.15); opacity: .18; }
+}
+
+/* ════════ II. SEE — animated dot grid like neural focus ════════ */
+body[data-current-part="2"] #partFx {
+  background-image: radial-gradient(var(--accent-a) 2px, transparent 2px);
+  background-size: 60px 60px;
+  background-position: center;
+  opacity: .08 !important;
+  animation: seeBreathe 6s ease-in-out infinite alternate;
+}
+@keyframes seeBreathe {
+  0%   { background-size: 60px 60px; opacity: .06; }
+  100% { background-size: 70px 70px; opacity: .12; }
+}
+
+/* ════════ III. LESS — single thin vertical line ════════ */
+body[data-current-part="3"] #partFx::before {
+  content: '';
+  position: absolute;
+  top: 10vh; bottom: 10vh; left: 50%;
+  width: 1px;
+  background: var(--accent-a);
+  opacity: .25;
+  animation: lessShrink 8s ease-in-out infinite alternate;
+}
+@keyframes lessShrink {
+  0%   { transform: scaleY(1); }
+  100% { transform: scaleY(.6); }
+}
+
+/* ════════ IV. ALONE — spotlight that pulses ════════ */
+body[data-current-part="4"] #partFx::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 80vh; height: 80vh;
+  border-radius: 50%;
+  background: radial-gradient(circle, transparent 30%, var(--accent-a) 100%);
+  transform: translate(-50%,-50%);
+  opacity: .08;
+  mix-blend-mode: multiply;
+  animation: alonePulse 9s ease-in-out infinite;
+}
+@keyframes alonePulse {
+  0%, 100% { transform: translate(-50%,-50%) scale(1); }
+  50%      { transform: translate(-50%,-50%) scale(1.1); opacity: .14; }
+}
+
+/* ════════ V. TIME — rotating clock face SVG ════════ */
+body[data-current-part="5"] #partFx::before {
+  content: '';
+  position: absolute;
+  right: 4vw; top: 12vh;
+  width: 180px; height: 180px;
+  border: 2px solid var(--accent-a);
+  border-radius: 50%;
+  opacity: .25;
+}
+body[data-current-part="5"] #partFx::after {
+  content: '';
+  position: absolute;
+  right: calc(4vw + 90px);
+  top: calc(12vh + 90px);
+  width: 2px; height: 60px;
+  background: var(--accent-a);
+  transform-origin: top left;
+  opacity: .55;
+  animation: timeHand 60s linear infinite;
+}
+@keyframes timeHand {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ════════ VI. MAKE — sketchy diagonal hatching ════════ */
+body[data-current-part="6"] #partFx {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0,
+    transparent 20px,
+    var(--accent-a) 20px,
+    var(--accent-a) 21px
+  );
+  opacity: .05 !important;
+  animation: makeShift 12s ease-in-out infinite alternate;
+}
+@keyframes makeShift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 40px 0; }
+}
+
+/* ════════ VII. FAIL — occasional glitch flash ════════ */
+body[data-current-part="7"] #partFx::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    transparent 30%,
+    var(--accent-a) 30.05%,
+    var(--accent-a) 30.5%,
+    transparent 30.55%,
+    transparent 60%,
+    var(--accent-a) 60.05%,
+    var(--accent-a) 60.4%,
+    transparent 60.45%);
+  opacity: 0;
+  animation: failGlitch 7s steps(40, end) infinite;
+}
+@keyframes failGlitch {
+  0%, 92%, 100% { opacity: 0; }
+  93%, 95%      { opacity: .25; transform: translateX(-3px); }
+  94%, 96%      { opacity: .15; transform: translateX(2px); }
+  97%, 99%      { opacity: 0; }
+}
+
+/* ════════ VIII. PEOPLE — drifting dots (anonymous figures) ════════ */
+body[data-current-part="8"] #partFx::before,
+body[data-current-part="8"] #partFx::after {
+  content: '';
+  position: absolute;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--accent-a);
+  opacity: .35;
+}
+body[data-current-part="8"] #partFx::before {
+  top: 22vh; left: -3vw;
+  animation: peopleDriftR 25s linear infinite;
+}
+body[data-current-part="8"] #partFx::after {
+  top: 70vh; right: -3vw;
+  animation: peopleDriftL 22s linear infinite;
+}
+@keyframes peopleDriftR {
+  0%   { transform: translateX(0) translateY(0); opacity: 0; }
+  10%  { opacity: .35; }
+  90%  { opacity: .35; }
+  100% { transform: translateX(110vw) translateY(-25vh); opacity: 0; }
+}
+@keyframes peopleDriftL {
+  0%   { transform: translateX(0) translateY(0); opacity: 0; }
+  10%  { opacity: .35; }
+  90%  { opacity: .35; }
+  100% { transform: translateX(-110vw) translateY(15vh); opacity: 0; }
+}
+
+/* ════════ IX. HOME — falling petals ════════ */
+body[data-current-part="9"] #partFx {
+  background-image:
+    radial-gradient(ellipse 8px 12px at center, var(--accent-a) 30%, transparent 55%);
+  background-repeat: no-repeat;
+  background-position: 12vw -50px;
+  opacity: .55 !important;
+  animation: fallA 8s linear infinite;
+}
+body[data-current-part="9"] #partFx::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 10px 14px at center, var(--accent-b) 30%, transparent 55%);
+  background-repeat: no-repeat;
+  background-position: 38vw -100px;
+  opacity: .55;
+  animation: fallB 11s linear infinite;
+}
+body[data-current-part="9"] #partFx::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 6px 10px at center, var(--accent-a) 30%, transparent 55%);
+  background-repeat: no-repeat;
+  background-position: 76vw -80px;
+  opacity: .45;
+  animation: fallC 9.5s linear infinite;
+}
+@keyframes fallA { 0% { background-position: 12vw -50px;  } 100% { background-position: 18vw 110vh; } }
+@keyframes fallB { 0% { background-position: 38vw -100px; } 100% { background-position: 32vw 110vh; } }
+@keyframes fallC { 0% { background-position: 76vw -80px;  } 100% { background-position: 84vw 110vh; } }
+
+/* ════════ X. END — vignette closing in slowly ════════ */
+body[data-current-part="10"] #partFx::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 20vw 5vw var(--ink);
+  opacity: .15;
+  animation: endClose 30s ease-in-out infinite alternate;
+}
+@keyframes endClose {
+  0%   { box-shadow: inset 0 0 0vw 0vw var(--ink); opacity: .08; }
+  100% { box-shadow: inset 0 0 30vw 8vw var(--ink); opacity: .25; }
+}
+
+/* ─── make the cover bigger and bolder for first impression ─── */
+.cover .title-line:nth-child(1),
+.cover .title-line:nth-child(3),
+.cover .title-line:nth-child(4) {
+  letter-spacing: -0.018em;
+}
+.cover .title-line.thin {
+  /* This was already drifting — keep it but stretch out */
+  font-size: clamp(36px, 7.5vw, 120px);
+}
+
+/* ─── reveal animation: bouncier on aphorisms ─── */
+.aphorism .line .ch {
+  transition: transform .8s cubic-bezier(.34,1.56,.64,1), opacity .5s ease !important;
+}
+
+/* ─── hover ripple on aphorism letters ─── */
+.aphorism .line:hover .ch {
+  transition-duration: .25s !important;
+}
+.aphorism .line .ch:hover {
+  transform: translateY(-8px) scale(1.1) !important;
+  color: var(--accent-a, var(--seal)) !important;
+}
+
+/* ─── colour-scheme rules need to win ─── */
+@media (prefers-reduced-motion: no-preference) {
+  /* Make sure the part FX runs */
+}
+@media (prefers-reduced-motion: reduce) {
+  #partFx { display: none; }
+  .splat { display: none; }
+  .cover .title-line .ch-bounce { animation: none !important; }
+}
+

@@ -13,6 +13,7 @@
 
 <div class="progress" id="progress"></div>
 <div class="part-badge" id="partBadge" aria-hidden="true">—</div>
+<div id="partFx" aria-hidden="true"></div>
 <nav class="float-nav" aria-label="reading nav">
   <button id="navTop" title="Top of book">↑</button>
   <button id="navContents" title="Contents">☰</button>
@@ -1437,6 +1438,121 @@
         });
       }, 6000);
     }
+  })();
+
+  // ╔════════════════════════════════════════════════════════════╗
+  // ║  FUN LAYER — splatter, kinetic cover, image hover tilt     ║
+  // ╚════════════════════════════════════════════════════════════╝
+  (function fun() {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) return;
+
+    // 1. Click-to-splat: click anywhere → ink splat at click position
+    let splatPool = [];
+    document.addEventListener('click', (e) => {
+      // Don't splat inside nav buttons or links
+      if (e.target.closest('a, button, .float-nav, .topbar')) return;
+      const splat = document.createElement('div');
+      splat.className = 'splat';
+      splat.style.left = (e.pageX) + 'px';
+      splat.style.top  = (e.pageY) + 'px';
+      // Random rotation/scale for variety
+      const r = Math.floor(Math.random() * 360);
+      const s = 0.8 + Math.random() * 0.6;
+      splat.style.setProperty('--r', r + 'deg');
+      splat.style.transform = `translate(-50%,-50%) rotate(${r}deg) scale(0)`;
+      document.body.appendChild(splat);
+      splatPool.push(splat);
+      // Limit pool to 30 splats
+      if (splatPool.length > 30) {
+        const old = splatPool.shift();
+        old.remove();
+      }
+      setTimeout(() => { splat.remove(); splatPool = splatPool.filter(s => s !== splat); }, 1000);
+    });
+
+    // 2. Kinetic cover — wrap cover title chars in <span class="ch-bounce"> for stagger
+    document.querySelectorAll('.cover .title-line').forEach(line => {
+      // Skip if already wrapped
+      if (line.querySelector('.ch-bounce')) return;
+      const text = line.textContent;
+      let i = 0;
+      const html = Array.from(text).map(ch => {
+        if (ch === ' ' || ch.charCodeAt(0) === 160) return ' ';
+        const span = `<span class="ch-bounce" style="--i:${i}">${ch}</span>`;
+        i++;
+        return span;
+      }).join('');
+      line.innerHTML = html;
+    });
+
+    // 3. Hover tilt 3D on every artwork — uses mouseenter/mousemove
+    document.querySelectorAll('figure img, .opener .plate img, .plate-full > img, .spread-arden .img img')
+      .forEach(img => {
+        const wrap = img.parentElement;
+        if (!wrap) return;
+        wrap.style.perspective = '1200px';
+        img.addEventListener('mousemove', (e) => {
+          const r = img.getBoundingClientRect();
+          const cx = (e.clientX - r.left) / r.width - 0.5;
+          const cy = (e.clientY - r.top)  / r.height - 0.5;
+          const rx = (-cy * 7).toFixed(2);
+          const ry = (cx  * 7).toFixed(2);
+          img.style.transform = `perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.02)`;
+        });
+        img.addEventListener('mouseleave', () => {
+          img.style.transform = '';
+        });
+      });
+
+    // 4. Click on artwork → quick zoom-in modal (fullscreen view)
+    document.querySelectorAll('.plate-full > img, .opener .plate img, .spread-arden .img img, figure img')
+      .forEach(img => {
+        img.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const m = document.createElement('div');
+          m.style.cssText = `
+            position: fixed; inset: 0; z-index: 9999;
+            background: rgba(15,12,8,.92); display: grid; place-items: center;
+            cursor: zoom-out; padding: 5vh 5vw;
+            opacity: 0; transition: opacity .3s ease;
+          `;
+          m.innerHTML = `<img src="${img.currentSrc || img.src}" style="max-width:100%;max-height:90vh;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.6)">`;
+          document.body.appendChild(m);
+          requestAnimationFrame(() => m.style.opacity = '1');
+          m.addEventListener('click', () => {
+            m.style.opacity = '0';
+            setTimeout(() => m.remove(), 300);
+          });
+        });
+      });
+
+    // 5. Sprinkle some entry-confetti when the user crosses into a new movement
+    let lastPart = null;
+    const observePart = () => {
+      const cur = document.body.getAttribute('data-current-part');
+      if (cur !== lastPart && cur) {
+        // Tiny celebration: 6 splats around the part badge
+        const badge = document.getElementById('partBadge');
+        if (badge && lastPart !== null) {
+          const r = badge.getBoundingClientRect();
+          for (let i = 0; i < 6; i++) {
+            setTimeout(() => {
+              const s = document.createElement('div');
+              s.className = 'splat';
+              s.style.left = (r.left + r.width/2 + (Math.random()-0.5)*100) + 'px';
+              s.style.top  = (r.top  + window.scrollY + r.height/2 + (Math.random()-0.5)*60) + 'px';
+              s.style.transform = 'translate(-50%,-50%) scale(0)';
+              s.style.position = 'absolute';
+              document.body.appendChild(s);
+              setTimeout(() => s.remove(), 1000);
+            }, i * 60);
+          }
+        }
+        lastPart = cur;
+      }
+    };
+    setInterval(observePart, 400);
   })();
 </script>
 
