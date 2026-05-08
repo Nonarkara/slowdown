@@ -2321,3 +2321,123 @@ section.audio-active::before {
   section[data-has-audio]:hover .audio-tag { opacity: 1; }
   section.audio-active::before { animation: none; }
 }
+
+/* ============================================================
+   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   ▓▓▓ MOBILE AUDIO FIXES — proper tap targets ▓▓▓
+   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   Apple HIG / Material Design: tap targets ≥ 44 × 44 px
+   ============================================================ */
+
+@media (max-width: 800px) {
+
+  /* GLOBAL Listen button — meet 44px tap target, slim profile */
+  .global-listen {
+    top: 10px;
+    right: 10px;
+    padding: 11px 14px 11px 12px;
+    min-height: 44px;
+    font-size: 10px;
+    /* Hide secondary text on very narrow phones, keep just the play CTA */
+    max-width: calc(100vw - 70px);
+  }
+  .global-listen .gl-icon {
+    width: 24px; height: 24px;
+    font-size: 11px;
+  }
+  .global-listen .gl-text strong {
+    font-size: 12px;
+    /* clamp single-line ellipsis on narrow phones */
+    display: inline-block;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+  }
+
+  /* Per-section audio tag — bigger, 44px tap target */
+  .audio-tag {
+    top: 14px;
+    right: 14px;
+    padding: 12px 16px 12px 12px;
+    min-height: 44px;
+    font-size: 10px;
+  }
+  .audio-tag .at-icon {
+    width: 22px; height: 22px;
+  }
+
+  /* Mini player — every interactive bit ≥ 44 × 44 */
+  .mini-player {
+    padding: 10px 12px 14px;
+    bottom: 12px;       /* avoid overlap with rail toggle (we'll sit above it) */
+    grid-template-columns: 44px 1fr 44px;
+    gap: 10px;
+  }
+  /* Make sure mini-player doesn't sit on top of rail toggle */
+  .mini-player.show ~ #rail .rail__toggle,
+  body:has(.mini-player.show) #railToggle {
+    /* Move rail toggle to right side when player is open, so they don't stack */
+    left: auto; right: 12px; bottom: 80px;
+  }
+  .mp-play {
+    width: 44px; height: 44px;
+    font-size: 16px;
+  }
+  .mp-close {
+    width: 44px; height: 44px;
+    font-size: 22px;
+    padding: 0;
+  }
+  /* Scrubber: visual bar stays 3px, but extend tap zone via pseudo */
+  .mp-scrub {
+    height: 4px;
+    margin-top: 12px;
+    position: relative;
+    cursor: pointer;
+  }
+  .mp-scrub::before {
+    /* Invisible 24px-tall hit zone wraps the visible bar */
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    top: -10px; bottom: -10px;
+  }
+  .mp-time {
+    font-size: 11px;
+  }
+  .mp-meta .mp-title {
+    font-size: 13px;
+  }
+
+  /* Part badge — keep below global Listen */
+  .part-badge {
+    top: 62px;       /* sits below the 44px-tall global Listen */
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+
+  /* Continue-reading toast — make sure it doesn't sit behind global Listen */
+  .continue-toast {
+    top: auto;
+    bottom: 80px;       /* rises above mini-player area */
+    left: 12px; right: 12px;
+    transform: translate(0, 200%);
+    flex-wrap: wrap;
+    padding: 12px;
+    font-size: 10px;
+  }
+  .continue-toast.show { transform: translate(0, 0); }
+  .continue-toast .ct-jump,
+  .continue-toast .ct-close {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Rail toggle — make sure it stays clickable when audio player is up */
+  .rail__toggle {
+    z-index: 96;        /* above mini-player */
+  }
+}
