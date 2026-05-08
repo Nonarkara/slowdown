@@ -2441,3 +2441,145 @@ section.audio-active::before {
     z-index: 96;        /* above mini-player */
   }
 }
+
+/* ============================================================
+   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   ▓▓▓ MAX FUN LAYER — VISIBLE delight ▓▓▓
+   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   ============================================================ */
+
+/* ─── CURSOR INK TRAIL — vermilion dots that fade behind the cursor ─── */
+.ink-dot {
+  position: fixed;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-a, #c93023) 0%, var(--accent-a, #c93023) 40%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%,-50%) scale(1);
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+  z-index: 998;
+  animation: inkFade 1.4s cubic-bezier(.2,.8,.25,1) forwards;
+}
+@keyframes inkFade {
+  0%   { opacity: 0.55; transform: translate(-50%,-50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%,-50%) scale(0.4); }
+}
+
+/* ─── ENTRY FLASH — screen-wide color burst when entering a new movement ─── */
+.part-flash {
+  position: fixed;
+  inset: 0;
+  background: var(--accent-a, var(--seal));
+  pointer-events: none;
+  z-index: 9000;
+  opacity: 0;
+  animation: flashIn 0.9s cubic-bezier(.2,.8,.25,1) forwards;
+}
+@keyframes flashIn {
+  0%   { opacity: 0; }
+  10%  { opacity: 0.18; }
+  100% { opacity: 0; }
+}
+
+/* ─── BIG CONFETTI BURST — used on movement entry ─── */
+.confetti {
+  position: fixed;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--accent-a, var(--seal));
+  pointer-events: none;
+  z-index: 998;
+  mix-blend-mode: multiply;
+  transform: translate(-50%, -50%);
+}
+
+/* ─── AMBIENT FLOATERS — slow-drifting dots in background ─── */
+.ambient-float {
+  position: fixed;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent-a, var(--seal));
+  opacity: 0;
+  pointer-events: none;
+  z-index: 4;
+  mix-blend-mode: multiply;
+  animation: ambientDrift 18s linear infinite;
+}
+@keyframes ambientDrift {
+  0%   { opacity: 0; transform: translate(0,0) scale(0.6); }
+  10%  { opacity: 0.35; }
+  90%  { opacity: 0.35; }
+  100% { opacity: 0; transform: translate(var(--dx, 200px), var(--dy, -100px)) scale(1.2); }
+}
+
+/* ─── HOVER WORD EMPHASIS — h1/h2 in essays grow + accent on hover ─── */
+.essay .body h2,
+.opener .word,
+.contents .head h2,
+.aphorism .line {
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1);
+}
+.essay .body h2:hover,
+.contents .head h2:hover {
+  transform: scale(1.02) rotate(-0.3deg);
+}
+
+/* Hover individual aphorism characters: bigger jump */
+.aphorism .line .ch {
+  display: inline-block;
+  cursor: default;
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1), color .25s ease;
+}
+.aphorism .line .ch:hover {
+  transform: translateY(-14px) scale(1.25) rotate(-4deg) !important;
+  color: var(--accent-a, var(--seal)) !important;
+}
+
+/* ─── CLICK RIPPLE — expanding ring on click (in addition to splat) ─── */
+.click-ripple {
+  position: absolute;
+  width: 8px; height: 8px;
+  border: 2px solid var(--accent-a, var(--seal));
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 997;
+  opacity: 0.7;
+  animation: ripple 0.9s cubic-bezier(.2,.8,.25,1) forwards;
+}
+@keyframes ripple {
+  0%   { transform: translate(-50%,-50%) scale(1); opacity: 0.7; border-width: 2px; }
+  100% { transform: translate(-50%,-50%) scale(20); opacity: 0; border-width: 1px; }
+}
+
+/* ─── ARTWORK HOVER LIFT — bigger, with shadow ─── */
+.compare .pair figure img,
+.quartet .grid4 img,
+.margin-spread .figure-col img,
+.spread-arden .img img {
+  transition: transform .55s cubic-bezier(.2,.8,.25,1), filter .4s ease, box-shadow .4s ease;
+}
+.compare .pair figure:hover img,
+.quartet .grid4 figure:hover img,
+.margin-spread .figure-col figure:hover img {
+  transform: translateY(-6px) scale(1.03) rotate(-0.5deg);
+  box-shadow: 0 32px 64px -28px rgba(0,0,0,.5);
+  filter: brightness(1.06) contrast(1.05) saturate(1.1);
+}
+
+/* ─── COVER TITLE TRACKS CURSOR — letters lean toward mouse ─── */
+.cover .title-line .ch-bounce {
+  transition: transform 0.4s cubic-bezier(.2,.8,.25,1);
+}
+
+/* ─── PART X (END) — confetti rain finale ─── */
+body[data-current-part="10"] .ambient-float {
+  animation-duration: 10s;
+  width: 8px; height: 8px;
+}
+
+/* ─── disable max-fun for reduced-motion users ─── */
+@media (prefers-reduced-motion: reduce) {
+  .ink-dot, .confetti, .ambient-float, .click-ripple, .part-flash { display: none !important; }
+}
