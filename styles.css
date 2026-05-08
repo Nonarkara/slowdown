@@ -2080,3 +2080,178 @@ body[data-current-part="10"] #partFx::before {
 @media (max-width: 1099px) and (min-width: 801px) {
   .topbar__brand { padding-left: 70px; }
 }
+
+/* ============================================================
+   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   ▓▓▓ AUDIO LAYER — narration playback ▓▓▓
+   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   ============================================================ */
+
+/* Per-section play button — appears on sections that have audio */
+.audio-tag {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 8;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 6px 8px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background .25s ease, transform .2s ease, box-shadow .2s ease;
+  opacity: 0;
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+}
+section[data-has-audio]:hover .audio-tag,
+section[data-has-audio].audio-active .audio-tag,
+.has-audio-flag .audio-tag {
+  opacity: 1;
+  transform: translateY(0);
+}
+.audio-tag:hover {
+  background: var(--accent-a, var(--seal));
+  transform: translateY(-2px);
+}
+.audio-tag .at-icon {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--accent-a, var(--seal));
+  display: grid; place-items: center;
+  color: var(--paper);
+  font-size: 9px;
+  flex-shrink: 0;
+}
+.audio-tag.is-playing .at-icon { background: var(--paper); color: var(--ink); }
+.audio-tag .at-label small {
+  display: block;
+  font-size: 8px;
+  opacity: .65;
+  letter-spacing: .25em;
+  margin-bottom: 1px;
+}
+
+/* Subtle highlight on section being narrated */
+section.audio-active {
+  position: relative;
+}
+section.audio-active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: var(--accent-a, var(--seal));
+  opacity: .55;
+  pointer-events: none;
+  animation: audioPulse 2.6s ease-in-out infinite;
+}
+@keyframes audioPulse {
+  0%, 100% { opacity: .35; }
+  50%      { opacity: .85; }
+}
+
+/* Mini player at bottom of viewport */
+.mini-player {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 92;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 12px 16px 12px 12px;
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  font-family: "JetBrains Mono", monospace;
+  box-shadow: 0 16px 40px rgba(0,0,0,.4);
+  min-width: 280px;
+  max-width: 380px;
+  transform: translateY(120%);
+  transition: transform .45s cubic-bezier(.2,.8,.25,1);
+}
+.mini-player.show { transform: translateY(0); }
+.mp-play {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--accent-a, var(--seal));
+  color: var(--paper);
+  border: none;
+  display: grid; place-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background .2s ease, transform .15s ease;
+}
+.mp-play:hover { transform: scale(1.08); }
+.mp-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.mp-meta small {
+  font-size: 8px; letter-spacing: .25em;
+  opacity: .55; text-transform: uppercase;
+}
+.mp-meta .mp-title {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 14px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.mp-time {
+  font-size: 10px; opacity: .65;
+  white-space: nowrap;
+  letter-spacing: .08em;
+}
+.mp-close {
+  background: transparent; border: none;
+  color: rgba(255,255,255,.35);
+  font-size: 16px; cursor: pointer;
+  padding: 4px 8px;
+  align-self: start;
+  transition: color .2s ease;
+}
+.mp-close:hover { color: var(--paper); }
+
+/* Scrubber bar across full width of mini player */
+.mp-scrub {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+  height: 3px;
+  background: rgba(255,255,255,.12);
+  cursor: pointer;
+  position: relative;
+}
+.mp-scrub-fill {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  background: var(--accent-a, var(--seal));
+  width: 0%;
+  transition: width .15s linear;
+}
+
+/* Mobile tweaks */
+@media (max-width: 800px) {
+  .mini-player {
+    bottom: 70px;       /* clear mobile rail toggle */
+    right: 12px; left: 12px;
+    min-width: 0; max-width: none;
+  }
+  .audio-tag {
+    top: 12px; right: 12px;
+    font-size: 9px;
+  }
+}
+
+/* Hide audio tag entirely if reduced motion + no audio interest */
+@media (prefers-reduced-motion: reduce) {
+  section[data-has-audio]:hover .audio-tag { opacity: 1; }
+  section.audio-active::before { animation: none; }
+}

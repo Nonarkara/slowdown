@@ -122,7 +122,7 @@
 <!-- ═══════════════════════════════════════════════════════════
      FOREWORD / HOW TO READ
      ═══════════════════════════════════════════════════════════ -->
-<section class="essay" data-screen-label="03 Foreword">
+<section class="essay" id="foreword" data-screen-label="03 Foreword">
   <aside class="gutter-l">
     <span class="num">00</span>
     Foreword<br>
@@ -1706,6 +1706,144 @@
       }
     };
     setInterval(observePart, 400);
+  })();
+
+  // ╔════════════════════════════════════════════════════════════╗
+  // ║  AUDIO LAYER — narration playback per section              ║
+  // ╚════════════════════════════════════════════════════════════╝
+  (function audioLayer() {
+    // Manifest: section ID → narration metadata
+    // (add more entries here as you record more sections)
+    const NARRATION = {
+      'foreword': { base: 'audio/foreword', label: 'A note before we begin', duration: 149 },
+    };
+
+    if (!Object.keys(NARRATION).length) return;
+
+    // Pick best supported format per browser
+    const probe = document.createElement('audio');
+    let preferredExt = 'mp3';
+    if (probe.canPlayType('audio/mp4; codecs="mp4a.40.2"')) preferredExt = 'm4a';
+    else if (probe.canPlayType('audio/mpeg')) preferredExt = 'mp3';
+    else if (probe.canPlayType('audio/aac'))  preferredExt = 'aac';
+
+    // Single shared <audio> element
+    const a = new Audio();
+    a.preload = 'metadata';
+    let currentId = null;
+
+    // Mini-player UI
+    const player = document.createElement('div');
+    player.className = 'mini-player';
+    player.innerHTML = `
+      <button class="mp-play" id="mpPlay" aria-label="Play / pause">▶</button>
+      <div class="mp-meta">
+        <small>NOW PLAYING</small>
+        <div class="mp-title" id="mpTitle">—</div>
+      </div>
+      <button class="mp-close" id="mpClose" aria-label="Close player">×</button>
+      <span class="mp-time" id="mpTime" style="grid-column:2/3;text-align:left;">0:00 / 0:00</span>
+      <div class="mp-scrub" id="mpScrub"><div class="mp-scrub-fill" id="mpScrubFill"></div></div>
+    `;
+    document.body.appendChild(player);
+    const $play = document.getElementById('mpPlay');
+    const $title = document.getElementById('mpTitle');
+    const $time = document.getElementById('mpTime');
+    const $scrub = document.getElementById('mpScrub');
+    const $scrubFill = document.getElementById('mpScrubFill');
+    const $close = document.getElementById('mpClose');
+
+    const fmt = (s) => {
+      if (!isFinite(s)) return '0:00';
+      const m = Math.floor(s / 60);
+      const ss = Math.floor(s % 60).toString().padStart(2, '0');
+      return `${m}:${ss}`;
+    };
+
+    function loadAndPlay(id) {
+      const def = NARRATION[id];
+      if (!def) return;
+      if (currentId === id && !a.paused) { a.pause(); return; }
+      if (currentId !== id) {
+        a.src = `${def.base}.${preferredExt}`;
+        currentId = id;
+        $title.textContent = def.label || id;
+      }
+      a.play().catch(err => console.warn('Audio play failed:', err));
+      player.classList.add('show');
+      document.querySelectorAll('section.audio-active').forEach(s => s.classList.remove('audio-active'));
+      const sec = document.getElementById(id);
+      if (sec) sec.classList.add('audio-active');
+      document.querySelectorAll('.audio-tag').forEach(t => {
+        t.classList.remove('is-playing');
+        t.querySelector('.at-icon').textContent = '▶';
+      });
+      const tag = sec?.querySelector('.audio-tag');
+      if (tag) { tag.classList.add('is-playing'); tag.querySelector('.at-icon').textContent = '❚❚'; }
+    }
+
+    a.addEventListener('play',  () => { $play.textContent = '❚❚'; });
+    a.addEventListener('pause', () => {
+      $play.textContent = '▶';
+      document.querySelectorAll('.audio-tag').forEach(t => {
+        t.classList.remove('is-playing');
+        const ic = t.querySelector('.at-icon');
+        if (ic) ic.textContent = '▶';
+      });
+    });
+    a.addEventListener('ended', () => {
+      $play.textContent = '▶';
+      document.querySelectorAll('section.audio-active').forEach(s => s.classList.remove('audio-active'));
+      setTimeout(() => player.classList.remove('show'), 2500);
+    });
+    a.addEventListener('timeupdate', () => {
+      const pct = a.duration ? (a.currentTime / a.duration * 100) : 0;
+      $scrubFill.style.width = pct + '%';
+      $time.textContent = `${fmt(a.currentTime)} / ${fmt(a.duration)}`;
+    });
+
+    $play.addEventListener('click', () => { if (a.paused) a.play(); else a.pause(); });
+    $close.addEventListener('click', () => {
+      a.pause();
+      currentId = null;
+      player.classList.remove('show');
+      document.querySelectorAll('section.audio-active').forEach(s => s.classList.remove('audio-active'));
+    });
+    $scrub.addEventListener('click', (e) => {
+      const r = $scrub.getBoundingClientRect();
+      const pct = (e.clientX - r.left) / r.width;
+      if (a.duration) a.currentTime = pct * a.duration;
+    });
+
+    // Inject play buttons into sections that have audio
+    Object.keys(NARRATION).forEach(id => {
+      const sec = document.getElementById(id);
+      if (!sec) { console.warn('Audio: section not found:', id); return; }
+      sec.dataset.hasAudio = 'true';
+      const def = NARRATION[id];
+      const tag = document.createElement('button');
+      tag.className = 'audio-tag';
+      tag.setAttribute('aria-label', `Play narration: ${def.label}`);
+      tag.innerHTML = `
+        <span class="at-icon">▶</span>
+        <span class="at-label"><small>NARRATION</small>Listen · ${fmt(def.duration||0)}</span>
+      `;
+      tag.addEventListener('click', (e) => { e.stopPropagation(); loadAndPlay(id); });
+      sec.appendChild(tag);
+    });
+
+    // Auto-pause if user scrolls far away from the playing section
+    let outAt = null;
+    setInterval(() => {
+      if (a.paused || !currentId) { outAt = null; return; }
+      const sec = document.getElementById(currentId);
+      if (!sec) return;
+      const r = sec.getBoundingClientRect();
+      const offscreen = r.bottom < -window.innerHeight || r.top > window.innerHeight * 2;
+      if (offscreen && !outAt) outAt = Date.now();
+      else if (!offscreen) outAt = null;
+      if (outAt && Date.now() - outAt > 12000) { a.pause(); outAt = null; }
+    }, 2000);
   })();
 </script>
 

@@ -19,3 +19,7 @@
 
 /assets/*
   Cache-Control: public, max-age=86400
+
+/audio/*
+  Cache-Control: public, max-age=86400
+  Accept-Ranges: bytes
