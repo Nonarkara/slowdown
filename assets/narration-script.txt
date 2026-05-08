@@ -1,0 +1,1070 @@
+═══════════════════════════════════════════════════════════════════
+  THE THINGS YOU CAN SEE ONLY WHEN YOU SLOW DOWN
+  Narration Script · Dr. Non Arkaraprasertkul
+═══════════════════════════════════════════════════════════════════
+
+HOW TO USE THIS SCRIPT
+───────────────────────────────────────────────────────────────────
+• Each section is marked with ▓▓▓ and a label.
+• Section IDs in [brackets] map to URLs and audio file names.
+• Text in [italic] is a directorial note, not to be read aloud.
+• Use ⌁ as a marker for natural pauses (not read).
+• An empty line = a beat of silence.
+
+RECOMMENDED RECORDING
+• Save each section as: [section-id].mp3  (e.g. p1.mp3, ch-1.mp3)
+• 96 kbps mono is plenty for spoken voice.
+• Pause 1.5s at ⌁, 2.5s at ▓▓▓, 4s at section breaks.
+• The book has 10 movements. Aim for ≤ 6 min/movement.
+
+───────────────────────────────────────────────────────────────────
+
+
+▓▓▓ 00 COVER
+    [section id: cover]
+    [soft, deliberate, low — set the tone]
+
+    The Things
+
+    you can see only
+
+    When You
+
+    Slow Down
+
+
+▓▓▓ 01 DEDICATION
+    [whispered, almost private]
+
+    [kicker: ⌁ A book for slow readers]
+    For the ones who are tired of being fast. For my father, who carried his work in a tea flask and never once asked the world to look at him. For my mother, who taught me that watching is its own labour.
+
+    [kicker: — Non · Shanghai · Bangkok · Boston]
+
+▓▓▓ 02 CONTENTS
+    [section id: contents]
+    [matter-of-fact, almost a librarian]
+
+    Contents
+
+    • I. Slow a defence of the unhurried p. 008
+    • II. See attention as the only luxury p. 026
+    • III. Less subtraction as a discipline p. 044
+    • IV. Alone solitude as instrument p. 062
+    • V. Time rivers, repetitions, a body that ages p. 080
+    • VI. Make the dignity of small daily work p. 098
+    • VII. Fail the tunnel that turns out to be a path p. 116
+    • VIII. People the only mirror that matters p. 134
+    • IX. Home three cities, two parents, one body p. 152
+    • X. End the small word that holds all the others p. 170
+    A note on reading. This book has no plot. Each spread is the size of a quiet thought. You can read it forwards on a Sunday, backwards on a Tuesday, or open a page at random for thirty seconds before bed. The art is half the book; the captions are the other half. Whichever you read first is correct.
+
+
+▓▓▓ 03 FOREWORD
+    [conversational, like reading to a friend across a table]
+
+    [kicker: ⌁ How this book wants to be read]
+    The book that is slower than you are.
+
+    I started this book because I was tired. Not the kind of tired you fix with a holiday. The kind you fix by remembering that watching a kettle boil is, in fact, a complete activity.
+
+    For most of my life I tried to be fast. I went to MIT to study architecture. I went to Harvard to study anthropology. I lived in Shanghai for ten years. I missed three deadlines, broke two relationships, and drank a great deal of coffee. The world, as far as I could tell, rewarded speed. So I gave it speed.
+
+    And then, very slowly, I noticed the things I was missing.
+
+    I noticed that the most interesting people I knew did not speak first. I noticed that the best architects I had read about — Louis Kahn, Tadao Ando, Geoffrey Bawa — were the ones who had waited the longest before drawing the first line. I noticed that my father, who never socialised and carried his lunch in a tea flask, was the calmest person in any room.
+
+    Slowness is not laziness. Slowness is the discipline of looking long enough to see the whole thing.
+
+    This book is a collection of small things I have learned by going slower than I was supposed to. There are ten movements. Each is short. Each is paired with a piece of art that is in the public domain — meaning it belongs to all of us, the way the sky and the alphabet belong to all of us.
+
+    You can read it cover to cover, but you do not have to. The pieces are short on purpose. Most of them are 250 to 600 words. I have learned that almost everything worth saying can be said on a single page; the rest is throat-clearing.
+
+    If you only have one minute today, read one aphorism. If you have ten, read one essay. If you have an evening, give it the evening. The book will not get up and leave.
+
+    — Non, written from a desk by the Yangtze, finished by the Chao Phraya, edited at six thousand metres above the Pacific.
+
+    [margin note] ⌁ on time The book is short on each page, long across the whole thing. Like a meal of many small dishes.
+
+    [margin note] ⌁ on the art All ninety-three works are public domain. Print them. Frame them. Give them to your children.
+
+    [margin note] ⌁ on the ten parts SLOW · SEE · LESS ALONE · TIME · MAKE FAIL · PEOPLE · HOME · END
+
+
+▓▓▓ 04 I-SLOW OPENER
+    [section id: p1]
+    [announce; this is a chapter title — let it land]
+
+    Slow.
+
+    A defence of the unhurried. The argument that the world is not, in fact, made for the fastest hand in the room.
+
+    Plate · Katsushika Hokusai · Fine Wind, Clear Morning · c. 1830 · Met / Wikimedia · Public domain
+
+
+▓▓▓ 05 I-APH 1
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · I.01
+
+    » The world is not going to slow down. So you must.
+
+    — Non, on a Tuesday in Shanghai
+
+
+▓▓▓ 06 I-WHY SLOW
+    [conversational, like reading to a friend across a table]
+
+    [kicker: ⌁ The first thing]
+    Speed is a cheap kind of beauty.
+
+    Speed is the most easily counterfeited virtue. A child can move quickly. A drone can move more quickly than a child. A piece of bad news travels around the world faster than the truth that corrects it.
+
+    What cannot be counterfeited is the long look. The decade-long study of one painter. The thirty years of waking up at five to write before work. The marriage that nobody photographed but everybody envied.
+
+    I lived in Shanghai during its fastest decade. I watched a city of bicycles become a city of e-scooters become a city of facial-recognition cameras. I am not nostalgic about the bicycles, exactly. I am nostalgic about the kind of attention a bicycle requires. You cannot ride a bicycle while looking at your phone. You cannot ride a bicycle and ignore the weather. The bicycle made you a participant in your own day.
+
+    Most of what we now call productivity is the opposite of that. It is the gradual outsourcing of attention to a faster machine, in exchange for the feeling that we are doing more. We are not doing more. We are doing the same things, badly, in front of a brighter screen.
+
+    Slow is not the opposite of busy. Slow is the opposite of distracted.
+
+    If you have ever watched an old craftsman work — a calligrapher, a tailor, a woman folding dumplings on a plastic stool — you have seen what slow really is. It is not delay. It is the absolute compression of attention into the present hand.
+
+    That is what this book is asking of you. Not less work. Better work. Not less life. More of the life you are already in.
+
+    [margin note] ⌁ overheard “He is not slow. He is doing it right the first time.” — my father, on a colleague who never missed a deadline.
+
+    [margin note] ⌁ note The Italians have a word, sprezzatura , for the kind of effort that hides itself. The Japanese have shokunin — the craftsman whose slowness is the work.
+
+
+▓▓▓ 07 I-PLATE PERSIMMONS
+    [gallery-tour voice, gentle but assured]
+
+    Plate: Six Persimmons
+    [credit: Muqi (牧谿) · 13th c. · Daitoku-ji, Kyoto · Public domain]
+    Why we are looking at this:
+    A monk made these six persimmons in ink in less time than it takes to drink tea, and they have been one of the most studied paintings in the world for eight hundred years. They are six brushstrokes, six greys, six different ways of being a fruit. The painter did not finish them quickly. He finished them once . There is a difference.
+
+
+▓▓▓ 08 I-ARDEN QUIET
+    [punch lines — let the line break do the timing]
+
+    [kicker: ⌁ I.03 · A short observation]
+    « Quiet rooms are full of information. »
+
+    Hammershøi painted his own apartment in Copenhagen for thirty years. The wife. The doors. The sunlight on the floor. He found, in one address, what most painters look for by travelling. ⌁ Plate · Vilhelm Hammershøi · 1901 · Statens Museum for Kunst.
+
+
+▓▓▓ 09 I-ON TRAINS
+    [conversational, like reading to a friend across a table]
+
+    [kicker: ⌁ A practical example]
+    In praise of the long train.
+
+    My favourite mode of transport is the overnight train. I know this is not the answer the airline industry would like me to give. I have given the answer many times anyway.
+
+    My first long train ride in China was Shanghai to Beijing in 2006. Ten and a half hours. I expected it to feel like waste. It felt like rest. Somewhere around hour four, I noticed I had stopped checking my watch. By hour seven, I had read more pages than in the previous month. By hour ten, I had become a person who could sit still.
+
+    A plane is a teleportation device that punishes you with bad food. A train is a small country with a window. The train acknowledges that you are alive in the time between two places. The plane pretends you are not.
+
+    I have taken many trains since. Shanghai–Guangzhou. Bangkok–Chiang Mai. Boston–DC. The pattern is always the same. The first hour, I am restless. The second hour, I begin to read. The third hour, the world out the window stops being a thing I am leaving and becomes a thing I am paying attention to.
+
+    A plane teleports you. A train returns you to yourself.
+
+    If you can afford the time, take the train. If you can't, sit at the gate for the same number of hours and read a real book without your phone. You will land a different person. The travel industry will not understand. You do not need them to.
+
+    [margin note] ⌁ data point I have written more pages on Chinese trains than at any desk I have ever owned.
+
+    [margin note] ⌁ counter-argument A friend says: “If you love the train so much, why do you have a Star Alliance Gold card?” Fair. A long life has many compromises.
+
+
+▓▓▓ 10 I-APH 2
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · I.05
+
+    » If you cannot tell whether you are working or wasting time, you are probably working.
+
+    — A defence of the staring-out-the-window phase
+
+
+▓▓▓ 11 I-COMPARE SPEED
+    [start with the title, then take time per figure]
+
+    « Two ways of moving through weather. »
+
+    You are allowed to be either painting. The trick is to know which one you are looking at when you make decisions.
+
+
+▓▓▓ 12 I-ON TEA
+    [same as essay — read the asides only after a 2s pause]
+
+    [kicker: ⌁ A small ritual]
+    « The tea is the lesson. Not the leaves. »
+
+    Every morning my father drank tea from the same enamel cup. He boiled the water in the same dented kettle. He waited the same five minutes. He was an engineer; he was not a sentimental man. He never said the tea was a ritual. He drank it the same way every day for forty-five years and that, in the end, is what a ritual is.
+
+    I tried, in my twenties, to optimise my mornings. I read books about morning routines. I bought a kettle that beeped. I drank coffee out of a thermos in a taxi. I felt very modern, and I felt nothing.
+
+    Now I have an enamel cup. I do not always remember to use it. But the days I do are different from the days I don't.
+
+    [aside, slower] ⌁ a small dare For one week, drink one cup of something hot every morning, sitting down, with no screen. Notice what your mind does in the silence. Do not act on what it says. Just notice.
+
+
+▓▓▓ 13 I-APH CLOSE
+    [slow, weighted; one beat per line]
+
+    ⌁ Closing · I.09
+
+    » You will never be more present than you decide to be.
+
+    — end of Movement I · turn the page slowly
+
+
+▓▓▓ 14 II-SEE OPENER
+    [section id: p2]
+    [announce; this is a chapter title — let it land]
+
+    See.
+
+    Attention is the only luxury you can refuse to share with the algorithm. The hare is looking back at you.
+
+    Plate · Albrecht Dürer · Young Hare · 1502 · Albertina, Vienna · Public domain
+
+
+▓▓▓ 15 II-APH 1
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · II.01
+
+    » Looking is free. Seeing is expensive.
+
+    — what every painting tries to say
+
+
+▓▓▓ 16 II-ATTENTION
+    [conversational, like reading to a friend across a table]
+
+    [kicker: ⌁ A confession]
+    I did not see my parents until I was thirty-two.
+
+    By see , I mean the verb a child does not know how to do, and an old man cannot stop doing. To see a person is to register that they are not, in fact, a function of your life. They have an interior the size of yours.
+
+    My father was an engineer at a state-owned company in Bangkok. He commuted ninety minutes each way. He never raised his voice. He read the newspaper at breakfast and he read it again at dinner. For most of my childhood, he was a quiet man-shaped object in the kitchen.
+
+    Then, one day, when I was thirty-two, he told me he had wanted to study astronomy.
+
+    This information rearranged my entire life. The man who never raised his voice had a sky inside him. The man with the tea flask had a different life he had not been allowed to live. He did not say this with regret. He said it with the same calm he said everything. But I had been living in his house for the first eighteen years of my life and I had not seen him.
+
+    Most of the people closest to you are wearing a costume. You have stopped noticing because you sewed it.
+
+    To see a person is to ask them a question whose answer you cannot guess. To see a painting is the same. To see a city is the same. The discipline is identical. It is the willingness to be wrong about what you thought was there.
+
+    I am still learning. I no longer assume my mother is only my mother. I no longer assume the cab driver is only a cab driver. I no longer assume Shanghai is the city I think it is. The world keeps showing me what was always there.
+
+    [margin note] ⌁ test Name three things your closest friend is afraid of. If you cannot, you have not been seeing them. You have been using them.
+
+    [margin note] ⌁ a quote “We do not see things as they are. We see them as we are.” — attributed, by a hundred people, to Anaïs Nin.
+
+
+▓▓▓ 17 II-PLATE VERMEER
+    [gallery-tour voice, gentle but assured]
+
+    Plate: Woman Holding a Balance
+    [credit: Johannes Vermeer · c. 1664 · National Gallery of Art · Public domain]
+    Why we are looking at this:
+    She is weighing nothing. Look closely: the pans are empty. The act of measuring is the subject. Vermeer is not painting a woman; he is painting attention — what it looks like to take a moment seriously before you act. Most of life is asking for this and getting answered too quickly.
+
+
+▓▓▓ 18 II-ARDEN PHONE
+    [punch lines — let the line break do the timing]
+
+    [kicker: ⌁ II.04 · A working hypothesis]
+    « The phone is not the problem. It is just the loudest symptom. »
+
+    The instruments in Dürer's Melencolia I — the compass, the hourglass, the bell, the magic square — are all instruments of attention. The figure is not depressed. She is paying close attention to something the painting does not show us. ⌁ Albrecht Dürer · 1514 · the Met.
+
+
+▓▓▓ 19 II-ON LOOKING
+    [same as essay — read the asides only after a 2s pause]
+
+    [kicker: ⌁ A small instruction]
+    « How to look at one painting for ten minutes. »
+
+    Set a timer. Stand or sit. Look at the painting. Do not read the label. After thirty seconds you will think you are done. You are not. After two minutes you will begin to itch. Stay. After five minutes the painting will start to do what it was made to do. After ten you will know more about it than the label could have told you.
+
+    Now read the label. Notice that it is mostly wrong about what mattered to you.
+
+    [aside, slower] ⌁ true story I once spent twenty minutes in front of Bada Shanren's fish at the Met. The fish looks angry, on purpose. Bada Shanren was a Ming prince whose dynasty had been overthrown. He could not say so. He painted a fish.
+
+    [aside, slower] ⌁ a heresy If you have ten minutes in a museum, see one painting for ten minutes. Do not see ten paintings for one minute each. The first plan is a museum visit. The second is a slideshow.
+
+
+▓▓▓ 20 II-APH 2
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · II.07
+
+    » Attention is the most generous thing one human can give another.
+
+    — including yourself
+
+
+▓▓▓ 21 II-QUARTET HARE
+    [four short observations — 1s pause between each]
+
+    « Four animals that are looking back. »
+
+
+▓▓▓ INTERLUDE · I
+    [CONTRAST — louder, faster, almost provocative]
+
+    STOP RUNNING. or just slow.
+
+
+▓▓▓ 22 III-LESS OPENER
+    [section id: p3]
+    [announce; this is a chapter title — let it land]
+
+    Less.
+
+    Subtraction is the most underrated discipline in the world. Almost everything you have, you should have less of.
+
+    Plate · Liang Kai · The Sixth Patriarch Cutting Bamboo · c. 1200 · Tokyo National Museum · Public domain
+
+
+▓▓▓ 23 III-APH 1
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · III.01
+
+    » A pencil can do more damage than a bomb. It just takes longer.
+
+    — a working principle
+
+
+▓▓▓ 24 III-PENCIL AND BOMB
+    [conversational, like reading to a friend across a table]
+
+    [kicker: ⌁ The thesis of this book, if it has one]
+    The pencil and the bomb.
+
+    A bomb is a one-time event. It is loud. It is photographed. The world watches it. The world remembers it. A pencil, in the hand of a patient person, will outlast the bomb. Constitutions, novels, peace treaties, love letters, and tax codes are all pencil work.
+
+    I think about this when I am tempted to do a big thing. The big thing is almost always a bomb. It costs more than it earns. It compresses years of small good decisions into a single dramatic gesture, which then has to be defended. The big thing is what people do when they have stopped trusting their own pencils.
+
+    The ninja, in the old stories, did not carry a sword unless he had to. He carried smaller tools. A length of black cloth. A thin file. A small bag of seeds. The ninja's job was not to defeat the army; it was to make the army's plan irrelevant. He used the smallest tool that would do the job. He went home before sunrise. Nobody knew he had been there.
+
+    I am not romanticising violence. I am defending modesty of method. Most of the work I admire — in design, in writing, in business, in raising children — is done with the smallest tool that will do the job. A short conversation instead of a long meeting. A two-page memo instead of a deck. A handwritten card instead of a campaign.
+
+    The right tool for the right job is almost always the smaller one.
+
+    The economy of doing-less is hard to talk about because it does not photograph. The bomb is on the news; the pencil is at a desk. But the world, if you look at it carefully, is mostly pencil. The skyscraper is a pencil drawing first. The court ruling is a pencil draft first. The kindness you remember is, more often than not, somebody who did the smaller thing without making a show of it.
+
+    If you are stuck — in a project, a relationship, a career — try the smaller tool first. The smaller tool will tell you whether the bigger tool is needed. It almost never is.
+
+    [margin note] ⌁ method Before any “big move,” I write a one-paragraph note to myself describing the small move that would solve 80% of the problem. About four times in five, the small move is enough.
+
+    [margin note] ⌁ corollary If your plan only works at full scale, your plan is a bomb. Find the pencil version.
+
+    [margin note] ⌁ also Liang Kai painted his masters in five brushstrokes. Five. He had earned the right to leave everything else out.
+
+
+▓▓▓ 25 III-PLATE BAMBOO
+    [gallery-tour voice, gentle but assured]
+
+    Plate: Splashed-Ink Landscape (破墨山水)
+    [credit: Sesshū Tōyō · 1495 · Tokyo National Museum · Public domain]
+    Why we are looking at this:
+    A landscape made of almost nothing. A boat. A roof. A mountain implied by what the painter chose not to paint. Sesshū made this at seventy-six, after a lifetime of making more careful pictures. The discipline of leaving things out is acquired, not natural. We are born adding.
+
+
+▓▓▓ 26 III-TWELVE SUBTRACTIONS
+    [slow enumeration; one beat per item]
+
+    [kicker: ⌁ A list]
+    12
+
+    Subtractions that improve almost any life.
+
+    Most self-help is addition. Add a habit. Add a tool. Add a vitamin. A book that only adds is a book that does not respect your time. Here is a list of removals. They cost nothing. They compound.
+
+    • One social platform you do not enjoy. Today.
+    • One recurring meeting that has produced nothing in four weeks.
+    • One chair you sit in too often, that is shaped like an apology.
+    • One acquaintance who only calls when something has gone wrong for them.
+    • One subscription you forgot you had. Probably two.
+    • One opinion you have repeated for years that you would not, today, hold for the first time.
+    • One adjective from your professional bio.
+    • One project you began with a borrowed enthusiasm.
+    • One container of takeaway sauce in the back of the fridge.
+    • One unread newsletter, every Sunday morning, without reading it first.
+    • One word from every paragraph you write. Then one more.
+    • One day a week from your calendar — given back to no one, kept for nothing in particular.
+
+▓▓▓ 27 III-ARDEN EMPTY CUP
+    [punch lines — let the line break do the timing]
+
+    [kicker: ⌁ III.06 · An old idea, again]
+    « Empty cups are easier to fill. »
+
+    A Zen teacher pours tea for a busy student until the cup overflows. The student says: master, the cup is full . The teacher says: so are you . Bada Shanren's fish, like an empty cup, is mostly absence. ⌁ Bada Shanren · Fish · c. 1690.
+
+
+▓▓▓ 28 III-APH 2
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · III.08
+
+    » Whatever you think the answer is, it is probably a smaller version of that.
+
+    — a Non-corollary to Paul Arden
+
+
+▓▓▓ 29 III-SIX THINGS
+    [same as essay — read the asides only after a 2s pause]
+
+    [kicker: ⌁ Returning to the persimmons]
+    « The argument for finishing things before you finish them. »
+
+    I keep coming back to Muqi. Six persimmons, painted in maybe ten minutes, that have been studied for eight hundred years. The persimmons are not the same. One is darker. One is lighter. Two touch. They have a rhythm of differences, like a small choir, and the choir is the painting.
+
+    Muqi could have added a seventh. He could have added a leaf, a vase, a bird. He stopped. He stopped at the moment the painting became most itself. This is, in my experience, the hardest skill in any art: knowing when you are done.
+
+    Most people stop too late, because they are still trying to convince themselves it is good. The art of less is the art of stopping at the moment of recognition, before the moment of doubt.
+
+    [aside, slower] ⌁ a question What in your life would be better with one fewer of? Not zero. One fewer.
+
+
+▓▓▓ 30 IV-ALONE OPENER
+    [section id: p4]
+    [announce; this is a chapter title — let it land]
+
+    Alone.
+
+    Solitude is not loneliness. Solitude is the room in which you become a person you would want to spend time with.
+
+    Plate · Caspar David Friedrich · The Monk by the Sea · 1808–10 · Alte Nationalgalerie · Public domain
+
+
+▓▓▓ 31 IV-APH 1
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · IV.01
+
+    » If you are afraid of being alone with yourself, find out who is in there.
+
+    — it is almost always the most interesting room you own
+
+
+▓▓▓ 32 IV-SOLITUDE
+    [conversational, like reading to a friend across a table]
+
+    [kicker: ⌁ An admission]
+    I am, at heart, a quiet introvert.
+
+    This is not the kind of thing a public-speaking, conference-attending, university-teaching, Bangkok-Shanghai-Boston-flying person is supposed to admit. But I have, by middle age, learned to stop performing the alternative.
+
+    I am at my best at a desk by a window. I am at my best on a long train. I am at my best in the early morning before the city has noticed. I am at my worst at networking events, although I attend many of them politely.
+
+    For a long time I thought this was a problem to fix. I read books about charisma. I forced myself to “put myself out there.” I went to dinners I did not want to attend. I came home and could not sleep, because the day had taken too much from me, and I did not know how to ask for it back.
+
+    Now I have a rule. I give the world four hours of social time on most days. After four hours I retreat without apology. I do not explain. I do not pretend to be ill. I have learned that the people who matter understand, and the people who do not understand do not matter, in the relevant sense.
+
+    Solitude is not the absence of people. It is the presence of yourself.
+
+    What I have found, in the long quiet hours, is that I am not lonely there. I am, instead, met. I meet myself the way an old friend meets you at a station — not with surprise, but with recognition.
+
+    If you have been busy for a long time, you may have forgotten this person. He is still waiting. He has read more than you remember reading. He has seen things you no longer notice. He will be patient. He has nowhere else to be.
+
+    [margin note] ⌁ rule Four-hour social budget. Per day. Cash, not credit.
+
+    [margin note] ⌁ a fragment “The capacity to be alone is the capacity to love.” — Donald Winnicott, paraphrased.
+
+    [margin note] ⌁ also Friedrich painted the monk so small that the painting is mostly sky. The point is that the sky is the company.
+
+
+▓▓▓ 33 IV-PLATE ROOSTER
+    [gallery-tour voice, gentle but assured]
+
+    Plate: Rooster
+    [credit: Itō Jakuchū · 18th c. · the Met · Public domain]
+    Why we are looking at this:
+    Jakuchū became a monk and painted, alone, in a temple courtyard, for forty years. He had a courtyard of birds for company. This rooster is calm because Jakuchū is calm. The painter and the bird agreed, somewhere in those forty years, to be alone together.
+
+
+▓▓▓ 34 IV-ARDEN QUIET FRIEND
+    [punch lines — let the line break do the timing]
+
+    [kicker: ⌁ IV.04 · Romantic, but accurate]
+    « If you cannot spend an hour alone in a room, you cannot be trusted in one. »
+
+    Friedrich's wanderer is alone, but he is not lost. He is exactly where he meant to be. The sea of fog is the world. The figure with his back to us is the only honest self-portrait. ⌁ Caspar David Friedrich · c. 1818 · Hamburger Kunsthalle.
+
+
+▓▓▓ 35 IV-APH 2
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · IV.06
+
+    » A friend you can sit with in silence is more rare than a marriage.
+
+    — and worth as much
+
+
+▓▓▓ 36 IV-ON WALKS
+    [same as essay — read the asides only after a 2s pause]
+
+    [kicker: ⌁ A practice]
+    « The unaccompanied walk. »
+
+    Once a week, I take a walk with no destination, no podcast, no phone in my hand, and no person. The first ten minutes are uncomfortable. The brain protests. It wants its inputs. It wants to be useful.
+
+    Around minute twenty, the brain gives up and starts to think for itself. This is when the good ideas arrive. Not because I am thinking about a problem, but because, for once, I have stopped thinking at myself in someone else's voice.
+
+    Hasegawa's pine trees are painted with so much fog they are almost not there. That is what the brain looks like at minute thirty of an unaccompanied walk. Mostly fog. A few trees. Enough.
+
+    [aside, slower] ⌁ test If you cannot walk for thirty minutes alone without checking your phone, your phone owns thirty minutes of you.
+
+
+▓▓▓ INTERLUDE · II
+    [CONTRAST — louder, faster, almost provocative]
+
+    WAIT.
+
+
+▓▓▓ 37 V-TIME OPENER
+    [section id: p5]
+    [announce; this is a chapter title — let it land]
+
+    Time.
+
+    Rivers, repetitions, a body that ages. Everything you love is on a clock; that is, in fact, what made you love it.
+
+    Plate · Tawaraya Sōtatsu · Waves at Matsushima · 17th c. · Freer Gallery of Art · Public domain
+
+
+▓▓▓ 38 V-APH 1
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · V.01
+
+    » Nothing fast is also important.
+
+    — a generalisation worth defending
+
+
+▓▓▓ 39 V-AGING
+    [conversational, like reading to a friend across a table]
+
+    [kicker: ⌁ On aging well]
+    I want to age like a building by Louis Kahn.
+
+    Kahn said good architecture ages beautifully . He did not say it endures. He did not say it is fashionable. He said it gets better with weather, with use, with the small disasters of living. Concrete softens. Wood darkens. Stone keeps the marks of the people who have leaned on it.
+
+    I want to age that way. Not against time. Not despite it. With it. The way a temple roof sags slightly into its joinery and is more itself for the sag.
+
+    The opposite of this is the cosmetic life — the life that pretends nothing is happening. I have known people who, at sixty, look thirty-five, and have nothing to say. The fastest path to a small life is a refusal to take time on board.
+
+    Wrinkles are not damage. They are evidence.
+
+    I have a few wrinkles already, in the corners of my eyes, from squinting at trains and at students who were lying about their dissertations. I am not going to remove them. They are receipts. The face I am earning is the face I want to die in.
+
+    If I am lucky, I will become a slightly weathered version of the person I was at thirty — the same person, only more clearly. That is what an old building does. It does not become a new building. It becomes a more honest version of itself.
+
+    [margin note] ⌁ kahn “Even a brick wants to be something.” — Louis Kahn, in conversation with a brick.
+
+    [margin note] ⌁ corollary You are also a brick. What do you want to be?
+
+
+▓▓▓ 40 V-PLATE MONT SAINTE-VICTOIRE
+    [gallery-tour voice, gentle but assured]
+
+    Plate: Mont Sainte-Victoire
+    [credit: Paul Cézanne · 1904–06 · Philadelphia Museum of Art · Public domain]
+    Why we are looking at this:
+    Cézanne painted this mountain more than sixty times. Not because he could not get it right, but because getting it right was the wrong frame. The mountain was a relationship. He visited it. He listened. He went home. He returned the next morning. The painting is what the relationship looked like by the end. Most things worth doing are like this.
+
+
+▓▓▓ 41 V-COMPARE PATIENCE
+    [start with the title, then take time per figure]
+
+    « Two ways a painter treats a year. »
+
+    Patience is not waiting. Patience is participating in a slower thing.
+
+
+▓▓▓ 42 V-THINGS TAKE
+    [slow enumeration; one beat per item]
+
+    [kicker: ⌁ A list]
+    10
+
+    Things that take longer than you think, and should.
+
+    Most regret is the regret of a thing rushed. Here is a list of things to give time to. None of them care about your schedule.
+
+    • A friendship that has not yet had its third real conversation.
+    • A book about a place you have not been to.
+    • A new language, accepted as a slow lifelong roommate, not a sprint.
+    • A grief, allowed to take the season it asked for.
+    • A child's question, answered fully, not in passing.
+    • A meal cooked from raw ingredients, with no music.
+    • A sentence you suspect is not yet true. Wait until it is.
+    • The decision about whether to leave a city.
+    • The decision about whether to stay.
+    • Tea. Always tea. Until the tea tells you it is done.
+
+▓▓▓ 43 V-APH CLOSE
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · V.10
+
+    » Time is the only thing you cannot earn back. It is also the only thing you keep giving away for free.
+
+    — end of Movement V
+
+
+▓▓▓ 44 VI-MAKE OPENER
+    [section id: p6]
+    [announce; this is a chapter title — let it land]
+
+    Make.
+
+    The dignity of small daily work. The world is not held up by genius. It is held up by people who keep showing up to plane the floor.
+
+    Plate · Gustave Caillebotte · The Floor Planers · 1875 · Musée d'Orsay · Public domain
+
+
+▓▓▓ 45 VI-APH 1
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · VI.01
+
+    » Quiet repetition is its own kind of art.
+
+    — what my father knew, and almost did not say
+
+
+▓▓▓ 46 VI-FLOOR PLANERS
+    [conversational, like reading to a friend across a table]
+
+    [kicker: ⌁ Notes from a desk]
+    In praise of the floor planers.
+
+    Caillebotte painted three men on their knees, scraping the wood floor of a Paris apartment. The painting was rejected by the Salon. It was, the jury said, vulgar. It showed labour. It did not show ideals.
+
+    It is now one of my favourite paintings. The men are not heroes. They are not victims. They are working. The light is on their backs. They are, in their three different postures, one continuous act of attention. Caillebotte saw what most painters did not: that the room these men were preparing was, in fact, the painting.
+
+    I think about the floor planers on the days I do not want to work. There is a kind of work that is easy to romanticise — the writing of a great novel, the founding of a company, the design of a building. There is another kind of work that is harder to talk about: the daily work of preparing the surface on which the great thing might happen.
+
+    Most of life is the second kind.
+
+    Genius is a rumour. Habit is a receipt.
+
+    I have published papers, given talks, founded companies, built things people use. None of those are the work. The work was the morning. The work was sitting down at the desk again on the day after the bad one. The work was the floor planing. The visible thing — the talk, the paper, the launch — was a single floorboard in a long apartment.
+
+    If you are looking for a vocation, do not look for a calling. Look for a kind of work whose floor planing you can stand. That is the work.
+
+    [margin note] ⌁ a definition Vocation: the activity whose boring middle hour you can survive without resentment.
+
+    [margin note] ⌁ counter If you only love the photographable parts of your work, you do not love your work. You love being seen working.
+
+
+▓▓▓ 47 VI-ARDEN DAILY
+    [punch lines — let the line break do the timing]
+
+    [kicker: ⌁ VI.03 · Hokusai's confession]
+    « At seventy-three I began to understand animals. »
+
+    Hokusai wrote, in his old age: at six I drew. At fifty I had published much. At seventy I had nothing worth keeping. At seventy-three I began to understand the structure of birds and beasts. Maybe by ninety, he said, I will be alive. He died at eighty-eight. Still on the way. ⌁ Two Cranes · LACMA · PD.
+
+
+▓▓▓ 48 VI-SOLO WORK
+    [same as essay — read the asides only after a 2s pause]
+
+    [kicker: ⌁ The one-person empire]
+    « Some work is best done by one person. »
+
+    I am wary of the word team . It is one of those words that sounds noble and turns out to be a way of dividing the credit and concealing the indecision. Some work — the kind I most respect — is the work of one person who has learned to argue with themselves.
+
+    Whistler painted his nocturnes at night, alone, on a small boat in the Thames. The critic Ruskin called this painting an act of throwing a pot of paint in the public's face. Whistler sued. Whistler won. He won because he had spent ten years learning how to throw paint, alone, on a small boat, in the dark.
+
+    I am not arguing against collaboration. I am arguing for the kind of mastery that can only be earned alone, and the kind of confidence that can only be tested alone, and the kind of joy of finishing one's own work that can only be felt alone.
+
+    [aside, slower] ⌁ note The fastest way to get good at any craft is to do it alone, daily, badly, until the badness is interesting. Then you have a style.
+
+
+▓▓▓ 49 VI-APH 2
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · VI.07
+
+    » A career is what you can be paid for. A practice is what you cannot stop doing even unpaid.
+
+    — pick the second one if you can
+
+
+▓▓▓ INTERLUDE · III
+    [CONTRAST — louder, faster, almost provocative]
+
+    ARE YOU awake YET?
+
+
+▓▓▓ 50 VII-FAIL OPENER
+    [section id: p7]
+    [announce; this is a chapter title — let it land]
+
+    Fail.
+
+    The tunnel that turns out to be the path. Failure is a teacher who arrives without an appointment and stays as long as the lesson takes.
+
+    Plate · Katsushika Hokusai · Rainstorm Beneath the Summit · c. 1831 · Public domain
+
+
+▓▓▓ 51 VII-APH 1
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · VII.01
+
+    » If you have not yet failed, you have not yet tried hard enough to be wrong.
+
+    — a working epigraph
+
+
+▓▓▓ 52 VII-TUNNEL
+    [conversational, like reading to a friend across a table]
+
+    [kicker: ⌁ A confession in two parts]
+    I wish I had never done a PhD. — and I would do it again.
+
+    Six years into a PhD I had begun to suspect I should not have started, the graduate school sent me a survey. The first question was: Would you do this again? My finger hovered over Yes . Of course I would. I had spent six years preparing the answer.
+
+    Then I did not click. I sat in front of the screen for a long time. The question, I realised, was not asking what I would do; it was asking what the six years had taught me. And what the six years had taught me was that I had walked through a long, mostly unlit tunnel, on the assumption that there was a room at the end. There was no room. There was a door, and on the other side of the door was a different version of me — older, slower, more honest, less impressed.
+
+    I would not do the PhD again. And I would do the tunnel again. The tunnel was not the PhD. The tunnel was the slow, private dismantling of a younger man's certainty. That dismantling had to happen somewhere. It happened to happen there.
+
+    Failure is not the opposite of success. Failure is the slower form of teaching.
+
+    I have been thrown under buses by people I trusted. I have had projects refuse to ship, books refuse to finish, students refuse to learn from a teacher who had something to teach. I have spent more nights than I would like staring at a ceiling, drafting in my head the sentence that would have ended the argument, that I never said.
+
+    None of these were failures. They were tunnels. The mistake, every time, was thinking the tunnel was the destination — and getting angry at the dark.
+
+    If you are in a tunnel right now, I cannot tell you how long it is. Nobody can. But I can tell you that the dark is doing something to you that the daylight cannot do. Hold on. Walk slowly. Pay attention to the texture of the walls. The room you walk out into is the room you would not otherwise have been able to see.
+
+    [margin note] ⌁ a quote “The wound is the place where the light enters you.” — Rumi.
+
+    [margin note] ⌁ also I once read that Beckett's editor returned a manuscript with the note fail again, fail better . The line was, of course, Beckett's own. He was its first reader.
+
+    [margin note] ⌁ test If you cannot describe what your last failure taught you in one sentence, the lesson is not over.
+
+
+▓▓▓ 53 VII-PLATE WHISTLER
+    [gallery-tour voice, gentle but assured]
+
+    Plate: Nocturne in Black and Gold: The Falling Rocket
+    [credit: James McNeill Whistler · c. 1875 · Detroit Institute of Arts · Public domain]
+    Why we are looking at this:
+    A painting that ended a friendship, won a famous lawsuit, and was awarded one farthing in damages — about a quarter of a penny. Whistler hung the farthing on his watch chain for the rest of his life. There is a kind of failure that is, looked at sideways, a victory. You only see it from a distance.
+
+
+▓▓▓ 54 VII-ARDEN HONESTY
+    [punch lines — let the line break do the timing]
+
+    [kicker: ⌁ VII.05 · Old man, late painting]
+    « Rembrandt at fifty-three painted his own face after losing a wife, a son, a fortune, a house. »
+
+    It is one of the kindest paintings in the world. He did not flinch and he did not soften. He looked at himself the way a friend would. The lesson is not that he survived. The lesson is that he was still curious about his own face after that. ⌁ Rembrandt · 1659 · National Gallery of Art.
+
+
+▓▓▓ 55 VII-APH 2
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · VII.07
+
+    » The opposite of failure is not success. It is forgetting.
+
+    — and we forget, mostly, on purpose
+
+
+▓▓▓ 56 VIII-PEOPLE OPENER
+    [section id: p8]
+    [announce; this is a chapter title — let it land]
+
+    People.
+
+    The only mirror that matters. People are the problem and they are also the only solution. Both halves of the sentence are equally important.
+
+    Plate · after Pieter Bruegel the Elder · Landscape with the Fall of Icarus · c. 1560 · Royal Museums of Fine Arts of Belgium · Public domain
+
+
+▓▓▓ 57 VIII-APH 1
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · VIII.01
+
+    » Choose your five people before you choose your city.
+
+    — the geography that matters
+
+
+▓▓▓ 58 VIII-ICARUS
+    [conversational, like reading to a friend across a table]
+
+    [kicker: ⌁ The painting Auden loved]
+    A boy is drowning, and the farmer keeps ploughing.
+
+    In Bruegel's Landscape with the Fall of Icarus , the world's most famous mythological tragedy is happening, and almost nobody in the painting is looking. The farmer ploughs. The shepherd looks up at the sky, but the wrong direction. A ship sails on. Icarus is two pale legs, almost invisible, in the bottom-right corner.
+
+    Auden wrote a poem about this painting. The poem is about how the rest of the world goes on while one person is having the worst day of their life. He thought this was a tragedy. I think it is the most consoling fact I know.
+
+    The reason it is consoling is this: most days, you are the farmer. The boy in the water is somebody else. You do not see him because you are working. You are not callous. You are just on a different page of the painting. This is, in fact, how a society survives. If everybody stopped to look at every drowning, no field would ever be ploughed.
+
+    And: most days, somebody else is the farmer, and you are the boy. They do not see you because they are working. They are not callous. They are just on a different page of the painting.
+
+    The painting is not telling you to look at every drowning. It is telling you to be grateful, every day, that someone is currently ploughing on your behalf.
+
+    Once you accept this, the social world becomes manageable again. You stop expecting the farmer to see you. You go and find a friend who has, for once, put down the plough. You take care, when you can, to put down your own. You drown less often, because you have asked specifically for help, instead of waiting for the painting to notice.
+
+    [margin note] ⌁ Auden “About suffering they were never wrong, the old masters.” — opening line of Musée des Beaux Arts , 1938.
+
+    [margin note] ⌁ practical Every Sunday, send one specific message to one specific friend. How are you really? Not the field. The boy.
+
+
+▓▓▓ 59 VIII-APH 2
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · VIII.04
+
+    » The people who change you most are the ones who let you be exactly the person you already are.
+
+    — count them. usually four.
+
+
+▓▓▓ 60 VIII-ON FATHER
+    [same as essay — read the asides only after a 2s pause]
+
+    [kicker: ⌁ The man who never socialised]
+    « I learned everything I know about people from a man who avoided them. »
+
+    My father was an introvert in a culture that does not have a word for it. He had two close friends, both engineers. He saw them once a month. He spent the rest of his time with my mother, with us, and with himself. He was not unhappy. He was, in fact, the calmest happy man I have known.
+
+    What he taught me about people was, mostly, this: the people you love are the people whose company does not require a performance. Everyone else is an event. Events are fine. They are not the life.
+
+    He died slowly, over a year. I sat with him on more afternoons than I would have, in a faster life. We did not say much. He was tired. I read the newspaper to him, the way he had read it to himself for forty years. It was the closest I have been to anyone, and we said almost nothing.
+
+    [aside, slower] ⌁ note If you can sit in silence with someone for an hour and feel met, you are home.
+
+
+▓▓▓ 61 VIII-QUARTET PORTRAITS
+    [four short observations — 1s pause between each]
+
+    « Four faces worth looking at slowly. »
+
+
+▓▓▓ INTERLUDE · IV
+    [CONTRAST — louder, faster, almost provocative]
+
+    WHO IS THE BOY DROWNING IN YOUR painting?
+
+
+▓▓▓ 62 IX-HOME OPENER
+    [section id: p9]
+    [announce; this is a chapter title — let it land]
+
+    Home.
+
+    Three cities, two parents, one body. Home is not a postcode. Home is a verb you have to keep conjugating.
+
+    Plate · Claude Monet · The Houses of Parliament, Sunset · 1903 · National Gallery of Art · Public domain
+
+
+▓▓▓ 63 IX-APH 1
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · IX.01
+
+    » Home is the place where you do not have to explain your silences.
+
+    — there are usually three or four such places, in a long life
+
+
+▓▓▓ 64 IX-THREE CITIES
+    [conversational, like reading to a friend across a table]
+
+    [kicker: ⌁ Three cities, in chronological order]
+    Bangkok, Boston, Shanghai.
+
+    Bangkok taught me that the world is a market. Boston taught me that the world is a library. Shanghai taught me that the world is, mostly, an unfinished construction site, and that this is not a complaint.
+
+    I was born in Bangkok. I went to school there in a uniform that did not breathe. I walked, every morning, past a noodle stall whose owner I now realise was teaching me what it meant to do the same job, well, for forty years. He died last year. I did not go back for the funeral. I am sorry about this in the part of myself that is still Thai.
+
+    Boston was my first foreign weather. I arrived in September and was unprepared for snow. I bought a coat that was too thin and walked to MIT in it for a year before I admitted it. Boston was where I first learned to be alone in a city. The library at MIT is open most of the night. I learned to live there. The radiators clicked. The students did not look up. I read Kahn, and Kant, and Bachelard. I came home each night through the bridge over the Charles. I was twenty-three. I think I was mostly happy.
+
+    Shanghai was the third city, and the longest. Ten years. Two studios. One marriage, ending. One book, beginning. I learned, in Shanghai, that a city can teach you to be both bigger and smaller — bigger because the city is large, smaller because, in a city of twenty-six million, no single person is the protagonist. The city's lesson is humility. The city's other lesson is delight. The two are connected.
+
+    Home is not where you were born. Home is where you have agreed to be vulnerable.
+
+    I now live, when I can, in all three. I keep a desk in each. The desks are different sizes. The chairs are different heights. The view out the window is different. The work I do is the same. This is the trick I have learned: home is not a place. Home is a posture. You can sit that posture down anywhere.
+
+    [margin note] ⌁ a question If you had three desks anywhere in the world, where would they be? Trust the second answer. The first is the one your parents trained you to give.
+
+    [margin note] ⌁ Bachelard “The house allows one to dream in peace.” — Gaston Bachelard, The Poetics of Space .
+
+
+▓▓▓ 65 IX-PLATE HIROSHIGE
+    [gallery-tour voice, gentle but assured]
+
+    Plate: Sudden Shower over Shin-Ōhashi Bridge and Atake
+    [credit: Utagawa Hiroshige · 1857 · Brooklyn Museum / Met · Public domain]
+    Why we are looking at this:
+    A bridge full of strangers, suddenly caught in the rain, hurrying home. Each is alone under a thin straw cloak, but the bridge itself becomes a kind of community for the duration of the shower. Home is sometimes a place. It is sometimes ten minutes of weather you survive together.
+
+
+▓▓▓ 66 IX-ARDEN COOKING
+    [punch lines — let the line break do the timing]
+
+    [kicker: ⌁ IX.04 · A small case]
+    « Cooking dinner is the cheapest religion I know. »
+
+    My mother taught me to make rice by smelling the steam. There is a moment, just before the rice is done, when the smell turns from grass to bread. You cannot set a timer for it. You learn it once and you have it forever, like a prayer. ⌁ Hiroshige · Plum Park · 1857.
+
+
+▓▓▓ 67 IX-ON MOTHER
+    [same as essay — read the asides only after a 2s pause]
+
+    [kicker: ⌁ The other parent]
+    « My mother is the river between the two trees. »
+
+    Kōrin painted two plum trees, one old and one young, with a stylised silver river running between them. The river is not painted realistically; it is a band of pure decoration, a flat plane of pattern. And yet it is the most important thing in the painting. Without the river, the two trees are just two trees. With the river, they are a family.
+
+    My mother is the river. My father was a tree. I am the other tree. For most of my life I thought my father was the protagonist of our family because he was the one with the job. I did not understand, until much later, that my mother had spent forty years being the band of pattern that allowed the two trees to be in a single painting at all.
+
+    If you have a mother who is still alive, call her this week. Not because she is the protagonist. Because she is not, and because she has been holding the painting together quietly for longer than you remember.
+
+    [aside, slower] ⌁ a small dare Ask your mother, this week, what she had wanted to do at twenty-two. Listen to the answer with the same attention you would give a stranger's TED talk.
+
+
+▓▓▓ 68 IX-APH 2
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · IX.07
+
+    » Home is wherever you can hear yourself think. Sometimes that is a kitchen. Sometimes a train. Sometimes a life.
+
+    — end of Movement IX
+
+
+▓▓▓ 69 X-END OPENER
+    [section id: p10]
+    [announce; this is a chapter title — let it land]
+
+    End.
+
+    The small word that holds all the others. To live well is to have made friends with the last sentence before it is written.
+
+    Plate · Ogata Kōrin · Red and White Plum Blossoms · c. 1712 · MOA Museum of Art · Public domain
+
+
+▓▓▓ 70 X-APH 1
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · X.01
+
+    » You are going to die. Almost everything else is preparation.
+
+    — and most of it is good preparation
+
+
+▓▓▓ 71 X-ENOUGH
+    [conversational, like reading to a friend across a table]
+
+    [kicker: ⌁ Notes for the last page]
+    The word I am trying to learn is enough.
+
+    Enough is a hard word in any language I speak. In English it sounds like a defeat. In Thai it sounds like resignation. In Mandarin it sounds like an instruction to a child. None of these is what the word actually means.
+
+    Enough is the word that means: I have what I need to live well today. The day will end. The work will not be finished. That is fine. The work is not the point. The day is the point.
+
+    I have spent most of my life chasing more. More degrees. More projects. More cities. More languages. More respect. More publications. There is nothing wrong with more. More is the engine. But more is not the destination. Enough is the destination.
+
+    More is what you do. Enough is what you become.
+
+    If I am lucky, I will reach the end of my life having said the word enough out loud, to myself, on most days. Enough food. Enough work. Enough friends. Enough hours. Enough.
+
+    The plum blossoms in Kōrin's screen are not many. There are not few, either. They are exactly enough to make the painting a painting. I do not know how Kōrin knew. I think he knew because he had stopped trying to add.
+
+    I am still learning. Most days I add. On the days I subtract, I notice my breathing. I notice the room. I notice you, if you are with me. I notice that the rest of my life, however long, is going to be made out of these noticings.
+
+    That is, in the end, why I wrote this book. Not to teach you anything. To remind myself, on the days I forget.
+
+    [margin note] ⌁ a vow To say the word enough at least once, every day, out loud, until I mean it.
+
+    [margin note] ⌁ also Kōrin painted these plums on a folding screen meant to be opened in a single room. Not for a museum. Not for posterity. For a friend's tea ceremony. The right scale, for the right room.
+
+
+▓▓▓ 72 X-PLATE WANDERER
+    [gallery-tour voice, gentle but assured]
+
+    Plate: Wanderer above the Sea of Fog
+    [credit: Caspar David Friedrich · c. 1818 · Hamburger Kunsthalle · Public domain]
+    Why we are looking at this:
+    The most famous painting of a man with his back turned. He is alone. The fog is the future. He has climbed for hours to look at it. He does not know what is below the fog. Neither do you. Neither do I. The painting is not a tragedy. The painting is a posture. He is still standing. So are we. That is most of the assignment.
+
+
+▓▓▓ 73 X-APH 2
+    [slow, weighted; one beat per line]
+
+    ⌁ Aphorism · X.05
+
+    » The thing you would write on your last day is the thing you should be writing now.
+
+    — and you have more days than you think
+
+
+▓▓▓ 74 X-LAST LESSON
+    [same as essay — read the asides only after a 2s pause]
+
+    [kicker: ⌁ The last lesson]
+    « What you have read is what I have so far figured out. »
+
+    I am, by middle age, in possession of a small number of facts. They are the facts I would tell my younger self over a long dinner if I could. They will not change his life. They will, possibly, save him a year or two of unnecessary speed.
+
+    You will not finish what you started. You will not see all of the people you love before they are gone. You will not be famous in the way a younger you wanted to be. You will not be saved by any of the things you currently expect to save you.
+
+    And: there will be more long afternoons than you imagine. There will be a kind of slow, late happiness that does not announce itself. There will be a particular smell in a particular kitchen, in a particular city, that returns you to yourself in a single breath. There will be friends who turn out to be the kind you can sit with in silence. That is, in the end, plenty.
+
+    If this book has done its job, you have already paused once or twice in the reading. That is the book. The text was a pretext. The pause was the lesson.
+
+    [aside, slower] ⌁ on closing Close this book gently. Put it down. Look out a window. That part is the assignment.
+
+
+▓▓▓ 75 X-FINAL
+    [slow, weighted; one beat per line]
+
+    ⌁ Final aphorism · X.09
+
+    » Slow down. The world has been waiting for you to notice it.
+
+    — end of book · thank you for staying
+
+▓▓▓ INDEX OF ARTWORKS
+    [Skip in audio — visual reference only.]
+
+
+▓▓▓ INTERLUDE · V · FINAL
+    [CONTRAST — louder, faster, almost provocative]
+
+    TRY AGAIN. or don't.
+
+
+▓▓▓ 77 COLOPHON
+    [closing voice — slower, lower, like blowing out a candle]
+
+    The Things You Can See Only When You Slow Down A meditation on life in ten movements. Written by Dr. Non Arkaraprasertkul. Set in Anton, Hanken Grotesk, Cormorant Garamond, and JetBrains Mono. All artworks are in the public domain, sourced from the Met, the Getty, the Smithsonian, the Rijksmuseum, the Tokyo National Museum, the National Gallery of Art, LACMA, MOA, and Wikimedia Commons. Text © Non Arkaraprasertkul, all rights reserved. Art is everyone's. Print it. Frame it. Give it away. ⌁ Bangkok · Shanghai · Boston · MMXXVI
+
+
+───────────────────────────────────────────────────────────────────
+End of narration script.
+Total sections to record: 82
+───────────────────────────────────────────────────────────────────
