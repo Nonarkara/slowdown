@@ -4,16 +4,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Things You Can See Only When You Slow Down — Dr. Non Arkaraprasertkul</title>
 <meta name="description" content="A meditation on life in ten movements. With public-domain artworks from the Met, Getty, Smithsonian, Rijksmuseum, Tokyo National Museum, and Wikimedia Commons. By Dr. Non Arkaraprasertkul.">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Sarabun:wght@300;400;500&family=Noto+Serif+Thai:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 
 <div class="progress" id="progress"></div>
 <div class="part-badge" id="partBadge" aria-hidden="true">—</div>
 <div id="partFx" aria-hidden="true"></div>
+
+<!-- ════════ CHAPTER RAIL — always visible nav with bookmark ════════ -->
+<aside class="rail" id="rail" aria-label="Chapter navigation">
+  <button class="rail__toggle" id="railToggle" aria-label="Toggle chapter list">
+    <span class="rail__toggle-icon">≡</span>
+  </button>
+  <nav class="rail__nav">
+    <p class="rail__head">Movements</p>
+    <ol class="rail__list" id="railList">
+      <li><a href="#cover" data-jump="cover"><span class="r-num">—</span><span class="r-name">Cover</span></a></li>
+      <li><a href="#contents" data-jump="contents"><span class="r-num">·</span><span class="r-name">Contents</span></a></li>
+      <li><a href="#p1"  data-jump="p1"><span class="r-num">I</span><span class="r-name">Slow</span></a></li>
+      <li><a href="#p2"  data-jump="p2"><span class="r-num">II</span><span class="r-name">See</span></a></li>
+      <li><a href="#p3"  data-jump="p3"><span class="r-num">III</span><span class="r-name">Less</span></a></li>
+      <li><a href="#p4"  data-jump="p4"><span class="r-num">IV</span><span class="r-name">Alone</span></a></li>
+      <li><a href="#p5"  data-jump="p5"><span class="r-num">V</span><span class="r-name">Time</span></a></li>
+      <li><a href="#p6"  data-jump="p6"><span class="r-num">VI</span><span class="r-name">Make</span></a></li>
+      <li><a href="#p7"  data-jump="p7"><span class="r-num">VII</span><span class="r-name">Fail</span></a></li>
+      <li><a href="#p8"  data-jump="p8"><span class="r-num">VIII</span><span class="r-name">People</span></a></li>
+      <li><a href="#p9"  data-jump="p9"><span class="r-num">IX</span><span class="r-name">Home</span></a></li>
+      <li><a href="#p10" data-jump="p10"><span class="r-num">X</span><span class="r-name">End</span></a></li>
+      <li><a href="#index" data-jump="index"><span class="r-num">A</span><span class="r-name">Plates</span></a></li>
+      <li><a href="#colophon" data-jump="colophon"><span class="r-num">·</span><span class="r-name">Colophon</span></a></li>
+    </ol>
+    <button class="rail__bookmark" id="railBookmark">↻ Continue from V · TIME</button>
+  </nav>
+</aside>
 <nav class="float-nav" aria-label="reading nav">
   <button id="navTop" title="Top of book">↑</button>
   <button id="navContents" title="Contents">☰</button>
@@ -1526,6 +1556,129 @@
           });
         });
       });
+
+    // ───────────────────────────────────────────────────────────
+    //  CHAPTER RAIL — bookmark, navigation, continue-reading toast
+    // ───────────────────────────────────────────────────────────
+    const rail = document.getElementById('rail');
+    const railToggle = document.getElementById('railToggle');
+    const railList = document.getElementById('railList');
+    const railBookmark = document.getElementById('railBookmark');
+
+    // Section labels for bookmark display
+    const sectionLabels = {
+      'cover': 'Cover',
+      'contents': 'Contents',
+      'p1':  'I · Slow',  'p2':  'II · See',   'p3':  'III · Less',
+      'p4':  'IV · Alone','p5':  'V · Time',   'p6':  'VI · Make',
+      'p7':  'VII · Fail','p8':  'VIII · People','p9':  'IX · Home',
+      'p10': 'X · End',
+      'index': 'Index of Plates',
+      'colophon': 'Colophon',
+    };
+
+    // Toggle rail open on mobile
+    if (railToggle) {
+      railToggle.addEventListener('click', () => {
+        rail.classList.toggle('open');
+      });
+    }
+    // Close rail when an item is clicked (mobile)
+    document.querySelectorAll('.rail__list a').forEach(a => {
+      a.addEventListener('click', (e) => {
+        rail.classList.remove('open');
+        // Save bookmark when user explicitly jumps
+        const target = a.dataset.jump;
+        if (target) localStorage.setItem('slowdown:bookmark', target);
+      });
+    });
+
+    // Bookmark persistence: save the last-active major section
+    const SECTION_IDS = Object.keys(sectionLabels);
+    const trackable = SECTION_IDS.map(id => document.getElementById(id)).filter(Boolean);
+
+    let activeId = null;
+    const setActive = (id) => {
+      if (id === activeId) return;
+      activeId = id;
+      // Update rail
+      document.querySelectorAll('.rail__list a').forEach(a => {
+        const aId = a.dataset.jump;
+        a.classList.toggle('active', aId === id);
+        // Mark visited if its index is <= current's index
+        const aIdx = SECTION_IDS.indexOf(aId);
+        const curIdx = SECTION_IDS.indexOf(id);
+        if (aIdx >= 0 && curIdx >= 0 && aIdx < curIdx) {
+          a.classList.add('visited');
+        }
+      });
+      // Save bookmark (only if not on cover/contents — those are the entry)
+      if (id && id !== 'cover' && id !== 'contents') {
+        try { localStorage.setItem('slowdown:bookmark', id); } catch(e) {}
+      }
+    };
+
+    const updateActive = () => {
+      let cur = null;
+      for (const el of trackable) {
+        if (el.getBoundingClientRect().top <= window.innerHeight * 0.4) cur = el.id;
+      }
+      if (cur) setActive(cur);
+    };
+    let aTick = false;
+    window.addEventListener('scroll', () => {
+      if (!aTick) {
+        requestAnimationFrame(() => { updateActive(); aTick = false; });
+        aTick = true;
+      }
+    }, { passive: true });
+    updateActive();
+
+    // Show "Continue from..." toast on cover, if a bookmark exists
+    let savedBookmark = null;
+    try { savedBookmark = localStorage.getItem('slowdown:bookmark'); } catch(e) {}
+    if (savedBookmark && sectionLabels[savedBookmark] && document.getElementById(savedBookmark)) {
+      // Update the rail bookmark button label
+      if (railBookmark) {
+        railBookmark.textContent = '↻ Continue from ' + sectionLabels[savedBookmark];
+        railBookmark.classList.add('show');
+        railBookmark.addEventListener('click', () => {
+          document.getElementById(savedBookmark)?.scrollIntoView({ behavior: 'smooth' });
+          rail.classList.remove('open');
+        });
+      }
+      // Show a top toast — but only if user is at the top (cover area)
+      const showToast = () => {
+        if (window.scrollY > 600) return; // already past cover
+        if (document.querySelector('.continue-toast')) return; // already shown
+        const toast = document.createElement('div');
+        toast.className = 'continue-toast';
+        toast.innerHTML = `
+          <span class="ct-icon">↻</span>
+          <span class="ct-label">
+            <small>You left off at</small>
+            <strong>${sectionLabels[savedBookmark]}</strong>
+          </span>
+          <button class="ct-jump">Continue</button>
+          <button class="ct-close" aria-label="Dismiss">×</button>
+        `;
+        document.body.appendChild(toast);
+        requestAnimationFrame(() => toast.classList.add('show'));
+        toast.querySelector('.ct-jump').addEventListener('click', () => {
+          document.getElementById(savedBookmark)?.scrollIntoView({ behavior: 'smooth' });
+          dismiss();
+        });
+        toast.querySelector('.ct-close').addEventListener('click', dismiss);
+        function dismiss() {
+          toast.classList.remove('show');
+          setTimeout(() => toast.remove(), 400);
+        }
+        // Auto-dismiss after 12s
+        setTimeout(dismiss, 12000);
+      };
+      // Wait a moment for the page to settle, then show
+      setTimeout(showToast, 1400);
+    }
 
     // 5. Sprinkle some entry-confetti when the user crosses into a new movement
     let lastPart = null;

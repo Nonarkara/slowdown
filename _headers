@@ -1,0 +1,21 @@
+# Strict no-cache for HTML (so users always get the latest)
+/
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+
+# CSS/JS: short cache so they pick up updates fast but still benefit from CDN
+/styles.css
+  Cache-Control: public, max-age=300, must-revalidate
+
+# Images: longer cache (they don't change often)
+/img/*
+  Cache-Control: public, max-age=86400
+
+/assets/*
+  Cache-Control: public, max-age=86400
