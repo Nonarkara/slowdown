@@ -1,0 +1,1186 @@
+/* ============================================================
+   THE THINGS YOU CAN SEE ONLY WHEN YOU SLOW DOWN
+   — book styles —
+   ============================================================ */
+
+:root {
+  --paper:        oklch(0.965 0.008 80);
+  --paper-deep:   oklch(0.94 0.012 80);
+  --ink:          #16140F;
+  --ink-soft:     #2a2722;
+  --ink-fade:     #6b6557;
+  --ink-mute:     #9a9384;
+  --rule:         oklch(0.85 0.012 80);
+  --rule-soft:    oklch(0.90 0.010 80);
+  --seal:         oklch(0.42 0.12 28);   /* reserved: tiny marks */
+  --shadow-deep:  0 40px 80px -40px rgba(20,15,5,.45), 0 6px 20px rgba(20,15,5,.10);
+  --shadow-card:  0 18px 40px -28px rgba(20,15,5,.35);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+html, body {
+  margin: 0; padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  font-size: 19px;
+  line-height: 1.6;
+  font-feature-settings: "liga", "kern", "onum";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* paper grain */
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 1000;
+  background-image:
+    radial-gradient(rgba(60,40,15,.025) 1px, transparent 1px),
+    radial-gradient(rgba(60,40,15,.018) 1px, transparent 1px);
+  background-size: 4px 4px, 7px 7px;
+  background-position: 0 0, 2px 3px;
+  mix-blend-mode: multiply;
+}
+
+/* ----------- TYPE FAMILIES (semantic) ---------------- */
+.sans   { font-family: "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.serif  { font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif; }
+.mono   { font-family: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace; }
+.display{ font-family: "Anton", "Hanken Grotesk", "Helvetica Neue", sans-serif; font-weight: 400; letter-spacing: -0.005em; }
+
+/* ----------- HEADINGS ---------------- */
+h1, h2, h3, h4 { font-weight: 500; letter-spacing: -0.005em; color: var(--ink); margin: 0; }
+h1.serif, h2.serif, h3.serif {
+  font-family: "Cormorant Garamond", "EB Garamond", serif;
+}
+.kicker {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 11px; letter-spacing: .35em; text-transform: uppercase;
+  color: var(--ink-fade); font-weight: 600;
+}
+.kicker .seal-tick { color: var(--seal); margin-right: 8px; }
+
+/* ----------- TEXT ---------------- */
+p { margin: 0 0 1em; text-wrap: pretty; hyphens: auto; max-width: 60ch; }
+p + p { text-indent: 1.6em; }
+p.no-indent + p, .lead + p, h1 + p, h2 + p, h3 + p, blockquote + p, figure + p, .pull + p { text-indent: 0; }
+em { color: var(--ink-soft); }
+strong { font-weight: 600; }
+
+a { color: var(--ink); text-decoration: none; border-bottom: 1px dotted var(--ink-fade); }
+a:hover { color: var(--seal); border-bottom-color: var(--seal); }
+
+blockquote {
+  margin: 2em 0;
+  padding: 0 0 0 1.4em;
+  border-left: 1px solid var(--ink);
+  font-style: italic;
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+
+hr.rule { border: 0; height: 1px; background: var(--rule); margin: 3em auto; max-width: 60%; }
+hr.thin { border: 0; height: 1px; background: var(--rule-soft); margin: 1.4em 0; }
+
+/* ============================================================
+   STAGE — every section is a "spread" the size of the viewport
+   ============================================================ */
+.spread {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: [fold-l] 64px [body-l] 1fr [body-r] 64px [fold-r];
+  grid-template-rows: [top] 56px [body-t] 1fr [body-b] 56px [bottom];
+  position: relative;
+  break-after: page;
+}
+.spread > .folio {
+  position: absolute; right: 28px; bottom: 22px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px; letter-spacing: .15em; color: var(--ink-mute);
+}
+.spread > .folio.left { right: auto; left: 28px; }
+.spread > .running-head {
+  position: absolute; left: 28px; top: 22px;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 10px; letter-spacing: .35em; text-transform: uppercase; color: var(--ink-mute);
+  font-weight: 600;
+}
+.spread > .running-head .tick { color: var(--seal); margin-right: 8px; }
+
+/* For long content, allow it to flow taller than viewport */
+.spread.flow { min-height: auto; padding-block: 80px; }
+
+/* ============================================================
+   BOOK CONTAINER
+   ============================================================ */
+.book {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+/* ============================================================
+   COVER
+   ============================================================ */
+.cover {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: 56px 56px 40px;
+  position: relative;
+  background: var(--paper);
+  overflow: hidden;
+}
+.cover .stack {
+  align-self: center;
+  max-width: 1100px;
+}
+.cover .meta-top {
+  position: absolute; top: 32px; left: 56px; right: 56px;
+  display: flex; justify-content: space-between;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; letter-spacing: .15em; color: var(--ink-fade);
+  text-transform: uppercase;
+}
+.cover .title-line {
+  font-family: "Anton", "Hanken Grotesk", sans-serif;
+  font-size: clamp(72px, 14vw, 220px);
+  line-height: 0.86;
+  letter-spacing: -0.012em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0;
+}
+.cover .title-line.thin {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: -0.025em;
+  font-size: clamp(40px, 8vw, 130px);
+  color: var(--ink-soft);
+  line-height: 0.95;
+}
+.cover .author-block {
+  display: flex; justify-content: space-between; align-items: end; gap: 32px;
+  border-top: 1px solid var(--ink);
+  padding-top: 18px;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 13px; letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.cover .author-block .name { font-weight: 700; }
+.cover .author-block .pub { color: var(--ink-fade); font-weight: 500; }
+.cover .author-block .seal-mark {
+  width: 56px; height: 56px;
+  border: 1px solid var(--seal); color: var(--seal);
+  display: grid; place-items: center;
+  font-family: "Sarabun","Noto Serif Thai",serif;
+  font-size: 22px; letter-spacing: -0.05em;
+  background: rgba(255,255,255,.3);
+}
+
+/* ============================================================
+   DEDICATION
+   ============================================================ */
+.dedication {
+  display: grid; place-items: center; min-height: 100vh; padding: 80px;
+  text-align: center;
+}
+.dedication .ded-text {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: clamp(22px, 2.4vw, 32px);
+  color: var(--ink-soft);
+  max-width: 680px;
+  line-height: 1.45;
+}
+.dedication .ded-text + .kicker { margin-top: 36px; }
+
+/* ============================================================
+   CONTENTS
+   ============================================================ */
+.contents { padding: 100px 56px; }
+.contents .head {
+  display: grid; grid-template-columns: 1fr auto; align-items: end;
+  border-bottom: 1px solid var(--ink); padding-bottom: 18px; margin-bottom: 0;
+}
+.contents .head h2 {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(64px, 12vw, 200px);
+  line-height: 0.85;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.contents .head .meta {
+  text-align: right;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; color: var(--ink-fade); letter-spacing: .15em;
+  line-height: 1.5;
+}
+.contents ol {
+  list-style: none; padding: 0; margin: 0;
+}
+.contents ol > li {
+  display: grid;
+  grid-template-columns: 60px 1fr auto 120px;
+  align-items: baseline;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.contents ol > li .roman {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: var(--seal); letter-spacing: .1em;
+}
+.contents ol > li .name {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(28px, 4vw, 56px);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
+  color: var(--ink);
+  border: none;
+}
+.contents ol > li .name:hover { color: var(--seal); }
+.contents ol > li .gloss {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic; color: var(--ink-fade);
+  font-size: 16px;
+  text-align: right;
+}
+.contents ol > li .pp {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; letter-spacing: .15em;
+  color: var(--ink-mute); text-align: right;
+}
+
+/* ============================================================
+   SECTION OPENER (full-bleed art with massive type)
+   ============================================================ */
+.opener {
+  position: relative;
+  min-height: 100vh;
+  background: #0a0907;
+  color: var(--paper);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+.opener .plate {
+  position: absolute; inset: 0;
+}
+.opener .plate img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(.6) contrast(1.1) saturate(.9);
+}
+.opener::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.10) 50%, rgba(0,0,0,.55) 100%);
+  pointer-events: none;
+}
+.opener .opener-meta {
+  position: relative; z-index: 2;
+  padding: 48px 56px 0;
+  display: flex; justify-content: space-between;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; letter-spacing: .25em; text-transform: uppercase;
+  color: rgba(244,237,224,.7);
+}
+.opener .opener-block {
+  position: relative; z-index: 2;
+  padding: 0 56px 80px;
+  align-self: end;
+}
+.opener .roman {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px; letter-spacing: .25em;
+  color: rgba(244,237,224,.85);
+  display: block; margin-bottom: 28px;
+}
+.opener .word {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(120px, 22vw, 360px);
+  line-height: 0.86;
+  text-transform: uppercase;
+  margin: 0 0 24px;
+  letter-spacing: -0.01em;
+}
+.opener .gloss {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: clamp(20px, 2.2vw, 30px);
+  max-width: 680px;
+  color: rgba(244,237,224,.95);
+  line-height: 1.4;
+  margin: 0 0 12px;
+}
+.opener .credit {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px; letter-spacing: .15em;
+  color: rgba(244,237,224,.6);
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   APHORISM ISLAND (Arden-style single statement)
+   ============================================================ */
+.aphorism {
+  display: grid; place-items: center; min-height: 100vh;
+  padding: 80px 56px; text-align: center;
+}
+.aphorism .body {
+  max-width: 880px;
+}
+.aphorism .pre {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 11px; letter-spacing: .4em; text-transform: uppercase;
+  color: var(--ink-fade); margin-bottom: 36px; font-weight: 600;
+}
+.aphorism .pre .tick { color: var(--seal); }
+.aphorism .line {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(48px, 9vw, 140px);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.aphorism .line.serif {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  font-size: clamp(40px, 6vw, 88px);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.aphorism .post {
+  margin-top: 48px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; letter-spacing: .25em;
+  color: var(--ink-fade);
+}
+
+/* ============================================================
+   SPREAD: image-left + caption-right (Arden)
+   ============================================================ */
+.spread-arden {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  align-items: stretch;
+}
+.spread-arden .img {
+  background: #0a0907;
+  position: relative; overflow: hidden;
+}
+.spread-arden .img img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.spread-arden .img.contain { background: var(--paper-deep); }
+.spread-arden .img.contain img { object-fit: contain; padding: 32px; }
+.spread-arden .text {
+  display: grid; align-content: center;
+  padding: 80px 64px;
+  position: relative;
+}
+.spread-arden .text .kicker { margin-bottom: 36px; }
+.spread-arden .text .punch {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(40px, 5.4vw, 84px);
+  line-height: 0.96;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  max-width: 14ch;
+  margin-bottom: 24px;
+}
+.spread-arden .text .punch.serif {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 500;
+  text-transform: none;
+  font-size: clamp(32px, 4.2vw, 60px);
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+  line-height: 1.05;
+}
+.spread-arden .text .footnote {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; letter-spacing: .1em;
+  color: var(--ink-fade);
+  margin-top: 32px;
+  max-width: 38ch;
+  line-height: 1.6;
+}
+.spread-arden.flip { grid-template-columns: 1fr 1fr; }
+.spread-arden.flip .text { order: -1; }
+
+/* ============================================================
+   FULL BLEED PLATE WITH OVERLAY CAPTION
+   ============================================================ */
+.plate-full {
+  position: relative;
+  min-height: 100vh;
+  background: #0a0907;
+  overflow: hidden;
+  color: var(--paper);
+}
+.plate-full > img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.plate-full > img.contain {
+  object-fit: contain; background: #0a0907;
+}
+.plate-full .caption {
+  position: absolute; left: 56px; bottom: 56px;
+  background: rgba(10,8,5,.66);
+  backdrop-filter: blur(6px);
+  padding: 28px 32px;
+  max-width: 460px;
+  border-left: 1px solid rgba(244,237,224,.4);
+}
+.plate-full .caption .ttl {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic; font-size: 22px; line-height: 1.2;
+  margin-bottom: 8px;
+}
+.plate-full .caption .by {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px; letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(244,237,224,.75);
+  margin-bottom: 18px;
+}
+.plate-full .caption .why {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px; line-height: 1.55;
+  color: rgba(244,237,224,.95);
+}
+.plate-full .caption .why::before {
+  content: "WHY WE ARE LOOKING AT THIS";
+  display: block; font-family: "Hanken Grotesk", sans-serif;
+  font-size: 9.5px; letter-spacing: .35em; font-weight: 700;
+  color: rgba(244,237,224,.55); margin-bottom: 8px;
+}
+
+/* ============================================================
+   ESSAY SPREAD (S,M,L,XL grid feel)
+   ============================================================ */
+.essay {
+  padding: 100px 56px 120px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 200px minmax(0, 720px) 200px;
+  gap: 36px;
+  justify-content: center;
+}
+.essay .gutter-l, .essay .gutter-r {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; line-height: 1.6; color: var(--ink-fade);
+}
+.essay .gutter-l { text-align: right; }
+.essay .gutter-l .num {
+  font-family: "Anton", sans-serif;
+  font-size: 64px; color: var(--ink); line-height: 0.9;
+  display: block; margin-bottom: 16px;
+}
+.essay .gutter-r .marg {
+  border-left: 1px solid var(--rule);
+  padding-left: 16px;
+  font-style: italic;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px; line-height: 1.5; color: var(--ink-soft);
+  margin-bottom: 22px;
+}
+.essay .gutter-r .marg .lab {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-style: normal; font-weight: 700;
+  font-size: 9.5px; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--seal); display: block; margin-bottom: 4px;
+}
+.essay .body h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(34px, 4.4vw, 56px);
+  line-height: 1.05;
+  margin: 0 0 36px;
+  letter-spacing: -0.018em;
+  font-weight: 500;
+}
+.essay .body h2 .opp {
+  display: block; font-style: italic; color: var(--ink-fade);
+  font-size: 0.55em; letter-spacing: 0; margin-top: 8px; font-weight: 400;
+}
+.essay .body .kicker { display: block; margin-bottom: 22px; }
+.essay .body p { font-size: 19px; line-height: 1.65; }
+.essay .body .lead {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic; font-size: 24px; line-height: 1.45;
+  color: var(--ink-soft); margin-bottom: 28px;
+  max-width: none;
+}
+.essay .body .lead::first-letter {
+  initial-letter: 2; -webkit-initial-letter: 2;
+  font-weight: 600; color: var(--seal);
+  font-style: normal; margin-right: 8px;
+}
+.essay .body .pull {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.05; text-transform: uppercase;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 24px 0;
+  margin: 36px 0;
+  letter-spacing: -0.005em;
+}
+
+/* ============================================================
+   NUMBERED LIST PAGE
+   ============================================================ */
+.list-page {
+  padding: 100px 56px 120px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.list-page .lead-block .num-big {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(120px, 18vw, 260px);
+  line-height: 0.85;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin: 0 0 24px;
+}
+.list-page .lead-block h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(28px, 3vw, 40px); line-height: 1.1;
+  margin: 0 0 20px; letter-spacing: -0.015em; font-weight: 500;
+}
+.list-page .lead-block p {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic; color: var(--ink-soft);
+  font-size: 19px; line-height: 1.55;
+  max-width: 38ch;
+}
+.list-page ol.numbered {
+  list-style: none; padding: 0; margin: 0;
+  counter-reset: aph;
+  border-top: 1px solid var(--ink);
+}
+.list-page ol.numbered li {
+  counter-increment: aph;
+  display: grid; grid-template-columns: 56px 1fr; gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px; line-height: 1.4;
+}
+.list-page ol.numbered li::before {
+  content: counter(aph, decimal-leading-zero);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; letter-spacing: .12em;
+  color: var(--seal);
+  padding-top: 6px;
+}
+
+/* ============================================================
+   MARGINALIA SPREAD (image + asides)
+   ============================================================ */
+.margin-spread {
+  padding: 100px 56px 120px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.margin-spread .figure-col figure { margin: 0; }
+.margin-spread .figure-col img {
+  width: 100%; height: auto;
+  background: #0a0907;
+  display: block;
+}
+.margin-spread .figure-col figcaption {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px; letter-spacing: .15em; color: var(--ink-fade);
+  margin-top: 14px; line-height: 1.6;
+  text-transform: uppercase;
+}
+.margin-spread .text-col h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1.1; margin: 0 0 22px;
+  font-weight: 500; letter-spacing: -0.015em;
+}
+.margin-spread .text-col p {
+  font-size: 18px; line-height: 1.6; max-width: none;
+}
+.margin-spread .text-col .aside {
+  margin-top: 32px;
+  border-top: 1px solid var(--rule);
+  padding-top: 22px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px; line-height: 1.6;
+  color: var(--ink-soft);
+}
+.margin-spread .text-col .aside .lab {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 9.5px; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--seal); display: block; margin-bottom: 8px;
+}
+
+/* ============================================================
+   TWO-IMAGE COMPARISON
+   ============================================================ */
+.compare {
+  padding: 100px 56px 120px;
+}
+.compare h3 {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(40px, 6vw, 84px);
+  line-height: 0.92; text-transform: uppercase;
+  letter-spacing: -0.005em;
+  margin: 0 0 56px; max-width: 18ch;
+}
+.compare .pair {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+}
+.compare .pair figure { margin: 0; }
+.compare .pair figure img {
+  width: 100%; height: 360px; object-fit: cover;
+  background: #0a0907; display: block;
+}
+.compare .pair figure figcaption {
+  font-family: "Cormorant Garamond", serif; font-style: italic;
+  font-size: 16px; color: var(--ink-soft);
+  margin-top: 14px; line-height: 1.45;
+  display: grid; grid-template-columns: 24px 1fr; gap: 12px;
+}
+.compare .pair figure figcaption::before {
+  content: attr(data-mark);
+  font-family: "Anton", sans-serif; font-style: normal;
+  font-size: 22px; color: var(--seal); line-height: 1;
+}
+.compare .closing {
+  margin-top: 56px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: clamp(22px, 2.6vw, 32px);
+  line-height: 1.4;
+  color: var(--ink); max-width: 720px;
+}
+
+/* ============================================================
+   QUARTET (4 images grid)
+   ============================================================ */
+.quartet {
+  padding: 100px 56px 120px;
+}
+.quartet h3 {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(36px, 5vw, 72px);
+  text-transform: uppercase; line-height: 0.95;
+  margin: 0 0 48px; letter-spacing: -0.005em;
+}
+.quartet .grid4 {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
+}
+.quartet .grid4 figure { margin: 0; }
+.quartet .grid4 img {
+  width: 100%; height: 280px; object-fit: cover; display: block; background: #0a0907;
+}
+.quartet .grid4 figcaption {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: var(--ink-fade); margin-top: 10px;
+  line-height: 1.5;
+}
+.quartet .grid4 figcaption strong { color: var(--ink); font-weight: 600; }
+
+/* ============================================================
+   INDEX OF ARTWORKS
+   ============================================================ */
+.art-index {
+  padding: 100px 56px 120px;
+}
+.art-index h2 {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(56px, 10vw, 160px);
+  line-height: 0.9; text-transform: uppercase;
+  margin: 0 0 18px; letter-spacing: -0.005em;
+}
+.art-index .head-meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; letter-spacing: .15em;
+  color: var(--ink-fade); margin-bottom: 56px;
+  text-transform: uppercase;
+}
+.art-index ol.index {
+  list-style: none; padding: 0; margin: 0;
+  border-top: 1px solid var(--ink);
+}
+.art-index ol.index li {
+  display: grid;
+  grid-template-columns: 80px 80px 1fr 1.2fr 1fr;
+  gap: 24px; padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 13px; line-height: 1.4;
+  align-items: center;
+}
+.art-index ol.index li .ix {
+  font-family: "JetBrains Mono", monospace;
+  color: var(--seal); letter-spacing: .1em;
+}
+.art-index ol.index li .thumb {
+  width: 64px; height: 64px; object-fit: cover;
+  background: #0a0907; display: block;
+}
+.art-index ol.index li .ttl {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic; font-size: 17px; color: var(--ink);
+}
+.art-index ol.index li .by { color: var(--ink-soft); }
+.art-index ol.index li .src {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; color: var(--ink-fade);
+  letter-spacing: .05em;
+  text-align: right;
+}
+
+/* ============================================================
+   COLOPHON
+   ============================================================ */
+.colophon {
+  padding: 120px 56px;
+  text-align: center;
+  display: grid; place-items: center; min-height: 70vh;
+}
+.colophon .seal-mark {
+  width: 64px; height: 64px;
+  border: 1px solid var(--seal); color: var(--seal);
+  display: grid; place-items: center;
+  font-family: "Sarabun","Noto Serif Thai",serif;
+  font-size: 24px; letter-spacing: -.05em;
+  margin: 0 auto 36px;
+}
+.colophon .colotext {
+  font-family: "Cormorant Garamond", serif;
+  color: var(--ink-soft);
+  font-size: 17px; line-height: 1.7;
+  max-width: 540px;
+}
+.colophon .colotext em { color: var(--ink); }
+.colophon .colotext .sig {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; letter-spacing: .25em; color: var(--ink-fade);
+  text-transform: uppercase; margin-top: 36px; display: block;
+}
+
+/* ============================================================
+   FIXED CHROME — progress / nav
+   ============================================================ */
+.progress {
+  position: fixed; top: 0; left: 0; height: 2px;
+  background: var(--ink); z-index: 9999;
+  transition: width .12s linear;
+}
+.float-nav {
+  position: fixed; right: 22px; bottom: 22px;
+  display: flex; gap: 8px; z-index: 50;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+.float-nav button {
+  width: 40px; height: 40px;
+  background: var(--ink); color: var(--paper);
+  border: none; cursor: pointer;
+  font-size: 14px; font-weight: 600;
+  letter-spacing: .05em;
+  box-shadow: var(--shadow-card);
+  transition: transform .2s;
+}
+.float-nav button:hover { transform: translateY(-2px); }
+.float-nav .where {
+  position: absolute; right: 0; bottom: 52px;
+  background: var(--ink); color: var(--paper);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px; letter-spacing: .15em;
+  text-transform: uppercase;
+  padding: 6px 10px; white-space: nowrap;
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
+  body::before { display: none; }
+  .progress, .float-nav { display: none !important; }
+  .spread, .opener, .aphorism, .essay, .list-page, .margin-spread,
+  .compare, .quartet, .plate-full, .spread-arden, .cover, .dedication,
+  .contents, .art-index, .colophon {
+    break-after: page; min-height: auto; page-break-after: always;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 800px) {
+  body { font-size: 17px; }
+  .cover { padding: 32px 24px; }
+  .cover .meta-top { left: 24px; right: 24px; top: 20px; }
+  .contents { padding: 60px 24px; }
+  .contents ol > li { grid-template-columns: 40px 1fr; }
+  .contents ol > li .gloss, .contents ol > li .pp { display: none; }
+  .opener .opener-block { padding: 0 24px 48px; }
+  .opener .opener-meta { padding: 24px 24px 0; }
+  .aphorism { padding: 48px 24px; }
+  .essay { padding: 60px 24px; grid-template-columns: 1fr; }
+  .essay .gutter-l, .essay .gutter-r { text-align: left; }
+  .spread-arden { grid-template-columns: 1fr; }
+  .spread-arden .img { min-height: 60vh; }
+  .spread-arden .text { padding: 40px 24px; }
+  .list-page { grid-template-columns: 1fr; padding: 60px 24px; gap: 36px; }
+  .margin-spread { grid-template-columns: 1fr; padding: 60px 24px; }
+  .compare { padding: 60px 24px; }
+  .compare .pair { grid-template-columns: 1fr; }
+  .quartet { padding: 60px 24px; }
+  .quartet .grid4 { grid-template-columns: 1fr; }
+  .plate-full .caption { left: 24px; bottom: 24px; max-width: calc(100% - 48px); padding: 20px 22px; }
+  .art-index { padding: 60px 24px; }
+  .art-index ol.index li { grid-template-columns: 50px 60px 1fr; }
+  .art-index ol.index li .by, .art-index ol.index li .src { display: none; }
+  .colophon { padding: 60px 24px; }
+}
+
+/* ============================================================
+   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   ▓▓▓ REMIX LAYER — playful palette + motion + interludes ▓▓▓
+   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   added per author request: "make things move when boring,
+   silence when content demands, playful, different palette"
+   ============================================================ */
+
+:root {
+  /* PALETTE OVERRIDE — mid-century print
+     (different from Ninja's parchment+vermilion, different from
+     100 Days' navy+vermilion. Closer to a bold poster) */
+  --paper:        #f4ede0;
+  --paper-deep:   #ebe2d0;
+  --ink:          #161410;
+  --ink-soft:     #2a2620;
+  --ink-fade:     #6f6757;
+
+  --seal:         #c93023;        /* punchier than original */
+  --ink-blue:     #1f3a8a;        /* NEW — playful indigo */
+  --ink-yellow:   #d4a01c;        /* NEW — printed mustard */
+  --ink-rose:     #e6829e;        /* NEW — fluo pink for surprise */
+  --paper-noise:  #e7dfd0;
+}
+
+/* ----------- TOP BAR / NAV — reskin to be bolder ---------------- */
+.float-nav button { background: var(--ink); color: var(--paper); }
+.float-nav button:hover { background: var(--seal); }
+.progress { background: var(--seal); height: 3px; }
+
+/* ============================================================
+   MOTION — scroll-triggered reveals
+   ============================================================ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .9s cubic-bezier(.2,.8,.25,1), transform .9s cubic-bezier(.2,.8,.25,1);
+  will-change: transform, opacity;
+}
+[data-reveal].in {
+  opacity: 1; transform: translateY(0);
+}
+[data-reveal="rise"] { transform: translateY(60px); }
+[data-reveal="rise"].in { transform: translateY(0); }
+
+[data-reveal="fade"] { transform: none; opacity: 0; }
+[data-reveal="fade"].in { opacity: 1; }
+
+[data-reveal="grow"] {
+  opacity: 0; transform: scale(.92);
+  transition: opacity 1.2s cubic-bezier(.2,.8,.25,1), transform 1.2s cubic-bezier(.2,.8,.25,1);
+}
+[data-reveal="grow"].in { opacity: 1; transform: scale(1); }
+
+[data-reveal="ink"] {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.4s cubic-bezier(.85,0,.15,1);
+  opacity: 1;
+  transform: none;
+}
+[data-reveal="ink"].in { clip-path: inset(0 0 0 0); }
+
+/* ----------- letter-rise — for aphorism punch ---------------- */
+.aphorism .line .ch {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+  transition: transform .7s cubic-bezier(.2,.8,.25,1), opacity .5s ease;
+}
+.aphorism.in .line .ch { transform: translateY(0); opacity: 1; }
+/* stagger via index custom prop */
+.aphorism .line .ch { transition-delay: calc(var(--i, 0) * 24ms); }
+
+/* ----------- parallax for opener images ---------------- */
+.opener .plate img {
+  will-change: transform;
+  transform: translateY(var(--py, 0));
+  transition: filter 1.6s ease;
+}
+.opener.in .plate img { filter: brightness(.66) contrast(1.08) saturate(.95); }
+
+/* ----------- cover: subtle continuous ink-bleed before scroll ---------------- */
+.cover {
+  position: relative;
+}
+.cover::before {
+  content: "";
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 18% 88%, rgba(201,48,35,.08), transparent 38%),
+    radial-gradient(ellipse at 88% 12%, rgba(31,58,138,.06), transparent 42%);
+  animation: bleed 18s ease-in-out infinite alternate;
+  z-index: 0;
+}
+.cover > * { position: relative; z-index: 1; }
+@keyframes bleed {
+  0%   { transform: translate(0,0) scale(1); opacity: .9; }
+  50%  { transform: translate(8px,-6px) scale(1.04); opacity: 1; }
+  100% { transform: translate(-6px,4px) scale(1.02); opacity: .85; }
+}
+.cover .seal-mark {
+  background: var(--seal);
+  color: var(--paper);
+  border-color: var(--seal);
+}
+
+/* ----------- play with the title on cover: subtle slow drift ---------------- */
+.cover .title-line.thin {
+  display: inline-block;
+  animation: drift 14s ease-in-out infinite alternate;
+}
+@keyframes drift {
+  0%, 100% { transform: translateX(-2px); }
+  50%      { transform: translateX(8px); }
+}
+
+/* ============================================================
+   PAUL ARDEN INTERLUDE — provocative full-bleed type pages
+   Inserted between movements. Each one uses a different trick.
+   ============================================================ */
+.interlude {
+  min-height: 100vh;
+  display: grid; place-items: center;
+  padding: 8vh 6vw;
+  position: relative;
+  overflow: hidden;
+}
+.interlude .ilm {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(72px, 18vw, 280px);
+  line-height: 0.85;
+  text-transform: uppercase;
+  letter-spacing: -.015em;
+  margin: 0;
+  text-align: center;
+  position: relative;
+}
+.interlude .ilm em {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  text-transform: none;
+  font-weight: 400;
+  color: var(--seal);
+  letter-spacing: -.02em;
+}
+.interlude .footnote {
+  position: absolute;
+  bottom: 32px; left: 6vw;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--ink-fade);
+}
+.interlude .corner {
+  position: absolute;
+  top: 32px; right: 6vw;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px; letter-spacing: .25em;
+  text-transform: uppercase; color: var(--ink-fade);
+}
+
+/* Variant 1: WAIT. (warm) — type subtly pulses */
+.interlude.warm { background: var(--paper); color: var(--ink); }
+.interlude.warm .ilm { animation: heart 3.4s ease-in-out infinite; }
+@keyframes heart {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.025); }
+}
+
+/* Variant 2: STOP. (red) — type sits on a red field, slight wobble */
+.interlude.fire { background: var(--seal); color: var(--paper); }
+.interlude.fire .ilm em { color: var(--ink-yellow); }
+.interlude.fire.in .ilm { animation: shake 1.4s ease-in-out 2; }
+@keyframes shake {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  20% { transform: translateX(-6px) rotate(-.4deg); }
+  40% { transform: translateX(7px) rotate(.5deg); }
+  60% { transform: translateX(-5px) rotate(-.3deg); }
+  80% { transform: translateX(4px) rotate(.2deg); }
+}
+
+/* Variant 3: WHY? (ink) — inverted, scrolling marquee subtitle */
+.interlude.ink { background: var(--ink); color: var(--paper); }
+.interlude.ink .ilm em { color: var(--ink-yellow); }
+.interlude.ink .marquee {
+  position: absolute; bottom: 18vh; left: 0; right: 0;
+  white-space: nowrap; overflow: hidden;
+  font-family: "Cormorant Garamond", serif; font-style: italic;
+  font-size: clamp(20px, 2.2vw, 30px);
+  color: rgba(244,237,224,.55);
+}
+.interlude.ink .marquee span {
+  display: inline-block; padding-right: 4vw;
+  animation: marquee 26s linear infinite;
+}
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Variant 4: TRY AGAIN. (blue) — type rotates slowly */
+.interlude.cool { background: var(--ink-blue); color: var(--paper); }
+.interlude.cool .ilm em { color: var(--ink-yellow); }
+.interlude.cool .ilm { animation: tilt 18s ease-in-out infinite alternate; transform-origin: center; }
+@keyframes tilt {
+  0%   { transform: rotate(-1.2deg); }
+  100% { transform: rotate(1.2deg); }
+}
+
+/* Variant 5: ARE YOU AWAKE? (yellow) — type that flickers like neon */
+.interlude.glow { background: var(--ink-yellow); color: var(--ink); }
+.interlude.glow .ilm em { color: var(--seal); }
+.interlude.glow.in .ilm { animation: flicker 5s ease-in-out 1; }
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  10% { opacity: .3; } 12% { opacity: 1; }
+  35% { opacity: .55; } 36% { opacity: 1; }
+  64% { opacity: .25; } 66% { opacity: 1; }
+}
+
+/* ============================================================
+   POINTING HAND — playful surprise (one place only)
+   ============================================================ */
+.pointer {
+  display: inline-block;
+  font-size: 1.4em;
+  color: var(--seal);
+  animation: nudgex 1.6s ease-in-out infinite;
+}
+@keyframes nudgex {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(8px); }
+}
+
+/* ============================================================
+   AUTHOR PORTRAIT — colophon
+   ============================================================ */
+.author-portrait {
+  width: 180px; height: 180px;
+  object-fit: cover; object-position: center 22%;
+  border: 1px solid var(--ink);
+  display: block;
+  margin: 0 auto 24px;
+  filter: grayscale(.15) contrast(1.05);
+  transition: filter .8s ease;
+}
+.colophon:hover .author-portrait { filter: grayscale(0) contrast(1); }
+
+/* ============================================================
+   APHORISM — small accent re-skin (uses new palette)
+   ============================================================ */
+.aphorism .pre .tick { color: var(--seal); }
+.aphorism .line {
+  /* a tiny pop on hover for desktop */
+  transition: color .4s ease, letter-spacing .4s ease;
+}
+.aphorism:hover .line:not(.serif) { color: var(--seal); }
+
+/* a single yellow underline accent on .pull quotes inside essays */
+.essay .body .pull {
+  border-color: var(--ink);
+  position: relative;
+}
+.essay .body .pull::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -6px;
+  height: 6px;
+  background: var(--ink-yellow);
+  opacity: .55;
+}
+
+/* TOC: spice up the gloss colors with rotating accents */
+.contents ol > li:nth-child(3n) .roman { color: var(--ink-blue); }
+.contents ol > li:nth-child(3n+1) .roman { color: var(--seal); }
+.contents ol > li:nth-child(3n+2) .roman { color: var(--ink-yellow); }
+.contents ol > li:hover { background: rgba(201,48,35,.04); }
+
+/* opener: tweak credit color */
+.opener .credit { color: rgba(244,237,224,.7); }
+.opener .word { transition: letter-spacing .8s ease; }
+.opener.in .word { letter-spacing: -0.005em; }
+
+/* spread-arden: punchier kicker */
+.spread-arden .kicker .seal-tick { color: var(--seal); }
+
+/* plate-full: caption uses fresh accent */
+.plate-full .caption { border-left-color: var(--ink-yellow); }
+.plate-full .caption .why::before { color: rgba(212,160,28,.85); }
+
+/* index of artworks: small thumb hover lift */
+.art-index ol.index li {
+  transition: padding-left .2s ease, background .2s ease;
+}
+.art-index ol.index li:hover {
+  padding-left: 8px;
+  background: rgba(201,48,35,.04);
+}
+.art-index ol.index li .thumb {
+  transition: transform .3s ease;
+}
+.art-index ol.index li:hover .thumb {
+  transform: scale(1.08);
+}
+
+/* honour reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+}
+
+/* mobile tweaks for interludes */
+@media (max-width: 800px) {
+  .interlude .ilm { font-size: clamp(48px, 14vw, 88px); }
+  .author-portrait { width: 140px; height: 140px; }
+}
