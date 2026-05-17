@@ -2021,24 +2021,22 @@
 </script>
 
 
-<!-- ════════ THE LIBRARY — all four books, current highlighted ════════ -->
+<!-- ════════ THE LIBRARY — all five books, current highlighted ════════ -->
 <aside class="library" aria-label="Other books by Non Arkaraprasertkul">
   <p class="lib-head">Non · The Library</p>
-  <p class="lib-sub">Four small books, four different shapes. Read in any order. Each opens in a new tab.</p>
+  <p class="lib-sub">Five small books, five different shapes. Read in any order. Each opens in a new tab.</p>
   <div class="lib-grid">
     <a href="https://100days.nonarkara.org" class="lib-card" target="_blank" rel="noopener">
       <span class="lib-num">I</span>
       <span class="lib-title">100 Days of Solitude</span>
       <span class="lib-tag">An illustrated travelogue</span>
-      
     </a>
     <a href="https://ninja.nonarkara.org" class="lib-card" target="_blank" rel="noopener">
       <span class="lib-num">II</span>
       <span class="lib-title">Ninja Innovation</span>
       <span class="lib-tag">A people-centric practice for the AI era</span>
-      
     </a>
-    <a href="https://slowdown.nonarkara.org" class="lib-card current" >
+    <a href="https://slowdown.nonarkara.org" class="lib-card current">
       <span class="lib-num">III</span>
       <span class="lib-title">The Things You Can See Only When You Slow Down</span>
       <span class="lib-tag">A meditation in ten movements</span>
@@ -2048,9 +2046,30 @@
       <span class="lib-num">IV</span>
       <span class="lib-title">What I Mean When I Say</span>
       <span class="lib-tag">A small dictionary</span>
-      
+    </a>
+    <a href="https://dao.nonarkara.org" class="lib-card" target="_blank" rel="noopener">
+      <span class="lib-num">V</span>
+      <span class="lib-title">Reading Dao De Jing with Dr. Non</span>
+      <span class="lib-tag">道德經 · The complete Laozi in three languages</span>
     </a>
   </div>
 </aside>
 
+
+  <!-- NON visitor tracker — fire-and-forget, no cookies -->
+  <script>
+  (function(){
+    if(sessionStorage.getItem('non_v'))return;
+    sessionStorage.setItem('non_v','1');
+    var SH='https://script.google.com/macros/s/AKfycbwzTwBNOseKkvkkjD-LH6B3GWrsFcwS6MTDbn7W5eb3zHxA-swtlHYuwJ3w5PAVXDhU7Q/exec';
+    var b={dashboard:'SLOWDOWN',hostname:location.hostname,page:location.href,
+      referrer:document.referrer||'Direct',userAgent:navigator.userAgent,
+      language:navigator.language,screen:screen.width+'x'+screen.height,
+      timezone:Intl.DateTimeFormat().resolvedOptions().timeZone};
+    function send(p){fetch(SH,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(p)}).catch(function(){});}
+    fetch('https://ipapi.co/json/').then(function(r){return r.json();}).then(function(d){
+      b.ip=d.ip;b.country=d.country_name;b.region=d.region;b.city=d.city;send(b);
+    }).catch(function(){send(b);});
+  })();
+  </script>
 </body></html>
