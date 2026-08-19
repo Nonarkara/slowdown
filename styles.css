@@ -825,7 +825,7 @@ hr.thin { border: 0; height: 1px; background: var(--rule-soft); margin: 1.4em 0;
    ============================================================ */
 @media print {
   body::before { display: none; }
-  .progress, .float-nav { display: none !important; }
+  .progress, .float-nav, .lang-toggle { display: none !important; }
   .spread, .opener, .aphorism, .essay, .list-page, .margin-spread,
   .compare, .quartet, .plate-full, .spread-arden, .cover, .dedication,
   .contents, .art-index, .colophon {
@@ -2744,4 +2744,193 @@ body[data-current-part="10"] .ambient-float {
   background: rgba(255,255,255,.18);
   padding: 4px 8px;
   border-radius: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LANGUAGE TOGGLE
+   ═══════════════════════════════════════════════════════════════ */
+.lang-toggle {
+  position: fixed;
+  top: auto;
+  right: auto;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(15,12,8,.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 0;
+  padding: 0;
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color .2s ease;
+}
+.lang-toggle:hover {
+  border-color: rgba(255,255,255,.3);
+}
+.lang-toggle button {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,.4);
+  padding: 8px 14px;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+  transition: color .2s ease, background .2s ease;
+  position: relative;
+}
+.lang-toggle button:hover {
+  color: rgba(255,255,255,.7);
+}
+.lang-toggle button.active {
+  color: #fff;
+  background: rgba(255,255,255,.1);
+}
+.lang-toggle button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 1px;
+  background: var(--seal, #c93023);
+}
+
+/* Chinese mode typography */
+body[data-lang="zh"] .cover .title-line {
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', 'STSong', serif;
+}
+body[data-lang="zh"] .opener-block .word {
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', serif;
+}
+body[data-lang="zh"] .essay .serif,
+body[data-lang="zh"] .aphorism .line.serif {
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', serif;
+}
+body[data-lang="zh"] .rail__head,
+body[data-lang="zh"] .rail__list,
+body[data-lang="zh"] .float-nav button {
+  font-family: 'Noto Sans SC', 'Source Han Sans SC', 'PingFang SC', sans-serif;
+}
+body[data-lang="zh"] .colotext {
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', serif;
+}
+
+/* Language visibility helpers */
+[data-lang-show] { display: none !important; }
+body[data-lang="en"] [data-lang-show="en"],
+body[data-lang="zh"] [data-lang-show="zh"] {
+  display: initial !important;
+}
+body[data-lang="en"] span[data-lang-show="en"],
+body[data-lang="zh"] span[data-lang-show="zh"] {
+  display: inline !important;
+}
+body[data-lang="en"] div[data-lang-show="en"],
+body[data-lang="zh"] div[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] p[data-lang-show="en"],
+body[data-lang="zh"] p[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] li[data-lang-show="en"],
+body[data-lang="zh"] li[data-lang-show="zh"] {
+  display: list-item !important;
+}
+body[data-lang="en"] h1[data-lang-show="en"],
+body[data-lang="zh"] h1[data-lang-show="zh"],
+body[data-lang="en"] h2[data-lang-show="en"],
+body[data-lang="zh"] h2[data-lang-show="zh"],
+body[data-lang="en"] h3[data-lang-show="en"],
+body[data-lang="zh"] h3[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] aside[data-lang-show="en"],
+body[data-lang="zh"] aside[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] section[data-lang-show="en"],
+body[data-lang="zh"] section[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] ol[data-lang-show="en"],
+body[data-lang="zh"] ol[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] figure[data-lang-show="en"],
+body[data-lang="zh"] figure[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] figcaption[data-lang-show="en"],
+body[data-lang="zh"] figcaption[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] .kicker[data-lang-show="en"],
+body[data-lang="zh"] .kicker[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] .lead[data-lang-show="en"],
+body[data-lang="zh"] .lead[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] .pull[data-lang-show="en"],
+body[data-lang="zh"] .pull[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] .post[data-lang-show="en"],
+body[data-lang="zh"] .post[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] .pre[data-lang-show="en"],
+body[data-lang="zh"] .pre[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] .footnote[data-lang-show="en"],
+body[data-lang="zh"] .footnote[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] .credit[data-lang-show="en"],
+body[data-lang="zh"] .credit[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] .gloss[data-lang-show="en"],
+body[data-lang="zh"] .gloss[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] .meta[data-lang-show="en"],
+body[data-lang="zh"] .meta[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] .meta-top[data-lang-show="en"],
+body[data-lang="zh"] .meta-top[data-lang-show="zh"] {
+  display: flex !important;
+}
+body[data-lang="en"] .opener-meta[data-lang-show="en"],
+body[data-lang="zh"] .opener-meta[data-lang-show="zh"] {
+  display: flex !important;
+}
+body[data-lang="en"] .name[data-lang-show="en"],
+body[data-lang="zh"] .name[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] .pub[data-lang-show="en"],
+body[data-lang="zh"] .pub[data-lang-show="zh"] {
+  display: block !important;
+}
+body[data-lang="en"] .rail__bookmark[data-lang-show="en"],
+body[data-lang="zh"] .rail__bookmark[data-lang-show="zh"] {
+  display: block !important;
 }

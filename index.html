@@ -13,7 +13,13 @@
 <link rel="stylesheet" href="styles.css?v=10">
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "0da324da0e204440a172088c0fafc92c"}'></script>
 </head>
-<body>
+<body data-lang="en">
+
+<!-- LANGUAGE TOGGLE -->
+<div class="lang-toggle" id="langToggle">
+  <button class="active" data-lang-btn="en">EN</button>
+  <button data-lang-btn="zh">中文</button>
+</div>
 
 <div class="progress" id="progress"></div>
 <div class="part-badge" id="partBadge" aria-hidden="true">—</div>
@@ -25,7 +31,7 @@
     <span class="rail__toggle-icon">≡</span>
   </button>
   <nav class="rail__nav">
-    <p class="rail__head">Movements</p>
+    <p class="rail__head" data-i18n="nav Movements">Movements</p>
     <ol class="rail__list" id="railList">
       <li><a href="#cover" data-jump="cover"><span class="r-num">—</span><span class="r-name">Cover</span></a></li>
       <li><a href="#contents" data-jump="contents"><span class="r-num">·</span><span class="r-name">Contents</span></a></li>
@@ -76,19 +82,19 @@
      ═══════════════════════════════════════════════════════════ -->
 <section class="cover" id="cover" data-screen-label="00 Cover">
   <div class="meta-top">
-    <span>Edition 01 · ⌁ MMXXVI</span>
-    <span>FREE · PUBLIC DOMAIN ART</span>
+    <span data-i18n="cover edition">Edition 01 · ⌁ MMXXVI</span>
+    <span data-i18n="cover free">FREE · PUBLIC DOMAIN ART</span>
   </div>
   <div class="stack">
-    <h1 class="title-line">The&nbsp;Things</h1>
-    <h1 class="title-line thin">you can see only</h1>
-    <h1 class="title-line">When&nbsp;You</h1>
-    <h1 class="title-line">Slow&nbsp;Down</h1>
+    <h1 class="title-line" data-i18n="cover title1">The&nbsp;Things</h1>
+    <h1 class="title-line thin" data-i18n="cover title2">you can see only</h1>
+    <h1 class="title-line" data-i18n="cover title3">When&nbsp;You</h1>
+    <h1 class="title-line" data-i18n="cover title4">Slow&nbsp;Down</h1>
   </div>
   <div class="author-block">
     <div>
-      <div class="name">Dr. Non Arkaraprasertkul</div>
-      <div class="pub">Ten movements · ninety-three plates · one quiet life</div>
+      <div class="name" data-i18n="cover author">Dr. Non Arkaraprasertkul</div>
+      <div class="pub" data-i18n="cover subtitle">Ten movements · ninety-three plates · one quiet life</div>
     </div>
     <div class="seal-mark" aria-hidden="true">นน</div>
   </div>
@@ -99,8 +105,8 @@
      ═══════════════════════════════════════════════════════════ -->
 <section class="dedication" data-screen-label="01 Dedication">
   <div>
-    <p class="kicker"><span class="seal-tick">⌁</span> A book for slow readers</p>
-    <p class="ded-text" style="margin-top:32px;">
+    <p class="kicker"><span class="seal-tick">⌁</span> <span data-i18n="ded kicker">A book for slow readers</span></p>
+    <p class="ded-text" style="margin-top:32px;" data-i18n="ded body">
       For the ones who are tired of being fast.<br>
       For my father, who carried his work in a tea flask<br>
       and never once asked the world to look at him.<br>
@@ -115,24 +121,24 @@
      ═══════════════════════════════════════════════════════════ -->
 <section class="contents" id="contents" data-screen-label="02 Contents">
   <div class="head">
-    <h2>Contents</h2>
+    <h2 data-i18n="contents title">Contents</h2>
     <div class="meta">
-      Ten Movements · 93 Plates<br>
-      Read in any order · stop anywhere<br>
-      ⌁ FREE TO PRINT, GIFT, REUSE
+      <span data-i18n="contents meta1">Ten Movements · 93 Plates</span><br>
+      <span data-i18n="contents meta2">Read in any order · stop anywhere</span><br>
+      <span data-i18n="contents meta3">⌁ FREE TO PRINT, GIFT, REUSE</span>
     </div>
   </div>
   <ol>
-    <li><span class="roman">I.</span><a class="name" href="#p1">Slow</a><span class="gloss">a defence of the unhurried</span><span class="pp">p. 008</span></li>
-    <li><span class="roman">II.</span><a class="name" href="#p2">See</a><span class="gloss">attention as the only luxury</span><span class="pp">p. 026</span></li>
-    <li><span class="roman">III.</span><a class="name" href="#p3">Less</a><span class="gloss">subtraction as a discipline</span><span class="pp">p. 044</span></li>
-    <li><span class="roman">IV.</span><a class="name" href="#p4">Alone</a><span class="gloss">solitude as instrument</span><span class="pp">p. 062</span></li>
-    <li><span class="roman">V.</span><a class="name" href="#p5">Time</a><span class="gloss">rivers, repetitions, a body that ages</span><span class="pp">p. 080</span></li>
-    <li><span class="roman">VI.</span><a class="name" href="#p6">Make</a><span class="gloss">the dignity of small daily work</span><span class="pp">p. 098</span></li>
-    <li><span class="roman">VII.</span><a class="name" href="#p7">Fail</a><span class="gloss">the tunnel that turns out to be a path</span><span class="pp">p. 116</span></li>
-    <li><span class="roman">VIII.</span><a class="name" href="#p8">People</a><span class="gloss">the only mirror that matters</span><span class="pp">p. 134</span></li>
-    <li><span class="roman">IX.</span><a class="name" href="#p9">Home</a><span class="gloss">three cities, two parents, one body</span><span class="pp">p. 152</span></li>
-    <li><span class="roman">X.</span><a class="name" href="#p10">End</a><span class="gloss">the small word that holds all the others</span><span class="pp">p. 170</span></li>
+    <li><span class="roman">I.</span><a class="name" href="#p1" data-i18n="toc p1 name">Slow</a><span class="gloss" data-i18n="toc p1 gloss">a defence of the unhurried</span><span class="pp">p. 008</span></li>
+    <li><span class="roman">II.</span><a class="name" href="#p2" data-i18n="toc p2 name">See</a><span class="gloss" data-i18n="toc p2 gloss">attention as the only luxury</span><span class="pp">p. 026</span></li>
+    <li><span class="roman">III.</span><a class="name" href="#p3" data-i18n="toc p3 name">Less</a><span class="gloss" data-i18n="toc p3 gloss">subtraction as a discipline</span><span class="pp">p. 044</span></li>
+    <li><span class="roman">IV.</span><a class="name" href="#p4" data-i18n="toc p4 name">Alone</a><span class="gloss" data-i18n="toc p4 gloss">solitude as instrument</span><span class="pp">p. 062</span></li>
+    <li><span class="roman">V.</span><a class="name" href="#p5" data-i18n="toc p5 name">Time</a><span class="gloss" data-i18n="toc p5 gloss">rivers, repetitions, a body that ages</span><span class="pp">p. 080</span></li>
+    <li><span class="roman">VI.</span><a class="name" href="#p6" data-i18n="toc p6 name">Make</a><span class="gloss" data-i18n="toc p6 gloss">the dignity of small daily work</span><span class="pp">p. 098</span></li>
+    <li><span class="roman">VII.</span><a class="name" href="#p7" data-i18n="toc p7 name">Fail</a><span class="gloss" data-i18n="toc p7 gloss">the tunnel that turns out to be a path</span><span class="pp">p. 116</span></li>
+    <li><span class="roman">VIII.</span><a class="name" href="#p8" data-i18n="toc p8 name">People</a><span class="gloss" data-i18n="toc p8 gloss">the only mirror that matters</span><span class="pp">p. 134</span></li>
+    <li><span class="roman">IX.</span><a class="name" href="#p9" data-i18n="toc p9 name">Home</a><span class="gloss" data-i18n="toc p9 gloss">three cities, two parents, one body</span><span class="pp">p. 152</span></li>
+    <li><span class="roman">X.</span><a class="name" href="#p10" data-i18n="toc p10 name">End</a><span class="gloss" data-i18n="toc p10 gloss">the small word that holds all the others</span><span class="pp">p. 170</span></li>
   </ol>
   <p style="margin-top:56px; max-width:720px; font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ink-fade); font-size:17px;">
     A note on reading. This book has no plot. Each spread is the size of a quiet thought. You can read it forwards on a Sunday, backwards on a Tuesday, or open a page at random for thirty seconds before bed. The art is half the book; the captions are the other half. Whichever you read first is correct.
@@ -152,17 +158,17 @@
     By the author
   </aside>
   <div class="body">
-    <p class="kicker"><span class="seal-tick">⌁</span> How this book wants to be read</p>
-    <h2 class="serif">The book<br>that is slower<br>than you are.</h2>
-    <p class="lead">I started this book because I was tired. Not the kind of tired you fix with a holiday. The kind you fix by remembering that watching a kettle boil is, in fact, a complete activity.</p>
-    <p class="no-indent">For most of my life I tried to be fast. I went to MIT to study architecture. I went to Harvard to study anthropology. I lived in Shanghai for ten years. I missed three deadlines, broke two relationships, and drank a great deal of coffee. The world, as far as I could tell, rewarded speed. So I gave it speed.</p>
-    <p>And then, very slowly, I noticed the things I was missing.</p>
-    <p>I noticed that the most interesting people I knew did not speak first. I noticed that the best architects I had read about — Louis Kahn, Tadao Ando, Geoffrey Bawa — were the ones who had waited the longest before drawing the first line. I noticed that my father, who never socialised and carried his lunch in a tea flask, was the calmest person in any room.</p>
-    <p class="pull">Slowness is not laziness. Slowness is the discipline of looking long enough to see the whole thing.</p>
-    <p>This book is a collection of small things I have learned by going slower than I was supposed to. There are ten movements. Each is short. Each is paired with a piece of art that is in the public domain — meaning it belongs to all of us, the way the sky and the alphabet belong to all of us.</p>
-    <p>You can read it cover to cover, but you do not have to. The pieces are short on purpose. Most of them are 250 to 600 words. I have learned that almost everything worth saying can be said on a single page; the rest is throat-clearing.</p>
-    <p>If you only have one minute today, read one aphorism. If you have ten, read one essay. If you have an evening, give it the evening. The book will not get up and leave.</p>
-    <p style="margin-top:36px;font-style:italic;color:var(--ink-fade);">— Non, written from a desk by the Yangtze, finished by the Chao Phraya, edited at six thousand metres above the Pacific.</p>
+    <p class="kicker"><span class="seal-tick">⌁</span> <span data-i18n="foreword kicker">How this book wants to be read</span></p>
+    <h2 class="serif" data-i18n="foreword h2">The book<br>that is slower<br>than you are.</h2>
+    <p class="lead" data-i18n="foreword lead">I started this book because I was tired. Not the kind of tired you fix with a holiday. The kind you fix by remembering that watching a kettle boil is, in fact, a complete activity.</p>
+    <p class="no-indent" data-i18n="foreword p1">For most of my life I tried to be fast. I went to MIT to study architecture. I went to Harvard to study anthropology. I lived in Shanghai for ten years. I missed three deadlines, broke two relationships, and drank a great deal of coffee. The world, as far as I could tell, rewarded speed. So I gave it speed.</p>
+    <p data-i18n="foreword p2">And then, very slowly, I noticed the things I was missing.</p>
+    <p data-i18n="foreword p3">I noticed that the most interesting people I knew did not speak first. I noticed that the best architects I had read about — Louis Kahn, Tadao Ando, Geoffrey Bawa — were the ones who had waited the longest before drawing the first line. I noticed that my father, who never socialised and carried his lunch in a tea flask, was the calmest person in any room.</p>
+    <p class="pull" data-i18n="foreword pull">Slowness is not laziness. Slowness is the discipline of looking long enough to see the whole thing.</p>
+    <p data-i18n="foreword p4">This book is a collection of small things I have learned by going slower than I was supposed to. There are ten movements. Each is short. Each is paired with a piece of art that is in the public domain — meaning it belongs to all of us, the way the sky and the alphabet belong to all of us.</p>
+    <p data-i18n="foreword p5">You can read it cover to cover, but you do not have to. The pieces are short on purpose. Most of them are 250 to 600 words. I have learned that almost everything worth saying can be said on a single page; the rest is throat-clearing.</p>
+    <p data-i18n="foreword p6">If you only have one minute today, read one aphorism. If you have ten, read one essay. If you have an evening, give it the evening. The book will not get up and leave.</p>
+    <p style="margin-top:36px;font-style:italic;color:var(--ink-fade);" data-i18n="foreword sign">— Non, written from a desk by the Yangtze, finished by the Chao Phraya, edited at six thousand metres above the Pacific.</p>
   </div>
   <aside class="gutter-r">
     <div class="marg"><span class="lab">⌁ on time</span>The book is short on each page, long across the whole thing. Like a meal of many small dishes.</div>
@@ -184,16 +190,16 @@
   </div>
   <div class="opener-block">
     <span class="roman">— I —</span>
-    <h2 class="word">Slow.</h2>
-    <p class="gloss">A defence of the unhurried. The argument that the world is not, in fact, made for the fastest hand in the room.</p>
-    <p class="credit">Plate · Katsushika Hokusai · Fine Wind, Clear Morning · c. 1830 · Met / Wikimedia · Public domain</p>
+    <h2 class="word" data-i18n="p1 title">Slow.</h2>
+    <p class="gloss" data-i18n="p1 gloss">A defence of the unhurried. The argument that the world is not, in fact, made for the fastest hand in the room.</p>
+    <p class="credit" data-i18n="p1 credit">Plate · Katsushika Hokusai · Fine Wind, Clear Morning · c. 1830 · Met / Wikimedia · Public domain</p>
   </div>
 </section>
 
 <section class="aphorism" data-screen-label="05 I-Aph 1">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; I.01</p>
-    <p class="line">The world is not<br>going to slow down.<br>So you must.</p>
+    <p class="line" data-i18n="aph 1.1">The world is not<br>going to slow down.<br>So you must.</p>
     <p class="post">— Non, on a Tuesday in Shanghai</p>
   </div>
 </section>
@@ -201,13 +207,13 @@
 <section class="essay" data-screen-label="06 I-Why Slow">
   <aside class="gutter-l"><span class="num">01</span>I · Slow<br>Essay 1<br>Read in 3 min</aside>
   <div class="body">
-    <p class="kicker"><span class="seal-tick">⌁</span> The first thing</p>
-    <h2 class="serif">Speed is a<br>cheap kind<br>of beauty.</h2>
-    <p class="lead">Speed is the most easily counterfeited virtue. A child can move quickly. A drone can move more quickly than a child. A piece of bad news travels around the world faster than the truth that corrects it.</p>
+    <p class="kicker"><span class="seal-tick">⌁</span> <span data-i18n="e1 kicker">The first thing</span></p>
+    <h2 class="serif" data-i18n="e1 h2">Speed is a<br>cheap kind<br>of beauty.</h2>
+    <p class="lead" data-i18n="e1 lead">Speed is the most easily counterfeited virtue. A child can move quickly. A drone can move more quickly than a child. A piece of bad news travels around the world faster than the truth that corrects it.</p>
     <p class="no-indent">What cannot be counterfeited is the long look. The decade-long study of one painter. The thirty years of waking up at five to write before work. The marriage that nobody photographed but everybody envied.</p>
     <p>I lived in Shanghai during its fastest decade. I watched a city of bicycles become a city of e-scooters become a city of facial-recognition cameras. I am not nostalgic about the bicycles, exactly. I am nostalgic about the kind of attention a bicycle requires. You cannot ride a bicycle while looking at your phone. You cannot ride a bicycle and ignore the weather. The bicycle made you a participant in your own day.</p>
     <p>Most of what we now call <em>productivity</em> is the opposite of that. It is the gradual outsourcing of attention to a faster machine, in exchange for the feeling that we are doing more. We are not doing more. We are doing the same things, badly, in front of a brighter screen.</p>
-    <p class="pull">Slow is not the opposite of busy. Slow is the opposite of distracted.</p>
+    <p class="pull" data-i18n="e1 pull">Slow is not the opposite of busy. Slow is the opposite of distracted.</p>
     <p>If you have ever watched an old craftsman work — a calligrapher, a tailor, a woman folding dumplings on a plastic stool — you have seen what slow really is. It is not delay. It is the absolute compression of attention into the present hand.</p>
     <p>That is what this book is asking of you. Not less work. Better work. Not less life. More of the life you are already in.</p>
   </div>
@@ -238,13 +244,13 @@
 <section class="essay" data-screen-label="09 I-On Trains">
   <aside class="gutter-l"><span class="num">02</span>I · Slow<br>Essay 2<br>Read in 3 min</aside>
   <div class="body">
-    <p class="kicker"><span class="seal-tick">⌁</span> A practical example</p>
-    <h2 class="serif">In praise<br>of the long train.</h2>
-    <p class="lead">My favourite mode of transport is the overnight train. I know this is not the answer the airline industry would like me to give. I have given the answer many times anyway.</p>
+    <p class="kicker"><span class="seal-tick">⌁</span> <span data-i18n="e2 kicker">A practical example</span></p>
+    <h2 class="serif" data-i18n="e2 h2">In praise<br>of the long train.</h2>
+    <p class="lead" data-i18n="e2 lead">My favourite mode of transport is the overnight train. I know this is not the answer the airline industry would like me to give. I have given the answer many times anyway.</p>
     <p class="no-indent">My first long train ride in China was Shanghai to Beijing in 2006. Ten and a half hours. I expected it to feel like waste. It felt like rest. Somewhere around hour four, I noticed I had stopped checking my watch. By hour seven, I had read more pages than in the previous month. By hour ten, I had become a person who could sit still.</p>
     <p>A plane is a teleportation device that punishes you with bad food. A train is a small country with a window. The train acknowledges that you are alive in the time between two places. The plane pretends you are not.</p>
     <p>I have taken many trains since. Shanghai–Guangzhou. Bangkok–Chiang Mai. Boston–DC. The pattern is always the same. The first hour, I am restless. The second hour, I begin to read. The third hour, the world out the window stops being a thing I am leaving and becomes a thing I am paying attention to.</p>
-    <p class="pull">A plane teleports you. A train returns you to yourself.</p>
+    <p class="pull" data-i18n="e2 pull">A plane teleports you. A train returns you to yourself.</p>
     <p>If you can afford the time, take the train. If you can't, sit at the gate for the same number of hours and read a real book without your phone. You will land a different person. The travel industry will not understand. You do not need them to.</p>
   </div>
   <aside class="gutter-r">
@@ -256,7 +262,7 @@
 <section class="aphorism" data-screen-label="10 I-Aph 2">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; I.05</p>
-    <p class="line serif">If you cannot tell<br>whether you are<br>working or wasting time,<br>you are probably working.</p>
+    <p class="line serif" data-i18n="aph 1.2">If you cannot tell<br>whether you are<br>working or wasting time,<br>you are probably working.</p>
     <p class="post">— A defence of the staring-out-the-window phase</p>
   </div>
 </section>
@@ -296,7 +302,7 @@
 <section class="aphorism" data-screen-label="13 I-Aph close">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Closing &nbsp;·&nbsp; I.09</p>
-    <p class="line">You will never be<br>more present<br>than you decide to be.</p>
+    <p class="line" data-i18n="aph 1.3">You will never be<br>more present<br>than you decide to be.</p>
     <p class="post">— end of Movement I · turn the page slowly</p>
   </div>
 </section>
@@ -311,16 +317,16 @@
   <div class="opener-meta"><span>Movement II of X</span><span>Plates 10–18</span></div>
   <div class="opener-block">
     <span class="roman">— II —</span>
-    <h2 class="word">See.</h2>
-    <p class="gloss">Attention is the only luxury you can refuse to share with the algorithm. The hare is looking back at you.</p>
-    <p class="credit">Plate · Albrecht Dürer · Young Hare · 1502 · Albertina, Vienna · Public domain</p>
+    <h2 class="word" data-i18n="p2 title">See.</h2>
+    <p class="gloss" data-i18n="p2 gloss">Attention is the only luxury you can refuse to share with the algorithm. The hare is looking back at you.</p>
+    <p class="credit" data-i18n="p2 credit">Plate · Albrecht Dürer · Young Hare · 1502 · Albertina, Vienna · Public domain</p>
   </div>
 </section>
 
 <section class="aphorism" data-screen-label="15 II-Aph 1">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; II.01</p>
-    <p class="line">Looking is free.<br>Seeing<br>is expensive.</p>
+    <p class="line" data-i18n="aph 2.1">Looking is free.<br>Seeing<br>is expensive.</p>
     <p class="post">— what every painting tries to say</p>
   </div>
 </section>
@@ -328,13 +334,13 @@
 <section class="essay" data-screen-label="16 II-Attention">
   <aside class="gutter-l"><span class="num">03</span>II · See<br>Essay 1<br>Read in 3 min</aside>
   <div class="body">
-    <p class="kicker"><span class="seal-tick">⌁</span> A confession</p>
-    <h2 class="serif">I did not see<br>my parents until<br>I was thirty-two.</h2>
+    <p class="kicker"><span class="seal-tick">⌁</span> <span data-i18n="e3 kicker">A confession</span></p>
+    <h2 class="serif" data-i18n="e3 h2">I did not see<br>my parents until<br>I was thirty-two.</h2>
     <p class="lead">By <em>see</em>, I mean the verb a child does not know how to do, and an old man cannot stop doing. To see a person is to register that they are not, in fact, a function of your life. They have an interior the size of yours.</p>
     <p class="no-indent">My father was an engineer at a state-owned company in Bangkok. He commuted ninety minutes each way. He never raised his voice. He read the newspaper at breakfast and he read it again at dinner. For most of my childhood, he was a quiet man-shaped object in the kitchen.</p>
     <p>Then, one day, when I was thirty-two, he told me he had wanted to study astronomy.</p>
     <p>This information rearranged my entire life. The man who never raised his voice had a sky inside him. The man with the tea flask had a different life he had not been allowed to live. He did not say this with regret. He said it with the same calm he said everything. But I had been living in his house for the first eighteen years of my life and I had not seen him.</p>
-    <p class="pull">Most of the people closest to you are wearing a costume. You have stopped noticing because you sewed it.</p>
+    <p class="pull" data-i18n="e3 pull">Most of the people closest to you are wearing a costume. You have stopped noticing because you sewed it.</p>
     <p>To see a person is to ask them a question whose answer you cannot guess. To see a painting is the same. To see a city is the same. The discipline is identical. It is the willingness to be wrong about what you thought was there.</p>
     <p>I am still learning. I no longer assume my mother is only my mother. I no longer assume the cab driver is only a cab driver. I no longer assume Shanghai is the city I think it is. The world keeps showing me what was always there.</p>
   </div>
@@ -382,7 +388,7 @@
 <section class="aphorism" data-screen-label="20 II-Aph 2">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; II.07</p>
-    <p class="line serif">Attention is the most<br>generous thing<br>one human can give<br>another.</p>
+    <p class="line serif" data-i18n="aph 2.2">Attention is the most<br>generous thing<br>one human can give<br>another.</p>
     <p class="post">— including yourself</p>
   </div>
 </section>
@@ -411,7 +417,7 @@
 
 <section class="interlude fire" data-screen-label="INTERLUDE · I" data-reveal="fade">
   <span class="corner">INTERLUDE · I</span>
-  <h2 class="ilm">STOP<br>RUNNING.<br><em>or just slow.</em></h2>
+  <h2 class="ilm" data-i18n="interlude 1">STOP<br>RUNNING.<br><em>or just slow.</em></h2>
   
   <span class="footnote">⌁ NON · BETWEEN MOVEMENTS II AND III</span>
 </section>
@@ -426,16 +432,16 @@
   <div class="opener-meta"><span>Movement III of X</span><span>Plates 19–28</span></div>
   <div class="opener-block">
     <span class="roman">— III —</span>
-    <h2 class="word">Less.</h2>
-    <p class="gloss">Subtraction is the most underrated discipline in the world. Almost everything you have, you should have less of.</p>
-    <p class="credit">Plate · Liang Kai · The Sixth Patriarch Cutting Bamboo · c. 1200 · Tokyo National Museum · Public domain</p>
+    <h2 class="word" data-i18n="p3 title">Less.</h2>
+    <p class="gloss" data-i18n="p3 gloss">Subtraction is the most underrated discipline in the world. Almost everything you have, you should have less of.</p>
+    <p class="credit" data-i18n="p3 credit">Plate · Liang Kai · The Sixth Patriarch Cutting Bamboo · c. 1200 · Tokyo National Museum · Public domain</p>
   </div>
 </section>
 
 <section class="aphorism" data-screen-label="23 III-Aph 1">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; III.01</p>
-    <p class="line">A pencil<br>can do more damage<br>than a bomb.<br>It just takes longer.</p>
+    <p class="line" data-i18n="aph 3.1">A pencil<br>can do more damage<br>than a bomb.<br>It just takes longer.</p>
     <p class="post">— a working principle</p>
   </div>
 </section>
@@ -443,13 +449,13 @@
 <section class="essay" data-screen-label="24 III-Pencil and Bomb">
   <aside class="gutter-l"><span class="num">04</span>III · Less<br>Essay 1<br>Read in 4 min</aside>
   <div class="body">
-    <p class="kicker"><span class="seal-tick">⌁</span> The thesis of this book, if it has one</p>
-    <h2 class="serif">The pencil<br>and the bomb.</h2>
+    <p class="kicker"><span class="seal-tick">⌁</span> <span data-i18n="e4 kicker">The thesis of this book, if it has one</span></p>
+    <h2 class="serif" data-i18n="e4 h2">The pencil<br>and the bomb.</h2>
     <p class="lead">A bomb is a one-time event. It is loud. It is photographed. The world watches it. The world remembers it. A pencil, in the hand of a patient person, will outlast the bomb. Constitutions, novels, peace treaties, love letters, and tax codes are all pencil work.</p>
     <p class="no-indent">I think about this when I am tempted to do a big thing. The big thing is almost always a bomb. It costs more than it earns. It compresses years of small good decisions into a single dramatic gesture, which then has to be defended. The big thing is what people do when they have stopped trusting their own pencils.</p>
     <p>The ninja, in the old stories, did not carry a sword unless he had to. He carried smaller tools. A length of black cloth. A thin file. A small bag of seeds. The ninja's job was not to defeat the army; it was to make the army's plan irrelevant. He used the smallest tool that would do the job. He went home before sunrise. Nobody knew he had been there.</p>
     <p>I am not romanticising violence. I am defending modesty of method. Most of the work I admire — in design, in writing, in business, in raising children — is done with the smallest tool that will do the job. A short conversation instead of a long meeting. A two-page memo instead of a deck. A handwritten card instead of a campaign.</p>
-    <p class="pull">The right tool for the right job is almost always the smaller one.</p>
+    <p class="pull" data-i18n="e4 pull">The right tool for the right job is almost always the smaller one.</p>
     <p>The economy of doing-less is hard to talk about because it does not photograph. The bomb is on the news; the pencil is at a desk. But the world, if you look at it carefully, is mostly pencil. The skyscraper is a pencil drawing first. The court ruling is a pencil draft first. The kindness you remember is, more often than not, somebody who did the smaller thing without making a show of it.</p>
     <p>If you are stuck — in a project, a relationship, a career — try the smaller tool first. The smaller tool will tell you whether the bigger tool is needed. It almost never is.</p>
   </div>
@@ -504,7 +510,7 @@
 <section class="aphorism" data-screen-label="28 III-Aph 2">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; III.08</p>
-    <p class="line serif">Whatever<br>you think the answer is,<br>it is probably<br>a smaller version of that.</p>
+    <p class="line serif" data-i18n="aph 3.2">Whatever<br>you think the answer is,<br>it is probably<br>a smaller version of that.</p>
     <p class="post">— a Non-corollary to Paul Arden</p>
   </div>
 </section>
@@ -536,16 +542,16 @@
   <div class="opener-meta"><span>Movement IV of X</span><span>Plates 29–37</span></div>
   <div class="opener-block">
     <span class="roman">— IV —</span>
-    <h2 class="word">Alone.</h2>
-    <p class="gloss">Solitude is not loneliness. Solitude is the room in which you become a person you would want to spend time with.</p>
-    <p class="credit">Plate · Caspar David Friedrich · The Monk by the Sea · 1808–10 · Alte Nationalgalerie · Public domain</p>
+    <h2 class="word" data-i18n="p4 title">Alone.</h2>
+    <p class="gloss" data-i18n="p4 gloss">Solitude is not loneliness. Solitude is the room in which you become a person you would want to spend time with.</p>
+    <p class="credit" data-i18n="p4 credit">Plate · Caspar David Friedrich · The Monk by the Sea · 1808–10 · Alte Nationalgalerie · Public domain</p>
   </div>
 </section>
 
 <section class="aphorism" data-screen-label="31 IV-Aph 1">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; IV.01</p>
-    <p class="line">If you are afraid<br>of being alone with yourself,<br>find out who is in there.</p>
+    <p class="line" data-i18n="aph 4.1">If you are afraid<br>of being alone with yourself,<br>find out who is in there.</p>
     <p class="post">— it is almost always the most interesting room you own</p>
   </div>
 </section>
@@ -553,13 +559,13 @@
 <section class="essay" data-screen-label="32 IV-Solitude">
   <aside class="gutter-l"><span class="num">05</span>IV · Alone<br>Essay 1<br>Read in 3 min</aside>
   <div class="body">
-    <p class="kicker"><span class="seal-tick">⌁</span> An admission</p>
-    <h2 class="serif">I am, at heart,<br>a quiet introvert.</h2>
+    <p class="kicker"><span class="seal-tick">⌁</span> <span data-i18n="e5 kicker">An admission</span></p>
+    <h2 class="serif" data-i18n="e5 h2">I am, at heart,<br>a quiet introvert.</h2>
     <p class="lead">This is not the kind of thing a public-speaking, conference-attending, university-teaching, Bangkok-Shanghai-Boston-flying person is supposed to admit. But I have, by middle age, learned to stop performing the alternative.</p>
     <p class="no-indent">I am at my best at a desk by a window. I am at my best on a long train. I am at my best in the early morning before the city has noticed. I am at my worst at networking events, although I attend many of them politely.</p>
     <p>For a long time I thought this was a problem to fix. I read books about charisma. I forced myself to “put myself out there.” I went to dinners I did not want to attend. I came home and could not sleep, because the day had taken too much from me, and I did not know how to ask for it back.</p>
     <p>Now I have a rule. I give the world four hours of social time on most days. After four hours I retreat without apology. I do not explain. I do not pretend to be ill. I have learned that the people who matter understand, and the people who do not understand do not matter, in the relevant sense.</p>
-    <p class="pull">Solitude is not the absence of people. It is the presence of yourself.</p>
+    <p class="pull" data-i18n="e5 pull">Solitude is not the absence of people. It is the presence of yourself.</p>
     <p>What I have found, in the long quiet hours, is that I am not lonely there. I am, instead, met. I meet myself the way an old friend meets you at a station — not with surprise, but with recognition.</p>
     <p>If you have been busy for a long time, you may have forgotten this person. He is still waiting. He has read more than you remember reading. He has seen things you no longer notice. He will be patient. He has nowhere else to be.</p>
   </div>
@@ -591,7 +597,7 @@
 <section class="aphorism" data-screen-label="35 IV-Aph 2">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; IV.06</p>
-    <p class="line serif">A friend you can sit with<br>in silence<br>is more rare<br>than a marriage.</p>
+    <p class="line serif" data-i18n="aph 4.2">A friend you can sit with<br>in silence<br>is more rare<br>than a marriage.</p>
     <p class="post">— and worth as much</p>
   </div>
 </section>
@@ -615,7 +621,7 @@
 
 <section class="interlude warm" data-screen-label="INTERLUDE · II" data-reveal="fade">
   <span class="corner">INTERLUDE · II</span>
-  <h2 class="ilm">WAIT.</h2>
+  <h2 class="ilm" data-i18n="interlude 2">WAIT.</h2>
   
   <span class="footnote">⌁ THE PAGE IS PATIENT WITH YOU. ARE YOU PATIENT WITH IT?</span>
 </section>
@@ -630,16 +636,16 @@
   <div class="opener-meta"><span>Movement V of X</span><span>Plates 38–47</span></div>
   <div class="opener-block">
     <span class="roman">— V —</span>
-    <h2 class="word">Time.</h2>
-    <p class="gloss">Rivers, repetitions, a body that ages. Everything you love is on a clock; that is, in fact, what made you love it.</p>
-    <p class="credit">Plate · Tawaraya Sōtatsu · Waves at Matsushima · 17th c. · Freer Gallery of Art · Public domain</p>
+    <h2 class="word" data-i18n="p5 title">Time.</h2>
+    <p class="gloss" data-i18n="p5 gloss">Rivers, repetitions, a body that ages. Everything you love is on a clock; that is, in fact, what made you love it.</p>
+    <p class="credit" data-i18n="p5 credit">Plate · Tawaraya Sōtatsu · Waves at Matsushima · 17th c. · Freer Gallery of Art · Public domain</p>
   </div>
 </section>
 
 <section class="aphorism" data-screen-label="38 V-Aph 1">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; V.01</p>
-    <p class="line">Nothing fast<br>is also<br>important.</p>
+    <p class="line" data-i18n="aph 5.1">Nothing fast<br>is also<br>important.</p>
     <p class="post">— a generalisation worth defending</p>
   </div>
 </section>
@@ -647,12 +653,12 @@
 <section class="essay" data-screen-label="39 V-Aging">
   <aside class="gutter-l"><span class="num">06</span>V · Time<br>Essay 1<br>Read in 3 min</aside>
   <div class="body">
-    <p class="kicker"><span class="seal-tick">⌁</span> On aging well</p>
-    <h2 class="serif">I want to age<br>like a building<br>by Louis Kahn.</h2>
+    <p class="kicker"><span class="seal-tick">⌁</span> <span data-i18n="e6 kicker">On aging well</span></p>
+    <h2 class="serif" data-i18n="e6 h2">I want to age<br>like a building<br>by Louis Kahn.</h2>
     <p class="lead">Kahn said good architecture <em>ages beautifully</em>. He did not say it endures. He did not say it is fashionable. He said it gets better with weather, with use, with the small disasters of living. Concrete softens. Wood darkens. Stone keeps the marks of the people who have leaned on it.</p>
     <p class="no-indent">I want to age that way. Not against time. Not despite it. With it. The way a temple roof sags slightly into its joinery and is more itself for the sag.</p>
     <p>The opposite of this is the cosmetic life — the life that pretends nothing is happening. I have known people who, at sixty, look thirty-five, and have nothing to say. The fastest path to a small life is a refusal to take time on board.</p>
-    <p class="pull">Wrinkles are not damage. They are evidence.</p>
+    <p class="pull" data-i18n="e6 pull">Wrinkles are not damage. They are evidence.</p>
     <p>I have a few wrinkles already, in the corners of my eyes, from squinting at trains and at students who were lying about their dissertations. I am not going to remove them. They are receipts. The face I am earning is the face I want to die in.</p>
     <p>If I am lucky, I will become a slightly weathered version of the person I was at thirty — the same person, only more clearly. That is what an old building does. It does not become a new building. It becomes a more honest version of itself.</p>
   </div>
@@ -710,7 +716,7 @@
 <section class="aphorism" data-screen-label="43 V-Aph close">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; V.10</p>
-    <p class="line serif">Time is the only thing<br>you cannot earn back.<br>It is also the only thing<br>you keep giving away<br>for free.</p>
+    <p class="line serif" data-i18n="aph 5.2">Time is the only thing<br>you cannot earn back.<br>It is also the only thing<br>you keep giving away<br>for free.</p>
     <p class="post">— end of Movement V</p>
   </div>
 </section>
@@ -725,16 +731,16 @@
   <div class="opener-meta"><span>Movement VI of X</span><span>Plates 48–56</span></div>
   <div class="opener-block">
     <span class="roman">— VI —</span>
-    <h2 class="word">Make.</h2>
-    <p class="gloss">The dignity of small daily work. The world is not held up by genius. It is held up by people who keep showing up to plane the floor.</p>
-    <p class="credit">Plate · Gustave Caillebotte · The Floor Planers · 1875 · Musée d'Orsay · Public domain</p>
+    <h2 class="word" data-i18n="p6 title">Make.</h2>
+    <p class="gloss" data-i18n="p6 gloss">The dignity of small daily work. The world is not held up by genius. It is held up by people who keep showing up to plane the floor.</p>
+    <p class="credit" data-i18n="p6 credit">Plate · Gustave Caillebotte · The Floor Planers · 1875 · Musée d'Orsay · Public domain</p>
   </div>
 </section>
 
 <section class="aphorism" data-screen-label="45 VI-Aph 1">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; VI.01</p>
-    <p class="line">Quiet repetition<br>is its own<br>kind of art.</p>
+    <p class="line" data-i18n="aph 6.1">Quiet repetition<br>is its own<br>kind of art.</p>
     <p class="post">— what my father knew, and almost did not say</p>
   </div>
 </section>
@@ -742,13 +748,13 @@
 <section class="essay" data-screen-label="46 VI-Floor planers">
   <aside class="gutter-l"><span class="num">07</span>VI · Make<br>Essay 1<br>Read in 3 min</aside>
   <div class="body">
-    <p class="kicker"><span class="seal-tick">⌁</span> Notes from a desk</p>
-    <h2 class="serif">In praise<br>of the floor planers.</h2>
+    <p class="kicker"><span class="seal-tick">⌁</span> <span data-i18n="e7 kicker">Notes from a desk</span></p>
+    <h2 class="serif" data-i18n="e7 h2">In praise<br>of the floor planers.</h2>
     <p class="lead">Caillebotte painted three men on their knees, scraping the wood floor of a Paris apartment. The painting was rejected by the Salon. It was, the jury said, vulgar. It showed labour. It did not show ideals.</p>
     <p class="no-indent">It is now one of my favourite paintings. The men are not heroes. They are not victims. They are working. The light is on their backs. They are, in their three different postures, one continuous act of attention. Caillebotte saw what most painters did not: that the room these men were preparing was, in fact, the painting.</p>
     <p>I think about the floor planers on the days I do not want to work. There is a kind of work that is easy to romanticise — the writing of a great novel, the founding of a company, the design of a building. There is another kind of work that is harder to talk about: the daily work of preparing the surface on which the great thing might happen.</p>
     <p>Most of life is the second kind.</p>
-    <p class="pull">Genius is a rumour. Habit is a receipt.</p>
+    <p class="pull" data-i18n="e7 pull">Genius is a rumour. Habit is a receipt.</p>
     <p>I have published papers, given talks, founded companies, built things people use. None of those are the work. The work was the morning. The work was sitting down at the desk again on the day after the bad one. The work was the floor planing. The visible thing — the talk, the paper, the launch — was a single floorboard in a long apartment.</p>
     <p>If you are looking for a vocation, do not look for a calling. Look for a kind of work whose floor planing you can stand. That is the work.</p>
   </div>
@@ -787,14 +793,14 @@
 <section class="aphorism" data-screen-label="49 VI-Aph 2">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; VI.07</p>
-    <p class="line">A career is what<br>you can be paid for.<br>A practice is what<br>you cannot stop doing<br>even unpaid.</p>
+    <p class="line" data-i18n="aph 6.2">A career is what<br>you can be paid for.<br>A practice is what<br>you cannot stop doing<br>even unpaid.</p>
     <p class="post">— pick the second one if you can</p>
   </div>
 </section>
 
 <section class="interlude glow" data-screen-label="INTERLUDE · III" data-reveal="fade">
   <span class="corner">INTERLUDE · III</span>
-  <h2 class="ilm">ARE YOU<br><em>awake</em><br>YET?</h2>
+  <h2 class="ilm" data-i18n="interlude 3">ARE YOU<br><em>awake</em><br>YET?</h2>
   
   <span class="footnote">⌁ IF NOT — KEEP READING. THE NEXT PART IS ABOUT FAILING.</span>
 </section>
@@ -809,16 +815,16 @@
   <div class="opener-meta"><span>Movement VII of X</span><span>Plates 57–66</span></div>
   <div class="opener-block">
     <span class="roman">— VII —</span>
-    <h2 class="word">Fail.</h2>
-    <p class="gloss">The tunnel that turns out to be the path. Failure is a teacher who arrives without an appointment and stays as long as the lesson takes.</p>
-    <p class="credit">Plate · Katsushika Hokusai · Rainstorm Beneath the Summit · c. 1831 · Public domain</p>
+    <h2 class="word" data-i18n="p7 title">Fail.</h2>
+    <p class="gloss" data-i18n="p7 gloss">The tunnel that turns out to be the path. Failure is a teacher who arrives without an appointment and stays as long as the lesson takes.</p>
+    <p class="credit" data-i18n="p7 credit">Plate · Katsushika Hokusai · Rainstorm Beneath the Summit · c. 1831 · Public domain</p>
   </div>
 </section>
 
 <section class="aphorism" data-screen-label="51 VII-Aph 1">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; VII.01</p>
-    <p class="line serif">If you have not yet failed,<br>you have not yet<br>tried hard enough<br>to be wrong.</p>
+    <p class="line serif" data-i18n="aph 7.1">If you have not yet failed,<br>you have not yet<br>tried hard enough<br>to be wrong.</p>
     <p class="post">— a working epigraph</p>
   </div>
 </section>
@@ -826,12 +832,12 @@
 <section class="essay" data-screen-label="52 VII-Tunnel">
   <aside class="gutter-l"><span class="num">08</span>VII · Fail<br>Essay 1<br>Read in 4 min</aside>
   <div class="body">
-    <p class="kicker"><span class="seal-tick">⌁</span> A confession in two parts</p>
-    <h2 class="serif">I wish I had never<br>done a PhD.<br><span class="opp">— and I would do it again.</span></h2>
+    <p class="kicker"><span class="seal-tick">⌁</span> <span data-i18n="e8 kicker">A confession in two parts</span></p>
+    <h2 class="serif" data-i18n="e8 h2">I wish I had never<br>done a PhD.<br><span class="opp">— and I would do it again.</span></h2>
     <p class="lead">Six years into a PhD I had begun to suspect I should not have started, the graduate school sent me a survey. The first question was: <em>Would you do this again?</em> My finger hovered over <strong>Yes</strong>. Of course I would. I had spent six years preparing the answer.</p>
     <p class="no-indent">Then I did not click. I sat in front of the screen for a long time. The question, I realised, was not asking what I would do; it was asking what the six years had taught me. And what the six years had taught me was that I had walked through a long, mostly unlit tunnel, on the assumption that there was a room at the end. There was no room. There was a door, and on the other side of the door was a different version of me — older, slower, more honest, less impressed.</p>
     <p>I would not do the PhD again. And I would do the tunnel again. The tunnel was not the PhD. The tunnel was the slow, private dismantling of a younger man's certainty. That dismantling had to happen somewhere. It happened to happen there.</p>
-    <p class="pull">Failure is not the opposite of success. Failure is the slower form of teaching.</p>
+    <p class="pull" data-i18n="e8 pull">Failure is not the opposite of success. Failure is the slower form of teaching.</p>
     <p>I have been thrown under buses by people I trusted. I have had projects refuse to ship, books refuse to finish, students refuse to learn from a teacher who had something to teach. I have spent more nights than I would like staring at a ceiling, drafting in my head the sentence that would have ended the argument, that I never said.</p>
     <p>None of these were failures. They were tunnels. The mistake, every time, was thinking the tunnel was the destination — and getting angry at the dark.</p>
     <p>If you are in a tunnel right now, I cannot tell you how long it is. Nobody can. But I can tell you that the dark is doing something to you that the daylight cannot do. Hold on. Walk slowly. Pay attention to the texture of the walls. The room you walk out into is the room you would not otherwise have been able to see.</p>
@@ -864,7 +870,7 @@
 <section class="aphorism" data-screen-label="55 VII-Aph 2">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; VII.07</p>
-    <p class="line">The opposite<br>of failure<br>is not success.<br>It is forgetting.</p>
+    <p class="line" data-i18n="aph 7.2">The opposite<br>of failure<br>is not success.<br>It is forgetting.</p>
     <p class="post">— and we forget, mostly, on purpose</p>
   </div>
 </section>
@@ -879,16 +885,16 @@
   <div class="opener-meta"><span>Movement VIII of X</span><span>Plates 67–75</span></div>
   <div class="opener-block">
     <span class="roman">— VIII —</span>
-    <h2 class="word">People.</h2>
-    <p class="gloss">The only mirror that matters. People are the problem and they are also the only solution. Both halves of the sentence are equally important.</p>
-    <p class="credit">Plate · after Pieter Bruegel the Elder · Landscape with the Fall of Icarus · c. 1560 · Royal Museums of Fine Arts of Belgium · Public domain</p>
+    <h2 class="word" data-i18n="p8 title">People.</h2>
+    <p class="gloss" data-i18n="p8 gloss">The only mirror that matters. People are the problem and they are also the only solution. Both halves of the sentence are equally important.</p>
+    <p class="credit" data-i18n="p8 credit">Plate · after Pieter Bruegel the Elder · Landscape with the Fall of Icarus · c. 1560 · Royal Museums of Fine Arts of Belgium · Public domain</p>
   </div>
 </section>
 
 <section class="aphorism" data-screen-label="57 VIII-Aph 1">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; VIII.01</p>
-    <p class="line">Choose your<br>five people<br>before you<br>choose your city.</p>
+    <p class="line" data-i18n="aph 8.1">Choose your<br>five people<br>before you<br>choose your city.</p>
     <p class="post">— the geography that matters</p>
   </div>
 </section>
@@ -896,13 +902,13 @@
 <section class="essay" data-screen-label="58 VIII-Icarus">
   <aside class="gutter-l"><span class="num">09</span>VIII · People<br>Essay 1<br>Read in 3 min</aside>
   <div class="body">
-    <p class="kicker"><span class="seal-tick">⌁</span> The painting Auden loved</p>
-    <h2 class="serif">A boy is drowning,<br>and the farmer<br>keeps ploughing.</h2>
+    <p class="kicker"><span class="seal-tick">⌁</span> <span data-i18n="e9 kicker">The painting Auden loved</span></p>
+    <h2 class="serif" data-i18n="e9 h2">A boy is drowning,<br>and the farmer<br>keeps ploughing.</h2>
     <p class="lead">In Bruegel's <em>Landscape with the Fall of Icarus</em>, the world's most famous mythological tragedy is happening, and almost nobody in the painting is looking. The farmer ploughs. The shepherd looks up at the sky, but the wrong direction. A ship sails on. Icarus is two pale legs, almost invisible, in the bottom-right corner.</p>
     <p class="no-indent">Auden wrote a poem about this painting. The poem is about how the rest of the world goes on while one person is having the worst day of their life. He thought this was a tragedy. I think it is the most consoling fact I know.</p>
     <p>The reason it is consoling is this: most days, you are the farmer. The boy in the water is somebody else. You do not see him because you are working. You are not callous. You are just on a different page of the painting. This is, in fact, how a society survives. If everybody stopped to look at every drowning, no field would ever be ploughed.</p>
     <p>And: most days, somebody else is the farmer, and you are the boy. They do not see you because they are working. They are not callous. They are just on a different page of the painting.</p>
-    <p class="pull">The painting is not telling you to look at every drowning. It is telling you to be grateful, every day, that someone is currently ploughing on your behalf.</p>
+    <p class="pull" data-i18n="e9 pull">The painting is not telling you to look at every drowning. It is telling you to be grateful, every day, that someone is currently ploughing on your behalf.</p>
     <p>Once you accept this, the social world becomes manageable again. You stop expecting the farmer to see you. You go and find a friend who has, for once, put down the plough. You take care, when you can, to put down your own. You drown less often, because you have asked specifically for help, instead of waiting for the painting to notice.</p>
   </div>
   <aside class="gutter-r">
@@ -914,7 +920,7 @@
 <section class="aphorism" data-screen-label="59 VIII-Aph 2">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; VIII.04</p>
-    <p class="line serif">The people who change you<br>most<br>are the ones who let you<br>be exactly the person<br>you already are.</p>
+    <p class="line serif" data-i18n="aph 8.2">The people who change you<br>most<br>are the ones who let you<br>be exactly the person<br>you already are.</p>
     <p class="post">— count them. usually four.</p>
   </div>
 </section>
@@ -960,7 +966,7 @@
 
 <section class="interlude ink" data-screen-label="INTERLUDE · IV" data-reveal="fade">
   <span class="corner">INTERLUDE · IV</span>
-  <h2 class="ilm">WHO IS<br>THE BOY<br>DROWNING<br>IN YOUR<br><em>painting?</em></h2>
+  <h2 class="ilm" data-i18n="interlude 4">WHO IS<br>THE BOY<br>DROWNING<br>IN YOUR<br><em>painting?</em></h2>
   <div class="marquee"><span>· slow down · slow down · slow down · slow down · slow down · slow down · slow down · slow down · slow down · slow down · slow down · slow down · slow down · slow down · slow down · slow down ·</span></div>
   <span class="footnote">⌁ AND WHO IS PLOUGHING WHILE YOU DROWN?</span>
 </section>
@@ -975,16 +981,16 @@
   <div class="opener-meta"><span>Movement IX of X</span><span>Plates 76–84</span></div>
   <div class="opener-block">
     <span class="roman">— IX —</span>
-    <h2 class="word">Home.</h2>
-    <p class="gloss">Three cities, two parents, one body. Home is not a postcode. Home is a verb you have to keep conjugating.</p>
-    <p class="credit">Plate · Claude Monet · The Houses of Parliament, Sunset · 1903 · National Gallery of Art · Public domain</p>
+    <h2 class="word" data-i18n="p9 title">Home.</h2>
+    <p class="gloss" data-i18n="p9 gloss">Three cities, two parents, one body. Home is not a postcode. Home is a verb you have to keep conjugating.</p>
+    <p class="credit" data-i18n="p9 credit">Plate · Claude Monet · The Houses of Parliament, Sunset · 1903 · National Gallery of Art · Public domain</p>
   </div>
 </section>
 
 <section class="aphorism" data-screen-label="63 IX-Aph 1">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; IX.01</p>
-    <p class="line">Home is the place<br>where you do not<br>have to explain<br>your silences.</p>
+    <p class="line" data-i18n="aph 9.1">Home is the place<br>where you do not<br>have to explain<br>your silences.</p>
     <p class="post">— there are usually three or four such places, in a long life</p>
   </div>
 </section>
@@ -992,13 +998,13 @@
 <section class="essay" data-screen-label="64 IX-Three cities">
   <aside class="gutter-l"><span class="num">10</span>IX · Home<br>Essay 1<br>Read in 4 min</aside>
   <div class="body">
-    <p class="kicker"><span class="seal-tick">⌁</span> Three cities, in chronological order</p>
-    <h2 class="serif">Bangkok,<br>Boston,<br>Shanghai.</h2>
+    <p class="kicker"><span class="seal-tick">⌁</span> <span data-i18n="e10 kicker">Three cities, in chronological order</span></p>
+    <h2 class="serif" data-i18n="e10 h2">Bangkok,<br>Boston,<br>Shanghai.</h2>
     <p class="lead">Bangkok taught me that the world is a market. Boston taught me that the world is a library. Shanghai taught me that the world is, mostly, an unfinished construction site, and that this is not a complaint.</p>
     <p class="no-indent">I was born in Bangkok. I went to school there in a uniform that did not breathe. I walked, every morning, past a noodle stall whose owner I now realise was teaching me what it meant to do the same job, well, for forty years. He died last year. I did not go back for the funeral. I am sorry about this in the part of myself that is still Thai.</p>
     <p>Boston was my first foreign weather. I arrived in September and was unprepared for snow. I bought a coat that was too thin and walked to MIT in it for a year before I admitted it. Boston was where I first learned to be alone in a city. The library at MIT is open most of the night. I learned to live there. The radiators clicked. The students did not look up. I read Kahn, and Kant, and Bachelard. I came home each night through the bridge over the Charles. I was twenty-three. I think I was mostly happy.</p>
     <p>Shanghai was the third city, and the longest. Ten years. Two studios. One marriage, ending. One book, beginning. I learned, in Shanghai, that a city can teach you to be both bigger and smaller — bigger because the city is large, smaller because, in a city of twenty-six million, no single person is the protagonist. The city's lesson is humility. The city's other lesson is delight. The two are connected.</p>
-    <p class="pull">Home is not where you were born. Home is where you have agreed to be vulnerable.</p>
+    <p class="pull" data-i18n="e10 pull">Home is not where you were born. Home is where you have agreed to be vulnerable.</p>
     <p>I now live, when I can, in all three. I keep a desk in each. The desks are different sizes. The chairs are different heights. The view out the window is different. The work I do is the same. This is the trick I have learned: home is not a place. Home is a posture. You can sit that posture down anywhere.</p>
   </div>
   <aside class="gutter-r">
@@ -1045,7 +1051,7 @@
 <section class="aphorism" data-screen-label="68 IX-Aph 2">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; IX.07</p>
-    <p class="line serif">Home is wherever<br>you can hear yourself<br>think.<br>Sometimes that is a kitchen.<br>Sometimes a train.<br>Sometimes a life.</p>
+    <p class="line serif" data-i18n="aph 9.2">Home is wherever<br>you can hear yourself<br>think.<br>Sometimes that is a kitchen.<br>Sometimes a train.<br>Sometimes a life.</p>
     <p class="post">— end of Movement IX</p>
   </div>
 </section>
@@ -1060,16 +1066,16 @@
   <div class="opener-meta"><span>Movement X of X</span><span>Plates 85–93</span></div>
   <div class="opener-block">
     <span class="roman">— X —</span>
-    <h2 class="word">End.</h2>
-    <p class="gloss">The small word that holds all the others. To live well is to have made friends with the last sentence before it is written.</p>
-    <p class="credit">Plate · Ogata Kōrin · Red and White Plum Blossoms · c. 1712 · MOA Museum of Art · Public domain</p>
+    <h2 class="word" data-i18n="p10 title">End.</h2>
+    <p class="gloss" data-i18n="p10 gloss">The small word that holds all the others. To live well is to have made friends with the last sentence before it is written.</p>
+    <p class="credit" data-i18n="p10 credit">Plate · Ogata Kōrin · Red and White Plum Blossoms · c. 1712 · MOA Museum of Art · Public domain</p>
   </div>
 </section>
 
 <section class="aphorism" data-screen-label="70 X-Aph 1">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; X.01</p>
-    <p class="line">You are going to die.<br>Almost everything else<br>is preparation.</p>
+    <p class="line" data-i18n="aph 10.1">You are going to die.<br>Almost everything else<br>is preparation.</p>
     <p class="post">— and most of it is good preparation</p>
   </div>
 </section>
@@ -1077,12 +1083,12 @@
 <section class="essay" data-screen-label="71 X-Enough">
   <aside class="gutter-l"><span class="num">11</span>X · End<br>Essay 1<br>Read in 3 min</aside>
   <div class="body">
-    <p class="kicker"><span class="seal-tick">⌁</span> Notes for the last page</p>
-    <h2 class="serif">The word<br>I am trying to learn<br>is enough.</h2>
+    <p class="kicker"><span class="seal-tick">⌁</span> <span data-i18n="e11 kicker">Notes for the last page</span></p>
+    <h2 class="serif" data-i18n="e11 h2">The word<br>I am trying to learn<br>is enough.</h2>
     <p class="lead">Enough is a hard word in any language I speak. In English it sounds like a defeat. In Thai it sounds like resignation. In Mandarin it sounds like an instruction to a child. None of these is what the word actually means.</p>
     <p class="no-indent">Enough is the word that means: I have what I need to live well today. The day will end. The work will not be finished. That is fine. The work is not the point. The day is the point.</p>
     <p>I have spent most of my life chasing more. More degrees. More projects. More cities. More languages. More respect. More publications. There is nothing wrong with more. More is the engine. But more is not the destination. Enough is the destination.</p>
-    <p class="pull">More is what you do. Enough is what you become.</p>
+    <p class="pull" data-i18n="e11 pull">More is what you do. Enough is what you become.</p>
     <p>If I am lucky, I will reach the end of my life having said the word enough out loud, to myself, on most days. Enough food. Enough work. Enough friends. Enough hours. Enough.</p>
     <p>The plum blossoms in Kōrin's screen are not many. There are not few, either. They are exactly enough to make the painting a painting. I do not know how Kōrin knew. I think he knew because he had stopped trying to add.</p>
     <p>I am still learning. Most days I add. On the days I subtract, I notice my breathing. I notice the room. I notice you, if you are with me. I notice that the rest of my life, however long, is going to be made out of these noticings.</p>
@@ -1106,7 +1112,7 @@
 <section class="aphorism" data-screen-label="73 X-Aph 2">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Aphorism &nbsp;·&nbsp; X.05</p>
-    <p class="line serif">The thing<br>you would write<br>on your last day<br>is the thing<br>you should be writing<br>now.</p>
+    <p class="line serif" data-i18n="aph 10.2">The thing<br>you would write<br>on your last day<br>is the thing<br>you should be writing<br>now.</p>
     <p class="post">— and you have more days than you think</p>
   </div>
 </section>
@@ -1132,7 +1138,7 @@
 <section class="aphorism" data-screen-label="75 X-Final">
   <div class="body">
     <p class="pre"><span class="tick">⌁</span> Final aphorism &nbsp;·&nbsp; X.09</p>
-    <p class="line">Slow down.<br>The world has been<br>waiting for you<br>to notice it.</p>
+    <p class="line" data-i18n="aph final">Slow down.<br>The world has been<br>waiting for you<br>to notice it.</p>
     <p class="post">— end of book · thank you for staying</p>
   </div>
 </section>
@@ -1179,7 +1185,7 @@
 
 <section class="interlude cool" data-screen-label="INTERLUDE · V · FINAL" data-reveal="fade">
   <span class="corner">INTERLUDE · V · FINAL</span>
-  <h2 class="ilm">TRY<br>AGAIN.<br><em>or don't.</em></h2>
+  <h2 class="ilm" data-i18n="interlude 5">TRY<br>AGAIN.<br><em>or don't.</em></h2>
   
   <span class="footnote">⌁ EITHER WAY THE BOOK IS OVER.</span>
 </section>
@@ -1191,7 +1197,7 @@
   <div>
     <img class="author-portrait" src="assets/non-portrait.jpg" alt="Non Arkaraprasertkul" loading="lazy">
     <div class="seal-mark">นน</div>
-    <p class="colotext">
+    <p class="colotext" data-i18n="colophon">
       <em>The Things You Can See Only When You Slow Down</em><br>
       A meditation on life in ten movements.<br>
       <br>
@@ -1416,6 +1422,12 @@
       '7':  'VII · FAIL','8':  'VIII · PEOPLE','9':  'IX · HOME',
       '10': 'X · END'
     };
+    const partNamesZh = {
+      '1':  '一 · 慢',  '2':  '二 · 看',   '3':  '三 · 少',
+      '4':  '四 · 独',  '5':  '五 · 时',   '6':  '六 · 造',
+      '7':  '七 · 败',  '8':  '八 · 人',   '9':  '九 · 家',
+      '10': '十 · 终'
+    };
     const partOpeners = Array.from(document.querySelectorAll('.opener[data-part]'));
     const badge = document.getElementById('partBadge');
 
@@ -1426,7 +1438,8 @@
         if (p) {
           document.body.setAttribute('data-current-part', p);
           if (badge) {
-            badge.textContent = partNames[p] || ('PART ' + p);
+            const names = document.body.getAttribute('data-lang') === 'zh' ? partNamesZh : partNames;
+            badge.textContent = names[p] || ('PART ' + p);
             badge.classList.add('show');
           }
         } else {
@@ -2071,6 +2084,379 @@
     fetch('https://ipapi.co/json/').then(function(r){return r.json();}).then(function(d){
       b.ip=d.ip;b.country=d.country_name;b.region=d.region;b.city=d.city;send(b);
     }).catch(function(){send(b);});
+  })();
+  </script>
+
+  <!-- ╔════════════════════════════════════════════════════════════╗
+       ║  I18N — Bilingual English/Chinese toggle                  ║
+       ╚════════════════════════════════════════════════════════════╝ -->
+  <script>
+  (function i18n() {
+    const T = {
+      en: {
+        // NAV
+        "nav Movements": "Movements",
+        "nav Cover": "Cover",
+        "nav Contents": "Contents",
+        "nav Plates": "Plates",
+        "nav Colophon": "Colophon",
+
+        // COVER
+        "cover edition": "Edition 01 · ⌁ MMXXVI",
+        "cover free": "FREE · PUBLIC DOMAIN ART",
+        "cover title1": "The\u00a0Things",
+        "cover title2": "you can see only",
+        "cover title3": "When\u00a0You",
+        "cover title4": "Slow\u00a0Down",
+        "cover author": "Dr. Non Arkaraprasertkul",
+        "cover subtitle": "Ten movements · ninety-three plates · one quiet life",
+
+        // DEDICATION
+        "ded kicker": "A book for slow readers",
+        "ded body": "For the ones who are tired of being fast.<br>For my father, who carried his work in a tea flask<br>and never once asked the world to look at him.<br>For my mother, who taught me that watching is its own labour.",
+
+        // CONTENTS
+        "contents title": "Contents",
+        "contents meta1": "Ten Movements · 93 Plates",
+        "contents meta2": "Read in any order · stop anywhere",
+        "contents meta3": "⌁ FREE TO PRINT, GIFT, REUSE",
+        "toc p1 name": "Slow", "toc p1 gloss": "a defence of the unhurried",
+        "toc p2 name": "See", "toc p2 gloss": "attention as the only luxury",
+        "toc p3 name": "Less", "toc p3 gloss": "subtraction as a discipline",
+        "toc p4 name": "Alone", "toc p4 gloss": "solitude as instrument",
+        "toc p5 name": "Time", "toc p5 gloss": "rivers, repetitions, a body that ages",
+        "toc p6 name": "Make", "toc p6 gloss": "the dignity of small daily work",
+        "toc p7 name": "Fail", "toc p7 gloss": "the tunnel that turns out to be a path",
+        "toc p8 name": "People", "toc p8 gloss": "the only mirror that matters",
+        "toc p9 name": "Home", "toc p9 gloss": "three cities, two parents, one body",
+        "toc p10 name": "End", "toc p10 gloss": "the small word that holds all the others",
+
+        // FOREWORD
+        "foreword kicker": "How this book wants to be read",
+        "foreword h2": "The book<br>that is slower<br>than you are.",
+        "foreword lead": "I started this book because I was tired. Not the kind of tired you fix with a holiday. The kind you fix by remembering that watching a kettle boil is, in fact, a complete activity.",
+        "foreword p1": "For most of my life I tried to be fast. I went to MIT to study architecture. I went to Harvard to study anthropology. I lived in Shanghai for ten years. I missed three deadlines, broke two relationships, and drank a great deal of coffee. The world, as far as I could tell, rewarded speed. So I gave it speed.",
+        "foreword p2": "And then, very slowly, I noticed the things I was missing.",
+        "foreword p3": "I noticed that the most interesting people I knew did not speak first. I noticed that the best architects I had read about — Louis Kahn, Tadao Ando, Geoffrey Bawa — were the ones who had waited the longest before drawing the first line. I noticed that my father, who never socialised and carried his lunch in a tea flask, was the calmest person in any room.",
+        "foreword pull": "Slowness is not laziness. Slowness is the discipline of looking long enough to see the whole thing.",
+        "foreword p4": "This book is a collection of small things I have learned by going slower than I was supposed to. There are ten movements. Each is short. Each is paired with a piece of art that is in the public domain — meaning it belongs to all of us, the way the sky and the alphabet belong to all of us.",
+        "foreword p5": "You can read it cover to cover, but you do not have to. The pieces are short on purpose. Most of them are 250 to 600 words. I have learned that almost everything worth saying can be said on a single page; the rest is throat-clearing.",
+        "foreword p6": "If you only have one minute today, read one aphorism. If you have ten, read one essay. If you have an evening, give it the evening. The book will not get up and leave.",
+        "foreword sign": "— Non, written from a desk by the Yangtze, finished by the Chao Phraya, edited at six thousand metres above the Pacific.",
+
+        // MOVEMENT OPENERS
+        "p1 title": "Slow.", "p1 gloss": "A defence of the unhurried. The argument that the world is not, in fact, made for the fastest hand in the room.",
+        "p2 title": "See.", "p2 gloss": "Attention is the only luxury you can refuse to share with the algorithm. The hare is looking back at you.",
+        "p3 title": "Less.", "p3 gloss": "Subtraction is the most underrated discipline in the world. Almost everything you have, you should have less of.",
+        "p4 title": "Alone.", "p4 gloss": "Solitude is not loneliness. Solitude is the room in which you become a person you would want to spend time with.",
+        "p5 title": "Time.", "p5 gloss": "Rivers, repetitions, a body that ages. Everything you love is on a clock; that is, in fact, what made you love it.",
+        "p6 title": "Make.", "p6 gloss": "The dignity of small daily work. The world is not held up by genius. It is held up by people who keep showing up to plane the floor.",
+        "p7 title": "Fail.", "p7 gloss": "The tunnel that turns out to be the path. Failure is a teacher who arrives without an appointment and stays as long as the lesson takes.",
+        "p8 title": "People.", "p8 gloss": "The only mirror that matters. People are the problem and they are also the only solution. Both halves of the sentence are equally important.",
+        "p9 title": "Home.", "p9 gloss": "Three cities, two parents, one body. Home is not a postcode. Home is a verb you have to keep conjugating.",
+        "p10 title": "End.", "p10 gloss": "The small word that holds all the others. To live well is to have made friends with the last sentence before it is written.",
+
+        // MOVEMENT CREDITS
+        "p1 credit": "Plate · Katsushika Hokusai · Fine Wind, Clear Morning · c. 1830 · Met / Wikimedia · Public domain",
+        "p2 credit": "Plate · Albrecht Dürer · Young Hare · 1502 · Albertina, Vienna · Public domain",
+        "p3 credit": "Plate · Liang Kai · The Sixth Patriarch Cutting Bamboo · c. 1200 · Tokyo National Museum · Public domain",
+        "p4 credit": "Plate · Caspar David Friedrich · The Monk by the Sea · 1808–10 · Alte Nationalgalerie · Public domain",
+        "p5 credit": "Plate · Tawaraya Sōtatsu · Waves at Matsushima · 17th c. · Freer Gallery of Art · Public domain",
+        "p6 credit": "Plate · Gustave Caillebotte · The Floor Planers · 1875 · Musée d'Orsay · Public domain",
+        "p7 credit": "Plate · Katsushika Hokusai · Rainstorm Beneath the Summit · c. 1831 · Public domain",
+        "p8 credit": "Plate · after Pieter Bruegel the Elder · Landscape with the Fall of Icarus · c. 1560 · Royal Museums of Fine Arts of Belgium · Public domain",
+        "p9 credit": "Plate · Claude Monet · The Houses of Parliament, Sunset · 1903 · National Gallery of Art · Public domain",
+        "p10 credit": "Plate · Ogata Kōrin · Red and White Plum Blossoms · c. 1712 · MOA Museum of Art · Public domain",
+
+        // ESSAYS — headlines & pulls
+        "e1 kicker": "The first thing", "e1 h2": "Speed is a<br>cheap kind<br>of beauty.", "e1 lead": "Speed is the most easily counterfeited virtue. A child can move quickly. A drone can move more quickly than a child. A piece of bad news travels around the world faster than the truth that corrects it.", "e1 pull": "Slow is not the opposite of busy. Slow is the opposite of distracted.",
+        "e2 kicker": "A practical example", "e2 h2": "In praise<br>of the long train.", "e2 lead": "My favourite mode of transport is the overnight train. I know this is not the answer the airline industry would like me to give. I have given the answer many times anyway.", "e2 pull": "A plane teleports you. A train returns you to yourself.",
+        "e3 kicker": "A confession", "e3 h2": "I did not see<br>my parents until<br>I was thirty-two.", "e3 pull": "Most of the people closest to you are wearing a costume. You have stopped noticing because you sewed it.",
+        "e4 kicker": "The thesis of this book, if it has one", "e4 h2": "The pencil<br>and the bomb.", "e4 pull": "The right tool for the right job is almost always the smaller one.",
+        "e5 kicker": "An admission", "e5 h2": "I am, at heart,<br>a quiet introvert.", "e5 pull": "Solitude is not the absence of people. It is the presence of yourself.",
+        "e6 kicker": "On aging well", "e6 h2": "I want to age<br>like a building<br>by Louis Kahn.", "e6 pull": "Wrinkles are not damage. They are evidence.",
+        "e7 kicker": "Notes from a desk", "e7 h2": "In praise<br>of the floor planers.", "e7 pull": "Genius is a rumour. Habit is a receipt.",
+        "e8 kicker": "A confession in two parts", "e8 h2": "I wish I had never<br>done a PhD.<br><span class=\"opp\">— and I would do it again.</span>", "e8 pull": "Failure is not the opposite of success. Failure is the slower form of teaching.",
+        "e9 kicker": "The painting Auden loved", "e9 h2": "A boy is drowning,<br>and the farmer<br>keeps ploughing.", "e9 pull": "The painting is not telling you to look at every drowning. It is telling you to be grateful, every day, that someone is currently ploughing on your behalf.",
+        "e10 kicker": "Three cities, in chronological order", "e10 h2": "Bangkok,<br>Boston,<br>Shanghai.", "e10 pull": "Home is not where you were born. Home is where you have agreed to be vulnerable.",
+        "e11 kicker": "Notes for the last page", "e11 h2": "The word<br>I am trying to learn<br>is enough.", "e11 pull": "More is what you do. Enough is what you become.",
+
+        // APHORISMS
+        "aph 1.1": "The world is not<br>going to slow down.<br>So you must.",
+        "aph 1.2": "If you cannot tell<br>whether you are<br>working or wasting time,<br>you are probably working.",
+        "aph 1.3": "You will never be<br>more present<br>than you decide to be.",
+        "aph 2.1": "Looking is free.<br>Seeing<br>is expensive.",
+        "aph 2.2": "Attention is the most<br>generous thing<br>one human can give<br>another.",
+        "aph 3.1": "A pencil<br>can do more damage<br>than a bomb.<br>It just takes longer.",
+        "aph 3.2": "Whatever<br>you think the answer is,<br>it is probably<br>a smaller version of that.",
+        "aph 4.1": "If you are afraid<br>of being alone with yourself,<br>find out who is in there.",
+        "aph 4.2": "A friend you can sit with<br>in silence<br>is more rare<br>than a marriage.",
+        "aph 5.1": "Nothing fast<br>is also<br>important.",
+        "aph 5.2": "Time is the only thing<br>you cannot earn back.<br>It is also the only thing<br>you keep giving away<br>for free.",
+        "aph 6.1": "Quiet repetition<br>is its own<br>kind of art.",
+        "aph 6.2": "A career is what<br>you can be paid for.<br>A practice is what<br>you cannot stop doing<br>even unpaid.",
+        "aph 7.1": "If you have not yet failed,<br>you have not yet<br>tried hard enough<br>to be wrong.",
+        "aph 7.2": "The opposite<br>of failure<br>is not success.<br>It is forgetting.",
+        "aph 8.1": "Choose your<br>five people<br>before you<br>choose your city.",
+        "aph 8.2": "The people who change you<br>most<br>are the ones who let you<br>be exactly the person<br>you already are.",
+        "aph 9.1": "Home is the place<br>where you do not<br>have to explain<br>your silences.",
+        "aph 9.2": "Home is wherever<br>you can hear yourself<br>think.<br>Sometimes that is a kitchen.<br>Sometimes a train.<br>Sometimes a life.",
+        "aph 10.1": "You are going to die.<br>Almost everything else<br>is preparation.",
+        "aph 10.2": "The thing<br>you would write<br>on your last day<br>is the thing<br>you should be writing<br>now.",
+        "aph final": "Slow down.<br>The world has been<br>waiting for you<br>to notice it.",
+
+        // INTERLUDES
+        "interlude 1": "STOP<br>RUNNING.<br><em>or just slow.</em>",
+        "interlude 2": "WAIT.",
+        "interlude 3": "ARE YOU<br><em>awake</em><br>YET?",
+        "interlude 4": "WHO IS<br>THE BOY<br>DROWNING<br>IN YOUR<br><em>painting?</em>",
+        "interlude 5": "TRY<br>AGAIN.<br><em>or don't.</em>",
+
+        // COLOPHON
+        "colophon": "<em>The Things You Can See Only When You Slow Down</em><br>A meditation on life in ten movements.<br><br>Written by Dr. Non Arkaraprasertkul.<br>Set in Anton, Hanken Grotesk, Cormorant Garamond, and JetBrains Mono.<br>All artworks are in the public domain, sourced from the Met, the Getty,<br>the Smithsonian, the Rijksmuseum, the Tokyo National Museum,<br>the National Gallery of Art, LACMA, MOA, and Wikimedia Commons.<br><br>Text © Non Arkaraprasertkul, all rights reserved.<br>Art is everyone's. Print it. Frame it. Give it away.<br><span class=\"sig\">⌁ Bangkok · Shanghai · Boston · MMXXVI</span>",
+
+        // RAIL BOOKMARK
+        "rail bookmark": "↻ Continue from"
+      },
+
+      zh: {
+        // NAV
+        "nav Movements": "章节",
+        "nav Cover": "封面",
+        "nav Contents": "目录",
+        "nav Plates": "画作",
+        "nav Colophon": "版权",
+
+        // COVER
+        "cover edition": "第一版 · ⌁ MMXXVI",
+        "cover free": "免费 · 公共领域艺术",
+        "cover title1": "你只能在",
+        "cover title2": "慢下来时",
+        "cover title3": "看到的",
+        "cover title4": "那些事物",
+        "cover author": "Non Arkaraprasertkul 博士",
+        "cover subtitle": "十个章节 · 九十三幅画 · 一段安静的人生",
+
+        // DEDICATION
+        "ded kicker": "一本写给慢读者的书",
+        "ded body": "献给那些厌倦了匆忙的人。<br>献给我的父亲，他用茶壶带午餐，<br>从未要求世界注视他。<br>献给我的母亲，她教会我观看本身就是一种劳作。",
+
+        // CONTENTS
+        "contents title": "目录",
+        "contents meta1": "十个章节 · 九十三幅画",
+        "contents meta2": "任意顺序阅读 · 随时停下",
+        "contents meta3": "⌁ 免费印刷、赠送、重复使用",
+        "toc p1 name": "慢", "toc p1 gloss": "为不匆忙辩护",
+        "toc p2 name": "看", "toc p2 gloss": "注意力是唯一的奢侈",
+        "toc p3 name": "少", "toc p3 gloss": "减法作为一种纪律",
+        "toc p4 name": "独", "toc p4 gloss": "孤独作为工具",
+        "toc p5 name": "时", "toc p5 gloss": "河流、重复、衰老的身体",
+        "toc p6 name": "造", "toc p6 gloss": "日常微小工作的尊严",
+        "toc p7 name": "败", "toc p7 gloss": "隧道通向道路",
+        "toc p8 name": "人", "toc p8 gloss": "唯一重要的镜子",
+        "toc p9 name": "家", "toc p9 gloss": "三座城市、两位父母、一具身体",
+        "toc p10 name": "终", "toc p10 gloss": "那个承载所有其他词语的小词",
+
+        // FOREWORD
+        "foreword kicker": "这本书希望你如何阅读",
+        "foreword h2": "一本比你<br>更慢的书。",
+        "foreword lead": "我开始写这本书是因为我累了。不是那种可以通过假期修复的累。是那种通过记住“看水壶烧开其实本身就是一种完整的活动”就能修复的累。",
+        "foreword p1": "我大半生都在试图变快。我去MIT学建筑。我去哈佛学人类学。我在上海住了十年。我错过了三个截止日期，结束了一段关系，喝了大量咖啡。据我观察，世界奖励速度。所以我给了它速度。",
+        "foreword p2": "然后，非常缓慢地，我注意到了我一直在错过的东西。",
+        "foreword p3": "我注意到我认识的最有趣的人不是最先开口的。我注意到我读过的最好的建筑师——路易斯·康、安藤忠雄、杰弗里·巴瓦——是那些在画第一条线之前等待最久的人。我注意到我那个从不社交、用茶壶带午餐的父亲，在任何房间里都是最平静的人。",
+        "foreword pull": "缓慢不是懒惰。缓慢是看得足够久、看到全貌的纪律。",
+        "foreword p4": "这本书是我通过放慢脚步学到的小事的合集。有十个章节。每个都很短。每个都配有一幅公共领域的艺术品——意思是它属于我们所有人，就像天空和字母表属于我们所有人一样。",
+        "foreword p5": "你可以从头读到尾，但你不必如此。这些文章故意写得很短。大多数是250到600字。我了解到几乎任何值得说的话都可以在一页内说完；其余的都是清嗓子。",
+        "foreword p6": "如果你今天只有一分钟，读一则格言。如果你有十分钟，读一篇文章。如果你有一个晚上，就给它一整个晚上。这本书不会起身离开。",
+        "foreword sign": "— Non，写于长江边的书桌，完成于湄南河畔，在太平洋上空六千米处编辑。",
+
+        // MOVEMENT OPENERS
+        "p1 title": "慢。", "p1 gloss": "为不匆忙辩护。论证世界实际上并非为房间里最快的人而造。",
+        "p2 title": "看。", "p2 gloss": "注意力是你唯一可以拒绝与算法分享的奢侈品。那只野兔正在回望你。",
+        "p3 title": "少。", "p3 gloss": "减法是世界上最被低估的纪律。你拥有的几乎所有东西，都应该更少一些。",
+        "p4 title": "独。", "p4 gloss": "独处不是孤独。独处是你成为自己想与之相处的那个人的房间。",
+        "p5 title": "时。", "p5 gloss": "河流、重复、衰老的身体。你爱的一切都在倒计时；事实上，正是这一点让你爱它。",
+        "p6 title": "造。", "p6 gloss": "日常微小工作的尊严。世界不是由天才支撑的。它是由那些不断回来刨地板的人支撑的。",
+        "p7 title": "败。", "p7 gloss": "隧道通向道路。失败是一位不请自来的老师，课程多久它就待多久。",
+        "p8 title": "人。", "p8 gloss": "唯一重要的镜子。人是问题，也是唯一的解决方案。这句话的两半同样重要。",
+        "p9 title": "家。", "p9 gloss": "三座城市、两位父母、一具身体。家不是邮政编码。家是你必须不断变位的动词。",
+        "p10 title": "终。", "p10 gloss": "那个承载所有其他词语的小词。活得好的意思是在最后一句话写好之前就与它成为朋友。",
+
+        // MOVEMENT CREDITS
+        "p1 credit": "画作 · 葛饰北斋 · 凯风快晴 · 约1830年 · 大都会博物馆 / 维基共享资源 · 公共领域",
+        "p2 credit": "画作 · 阿尔布雷希特·丢勒 · 野兔 · 1502年 · 维也纳阿尔贝蒂娜博物馆 · 公共领域",
+        "p3 credit": "画作 · 梁楷 · 六祖截竹图 · 约1200年 · 东京国立博物馆 · 公共领域",
+        "p4 credit": "画作 · 卡斯帕·大卫·弗里德里希 · 海边修士 · 1808–10年 · 柏林旧国家美术馆 · 公共领域",
+        "p5 credit": "画作 · 俵屋宗达 · 松岛波涛图 · 17世纪 · 弗利尔美术馆 · 公共领域",
+        "p6 credit": "画作 · 古斯塔夫·卡耶博特 · 刨地板的工人 · 1875年 · 奥赛博物馆 · 公共领域",
+        "p7 credit": "画作 · 葛饰北斋 · 骏州江尻 · 约1831年 · 公共领域",
+        "p8 credit": "画作 · 彼得·勃鲁盖尔（传） · 伊卡洛斯坠落的风景 · 约1560年 · 比利时皇家美术博物馆 · 公共领域",
+        "p9 credit": "画作 · 克劳德·莫奈 · 落日下的国会大厦 · 1903年 · 美国国家美术馆 · 公共领域",
+        "p10 credit": "画作 · 尾形光琳 · 红白梅图屏风 · 约1712年 · MOA美术馆 · 公共领域",
+
+        // ESSAYS — headlines & pulls
+        "e1 kicker": "第一件事", "e1 h2": "速度是一种<br>廉价的美。", "e1 lead": "速度是最容易被伪造的美德。孩子可以快速移动。无人机可以比孩子更快。坏消息比纠正它的真相传播得更快。", "e1 pull": "慢不是忙的反面。慢是分心的反面。",
+        "e2 kicker": "一个实际的例子", "e2 h2": "赞美<br>长途火车。", "e2 lead": "我最喜欢的交通方式是夜车。我知道这不是航空业希望我给出的答案。但我还是给出了这个答案很多次。", "e2 pull": "飞机传送你。火车送你回到自己身边。",
+        "e3 kicker": "一个坦白", "e3 h2": "我直到三十二岁<br>才真正看见<br>我的父母。", "e3 pull": "你最亲近的大多数人都穿着戏服。你不再注意了，因为戏服是你缝的。",
+        "e4 kicker": "这本书的主旨，如果有的话", "e4 h2": "铅笔<br>与炸弹。", "e4 pull": "合适的工具对合适的工作几乎总是更小的那个。",
+        "e5 kicker": "一个承认", "e5 h2": "我骨子里<br>是个安静的<br>内向者。", "e5 pull": "独处不是没有人的存在。独处是你自己的存在。",
+        "e6 kicker": "关于优雅地老去", "e6 h2": "我想要像<br>路易斯·康的建筑<br>一样老去。", "e6 pull": "皱纹不是损伤。它们是证据。",
+        "e7 kicker": "来自书桌的笔记", "e7 h2": "赞美<br>刨地板的人。", "e7 pull": "天才是传闻。习惯是收据。",
+        "e8 kicker": "分两部分的坦白", "e8 h2": "我希望我从未<br>读过博士。<br><span class=\"opp\">——但我会再读一次。</span>", "e8 pull": "失败不是成功的对立面。失败是更慢的教学形式。",
+        "e9 kicker": "奥登钟爱的那幅画", "e9 h2": "一个男孩在溺水，<br>而农夫<br>继续耕作。", "e9 pull": "这幅画不是要你看每一次溺水。它是要你每天感激有人正在为你耕作。",
+        "e10 kicker": "三座城市，按时间顺序", "e10 h2": "曼谷，<br>波士顿，<br>上海。", "e10 pull": "家不是你出生的地方。家是你同意变得脆弱的地方。",
+        "e11 kicker": "最后一页的笔记", "e11 h2": "我试图学会<br>的那个词<br>是“足够”。", "e11 pull": "更多是你做的。足够是你成为的。",
+
+        // APHORISMS
+        "aph 1.1": "世界不会<br>慢下来。<br>所以你必须。",
+        "aph 1.2": "如果你分不清<br>自己是在工作<br>还是在浪费时间，<br>你可能是在工作。",
+        "aph 1.3": "你永远不会比<br>你决定的<br>更在当下。",
+        "aph 2.1": "看是免费的。<br>看见<br>很昂贵。",
+        "aph 2.2": "注意力是一个人<br>能给予另一个人的<br>最慷慨的东西。",
+        "aph 3.1": "一支铅笔<br>能造成的伤害<br>比炸弹更大。<br>只是需要更长时间。",
+        "aph 3.2": "无论<br>你认为答案是什么，<br>它可能都是<br>一个更小的版本。",
+        "aph 4.1": "如果你害怕<br>与自己独处，<br>去发现里面住着谁。",
+        "aph 4.2": "一个能与你<br>沉默相处的朋友<br>比婚姻<br>更稀有。",
+        "aph 5.1": "没有什么快的东西<br>是重要的。",
+        "aph 5.2": "时间是你唯一<br>无法赚回的东西。<br>它也是你唯一<br>不断免费送出去的<br>东西。",
+        "aph 6.1": "安静的重复<br>本身就是<br>一种艺术。",
+        "aph 6.2": "职业是你能<br>获得报酬的事。<br>实践是你即使<br>无报酬也<br>无法停止的事。",
+        "aph 7.1": "如果你还没有失败，<br>你还没有<br>足够努力地<br>去犯错。",
+        "aph 7.2": "失败的<br>对立面<br>不是成功。<br>而是遗忘。",
+        "aph 8.1": "选择你的<br>五个人，<br>然后再选择<br>你的城市。",
+        "aph 8.2": "最能改变你的人<br>是那些让你<br>成为你本来就是的<br>那个人的人。",
+        "aph 9.1": "家是你不必<br>解释沉默<br>的地方。",
+        "aph 9.2": "家是你能听到<br>自己思考的<br>任何地方。<br>有时是厨房。<br>有时是火车。<br>有时是一生。",
+        "aph 10.1": "你将死去。<br>几乎所有其他事<br>都是准备。",
+        "aph 10.2": "你在最后一天<br>会写下的东西<br>就是你现在<br>应该在写的东西。",
+        "aph final": "慢下来。<br>世界一直在<br>等你<br>注意到它。",
+
+        // INTERLUDES
+        "interlude 1": "停下<br>奔跑。<br><em>或者仅仅慢下来。</em>",
+        "interlude 2": "等等。",
+        "interlude 3": "你已经<br><em>醒了</em><br>吗？",
+        "interlude 4": "谁是<br>你画中<br>那个<br>溺水的<br><em>男孩？</em>",
+        "interlude 5": "再试<br>一次。<br><em>或者不。</em>",
+
+        // COLOPHON
+        "colophon": "<em>你只能在慢下来时看到的那些事物</em><br>关于人生的十个章节的冥想。<br><br>Non Arkaraprasertkul 博士 著。<br>字体：Anton、Hanken Grotesk、Cormorant Garamond、JetBrains Mono。<br>所有艺术品均为公共领域，来源：大都会博物馆、盖蒂博物馆、<br>史密森尼博物馆、荷兰国立博物馆、东京国立博物馆、<br>美国国家美术馆、LACMA、MOA博物馆、维基共享资源。<br><br>文字 © Non Arkaraprasertkul，保留所有权利。<br>艺术属于每个人。打印它。装裱它。送人。<br><span class=\"sig\">⌁ 曼谷 · 上海 · 波士顿 · MMXXVI</span>",
+
+        // RAIL BOOKMARK
+        "rail bookmark": "↻ 从这里继续"
+      }
+    };
+
+    // Re-wrap animated text after innerHTML swaps so the kinetic cover
+    // (ch-bounce) and aphorism letter-rise (ch) animations keep working
+    // across language changes. Mirrors the wrapping done by motion()/fun().
+    function rewrapDecor() {
+      document.querySelectorAll('.aphorism .line').forEach(line => {
+        if (line.querySelector('.ch')) return;
+        const frag = document.createDocumentFragment();
+        let i = 0;
+        Array.from(line.childNodes).forEach(node => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            for (const ch of node.textContent) {
+              const span = document.createElement('span');
+              span.className = 'ch';
+              span.style.setProperty('--i', i++);
+              span.textContent = ch;
+              frag.appendChild(span);
+            }
+          } else {
+            frag.appendChild(node.cloneNode(true));
+          }
+        });
+        line.innerHTML = '';
+        line.appendChild(frag);
+      });
+      document.querySelectorAll('.cover .title-line').forEach(line => {
+        if (line.querySelector('.ch-bounce')) return;
+        const text = line.textContent;
+        let i = 0;
+        const html = Array.from(text).map(ch => {
+          if (ch === ' ' || ch.charCodeAt(0) === 160) return ' ';
+          const span = `<span class="ch-bounce" style="--i:${i}">${ch}</span>`;
+          i++;
+          return span;
+        }).join('');
+        line.innerHTML = html;
+      });
+    }
+
+    // Apply translations to all [data-i18n] elements
+    function applyLang(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (T[lang] && T[lang][key] !== undefined) {
+          el.innerHTML = T[lang][key];
+        }
+      });
+
+      // Restore the animation wrappers destroyed by innerHTML swaps above
+      rewrapDecor();
+
+      // Update bookmark button
+      const savedBookmark = localStorage.getItem('slowdown:bookmark');
+      const sectionLabels = {
+        'cover': 'Cover', 'contents': 'Contents',
+        'p1': 'I · Slow', 'p2': 'II · See', 'p3': 'III · Less',
+        'p4': 'IV · Alone', 'p5': 'V · Time', 'p6': 'VI · Make',
+        'p7': 'VII · Fail', 'p8': 'VIII · People', 'p9': 'IX · Home',
+        'p10': 'X · End', 'index': 'Index', 'colophon': 'Colophon'
+      };
+      const sectionLabelsZh = {
+        'cover': '封面', 'contents': '目录',
+        'p1': '一 · 慢', 'p2': '二 · 看', 'p3': '三 · 少',
+        'p4': '四 · 独', 'p5': '五 · 时', 'p6': '六 · 造',
+        'p7': '七 · 败', 'p8': '八 · 人', 'p9': '九 · 家',
+        'p10': '十 · 终', 'index': '画作索引', 'colophon': '版权'
+      };
+      const labels = lang === 'zh' ? sectionLabelsZh : sectionLabels;
+      const railBookmark = document.getElementById('railBookmark');
+      if (railBookmark && savedBookmark && labels[savedBookmark]) {
+        const prefix = lang === 'zh' ? '↻ 从这里继续' : '↻ Continue from';
+        railBookmark.textContent = prefix + ' ' + labels[savedBookmark];
+      }
+
+      // Update <html> lang attribute
+      document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+
+      // Refresh the part badge if a movement is active (setPart only fires on change)
+      const partBadge = document.getElementById('partBadge');
+      const curPart = document.body.getAttribute('data-current-part');
+      if (partBadge && curPart) {
+        const zh = { '1': '一 · 慢', '2': '二 · 看', '3': '三 · 少', '4': '四 · 独', '5': '五 · 时', '6': '六 · 造', '7': '七 · 败', '8': '八 · 人', '9': '九 · 家', '10': '十 · 终' };
+        const en = { '1': 'I · SLOW', '2': 'II · SEE', '3': 'III · LESS', '4': 'IV · ALONE', '5': 'V · TIME', '6': 'VI · MAKE', '7': 'VII · FAIL', '8': 'VIII · PEOPLE', '9': 'IX · HOME', '10': 'X · END' };
+        partBadge.textContent = (lang === 'zh' ? zh : en)[curPart] || partBadge.textContent;
+      }
+    }
+
+    // Toggle handler
+    const toggle = document.getElementById('langToggle');
+    if (toggle) {
+      toggle.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const lang = btn.dataset.langBtn;
+          document.body.setAttribute('data-lang', lang);
+          toggle.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          applyLang(lang);
+          try { localStorage.setItem('slowdown:lang', lang); } catch(e) {}
+        });
+      });
+    }
+
+    // Restore saved language
+    let savedLang = 'en';
+    try { savedLang = localStorage.getItem('slowdown:lang') || 'en'; } catch(e) {}
+    if (savedLang === 'zh') {
+      document.body.setAttribute('data-lang', 'zh');
+      toggle.querySelectorAll('button').forEach(b => {
+        b.classList.toggle('active', b.dataset.langBtn === 'zh');
+      });
+      applyLang('zh');
+    }
   })();
   </script>
 </body></html>
