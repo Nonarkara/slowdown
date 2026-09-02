@@ -11,7 +11,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Sarabun:wght@300;400;500&family=Noto+Serif+Thai:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=10">
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "0da324da0e204440a172088c0fafc92c"}'></script>
 </head>
 <body data-lang="en">
 
@@ -2069,23 +2068,6 @@
   </div>
 </aside>
 
-
-  <!-- NON visitor tracker — fire-and-forget, no cookies -->
-  <script>
-  (function(){
-    if(sessionStorage.getItem('non_v'))return;
-    sessionStorage.setItem('non_v','1');
-    var SH='https://script.google.com/macros/s/AKfycbwzTwBNOseKkvkkjD-LH6B3GWrsFcwS6MTDbn7W5eb3zHxA-swtlHYuwJ3w5PAVXDhU7Q/exec';
-    var b={dashboard:'SLOWDOWN',hostname:location.hostname,page:location.href,
-      referrer:document.referrer||'Direct',userAgent:navigator.userAgent,
-      language:navigator.language,screen:screen.width+'x'+screen.height,
-      timezone:Intl.DateTimeFormat().resolvedOptions().timeZone};
-    function send(p){fetch(SH,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(p)}).catch(function(){});}
-    fetch('https://ipapi.co/json/').then(function(r){return r.json();}).then(function(d){
-      b.ip=d.ip;b.country=d.country_name;b.region=d.region;b.city=d.city;send(b);
-    }).catch(function(){send(b);});
-  })();
-  </script>
 
   <!-- ╔════════════════════════════════════════════════════════════╗
        ║  I18N — Bilingual English/Chinese toggle                  ║
