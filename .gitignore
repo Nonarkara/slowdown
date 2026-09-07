@@ -4,3 +4,7 @@
 .env
 .env.*
 !.env.example
+
+# Cloudflare Wrangler local cache (account ids, emails — not for git)
+.wrangler/
+
