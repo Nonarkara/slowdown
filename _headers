@@ -23,3 +23,32 @@
 /audio/*
   Cache-Control: public, max-age=86400
   Accept-Ranges: bytes
+
+# Security headers for every route. Existing Cache-Control rules above are unchanged.
+# Multiple matching rules inherit headers (Cloudflare Pages _headers).
+#
+# Content-Security-Policy-Report-Only is report-only pending review.
+# Browsers record violations and do not block or alter the page.
+#
+# Subresource origins taken from this site's client code (index.html), not guessed:
+#   https://fonts.googleapis.com  — stylesheet <link> and preconnect
+#   https://fonts.gstatic.com     — preconnect (crossorigin) for the font files that stylesheet loads
+#   https://commons.wikimedia.org — <img src> Special:FilePath, and the JS fallback that restores it
+#   https://upload.wikimedia.org  — wikiDirectUrl() assigns this host to img.src
+#   'self'                        — styles.css, img/*, assets/*, audio/foreword.{m4a,mp3,aac}
+# Inline scripts (two <script> blocks) and style attributes require 'unsafe-inline'.
+# No external script hosts appear in the client code.
+#
+# Top-level <a href> navigations are not CSP subresource origins and are omitted:
+#   https://100days.nonarkara.org
+#   https://ninja.nonarkara.org
+#   https://slowdown.nonarkara.org
+#   https://mean.nonarkara.org
+#   https://dao.nonarkara.org
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy-Report-Only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://commons.wikimedia.org https://upload.wikimedia.org; media-src 'self'; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com
